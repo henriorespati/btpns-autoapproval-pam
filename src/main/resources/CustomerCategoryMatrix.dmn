@@ -12,13 +12,13 @@
       <dmn:typeRef>string</dmn:typeRef>
     </dmn:itemComponent>
   </dmn:itemDefinition>
-  <dmn:inputData id="_F3F6EB38-38A9-4A3A-954A-17194E76056A" name="absentCount">
+  <dmn:inputData id="_F3F6EB38-38A9-4A3A-954A-17194E76056A" name="absent">
     <dmn:extensionElements/>
-    <dmn:variable id="_55A065F6-096F-4767-A29A-435E78571EE8" name="absentCount" typeRef="number"/>
+    <dmn:variable id="_55A065F6-096F-4767-A29A-435E78571EE8" name="absent" typeRef="number"/>
   </dmn:inputData>
-  <dmn:inputData id="_D19AEB21-0FB5-4A30-9AAD-91902B371379" name="bailoutCount">
+  <dmn:inputData id="_D19AEB21-0FB5-4A30-9AAD-91902B371379" name="bailout">
     <dmn:extensionElements/>
-    <dmn:variable id="_CD271768-A442-4C5F-AC3E-14C8FD274226" name="bailoutCount" typeRef="number"/>
+    <dmn:variable id="_CD271768-A442-4C5F-AC3E-14C8FD274226" name="bailout" typeRef="number"/>
   </dmn:inputData>
   <dmn:decision id="_F220A6BC-15E2-408F-AE4B-33A31E8158B7" name="CustomerCategoryMatrix">
     <dmn:extensionElements/>
@@ -32,12 +32,12 @@
     <dmn:decisionTable id="_D7012F68-2B6A-4998-BB17-5AA593DF2D91" hitPolicy="UNIQUE" preferredOrientation="Rule-as-Row">
       <dmn:input id="_1995BCD1-15D1-452F-940E-A910CD2738DA">
         <dmn:inputExpression id="_0BF820A0-ADFC-461F-B9C9-A41823AF41E0" typeRef="number">
-          <dmn:text>absentCount</dmn:text>
+          <dmn:text>absent</dmn:text>
         </dmn:inputExpression>
       </dmn:input>
       <dmn:input id="_5DAFDC0D-3E78-4EA4-935C-61AACACBBBA6">
         <dmn:inputExpression id="_7F4D73A5-DED8-423E-A961-6F307B7EDD91" typeRef="number">
-          <dmn:text>bailoutCount</dmn:text>
+          <dmn:text>bailout</dmn:text>
         </dmn:inputExpression>
       </dmn:input>
       <dmn:output id="_04C80D7E-1212-409A-B099-2DA9756762FD" name="autoReject" typeRef="string"/>
