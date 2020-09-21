@@ -21,6 +21,9 @@
     <dmn:informationRequirement id="_FD2E8F81-DA17-4845-A1A6-834ECC8695ED">
       <dmn:requiredDecision href="#_BA3102C8-2E28-46A4-AE9D-5F677E1BB84D"/>
     </dmn:informationRequirement>
+    <dmn:knowledgeRequirement id="_E39DB2E0-EE8C-4D4F-911D-75CFDBC1A64C">
+      <dmn:requiredKnowledge href="#_BD790BBF-9E61-457E-B152-49A0804DF30B"/>
+    </dmn:knowledgeRequirement>
     <dmn:decisionTable id="_A8B8C7D6-CBBE-4ED9-8774-BC3B1481D51F" hitPolicy="UNIQUE" preferredOrientation="Rule-as-Row">
       <dmn:input id="_FC35CC3D-C8A0-4516-A01D-EA4CBFBC8A9A">
         <dmn:inputExpression id="_98692361-6DF5-459D-8BFB-3C2138E680B6" typeRef="number">
@@ -32,7 +35,7 @@
       <dmn:annotation name="annotation"/>
       <dmn:rule id="_D6AB473F-E79B-4B74-B492-3A80C4E74865">
         <dmn:inputEntry id="_D263FB55-E974-4014-A590-A480827FAC24">
-          <dmn:text>&lt;minAmount</dmn:text>
+          <dmn:text>&lt;BKM</dmn:text>
         </dmn:inputEntry>
         <dmn:outputEntry id="_DBB72345-EDD7-4FC5-83C8-634EEA6015AB">
           <dmn:text>"Y"</dmn:text>
@@ -46,7 +49,7 @@
       </dmn:rule>
       <dmn:rule id="_D557A241-E85F-4379-9DDE-E891B4B75B6C">
         <dmn:inputEntry id="_BF576AB1-5D32-4FA6-92D2-C07D5CE74667">
-          <dmn:text>&gt;=minAmount</dmn:text>
+          <dmn:text>&gt;=BKM</dmn:text>
         </dmn:inputEntry>
         <dmn:outputEntry id="_FA63DA55-5059-4CFF-B9B8-7BC16D0E9C25">
           <dmn:text>"N"</dmn:text>
@@ -78,9 +81,9 @@
     <dmn:extensionElements/>
     <dmn:variable id="_9E1D05E3-3B7E-4BE7-96F0-1B7AE0A4C63B" name="savingBalance" typeRef="number"/>
   </dmn:inputData>
-  <dmn:businessKnowledgeModel id="_BD790BBF-9E61-457E-B152-49A0804DF30B" name="BusinessKnowledgeModel-1">
+  <dmn:businessKnowledgeModel id="_BD790BBF-9E61-457E-B152-49A0804DF30B" name="BKM-1">
     <dmn:extensionElements/>
-    <dmn:variable id="_C36D8965-EAB2-4BDE-8EAF-03C3048D59BD" name="BusinessKnowledgeModel-1" typeRef="number"/>
+    <dmn:variable id="_C36D8965-EAB2-4BDE-8EAF-03C3048D59BD" name="BKM-1" typeRef="number"/>
     <dmn:encapsulatedLogic id="_F9F341D3-9505-4B15-8B33-F7406229505D" kind="FEEL">
       <dmn:formalParameter id="_42602132-807A-44F9-935B-76EF589106AA" name="outstanding" typeRef="number"/>
       <dmn:literalExpression id="_C3E1B526-E182-4DA0-AC0B-0CDC57435A26">
@@ -162,6 +165,10 @@
       </dmndi:DMNEdge>
       <dmndi:DMNEdge id="dmnedge-_FD2E8F81-DA17-4845-A1A6-834ECC8695ED" dmnElementRef="_FD2E8F81-DA17-4845-A1A6-834ECC8695ED">
         <di:waypoint x="351" y="207"/>
+        <di:waypoint x="267" y="115"/>
+      </dmndi:DMNEdge>
+      <dmndi:DMNEdge id="dmnedge-_E39DB2E0-EE8C-4D4F-911D-75CFDBC1A64C" dmnElementRef="_E39DB2E0-EE8C-4D4F-911D-75CFDBC1A64C">
+        <di:waypoint x="526" y="324"/>
         <di:waypoint x="267" y="115"/>
       </dmndi:DMNEdge>
       <dmndi:DMNEdge id="dmnedge-_B7AD497B-3480-4A90-B8D6-8DFC8E8C3A78" dmnElementRef="_B7AD497B-3480-4A90-B8D6-8DFC8E8C3A78">
