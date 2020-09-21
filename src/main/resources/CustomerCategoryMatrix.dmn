@@ -22,7 +22,7 @@
   </dmn:inputData>
   <dmn:decision id="_F220A6BC-15E2-408F-AE4B-33A31E8158B7" name="CustomerCategoryMatrix">
     <dmn:extensionElements/>
-    <dmn:variable id="_AC8196D0-B596-4826-9CBF-57003B494F1D" name="CustomerCategoryMatrix"/>
+    <dmn:variable id="_AC8196D0-B596-4826-9CBF-57003B494F1D" name="CustomerCategoryMatrix" typeRef="output"/>
     <dmn:informationRequirement id="_73755089-476F-48E5-A353-61CC60209556">
       <dmn:requiredInput href="#_D19AEB21-0FB5-4A30-9AAD-91902B371379"/>
     </dmn:informationRequirement>
@@ -40,17 +40,106 @@
           <dmn:text>bailoutCount</dmn:text>
         </dmn:inputExpression>
       </dmn:input>
-      <dmn:output id="_04C80D7E-1212-409A-B099-2DA9756762FD"/>
-      <dmn:annotation name="annotation-1"/>
+      <dmn:output id="_04C80D7E-1212-409A-B099-2DA9756762FD" name="autoReject" typeRef="string"/>
+      <dmn:output id="_FE24B2CF-7B44-47B3-9F7D-9A444833BCDD" name="rejectCode" typeRef="string"/>
+      <dmn:annotation name="annotation"/>
+      <dmn:rule id="_BBB929F2-716D-4EE8-BED7-55130495BDAC">
+        <dmn:inputEntry id="_F51C0462-66DD-4951-B967-094763D6950B">
+          <dmn:text>-</dmn:text>
+        </dmn:inputEntry>
+        <dmn:inputEntry id="_1D67D1BC-91A8-469F-981F-C8FDAA7A1745">
+          <dmn:text>&gt;5</dmn:text>
+        </dmn:inputEntry>
+        <dmn:outputEntry id="_C4EB1773-ECF0-41EB-83A6-00E5B2C03A40">
+          <dmn:text>"Y"</dmn:text>
+        </dmn:outputEntry>
+        <dmn:outputEntry id="_A6A71A33-826D-4A32-9DE1-CB7080907C22">
+          <dmn:text>"014"</dmn:text>
+        </dmn:outputEntry>
+        <dmn:annotationEntry>
+          <dmn:text>"Bailout >5"</dmn:text>
+        </dmn:annotationEntry>
+      </dmn:rule>
+      <dmn:rule id="_4DC289DD-8753-4C6F-BB63-C632F17BB979">
+        <dmn:inputEntry id="_C63D3F0C-BA12-47DF-B838-B9A414389985">
+          <dmn:text>&gt;10</dmn:text>
+        </dmn:inputEntry>
+        <dmn:inputEntry id="_DF099350-C937-4179-90F9-7D8E45B7E3D8">
+          <dmn:text>-</dmn:text>
+        </dmn:inputEntry>
+        <dmn:outputEntry id="_600EA8D0-C68A-4681-A2C2-EC129EAFEB0C">
+          <dmn:text>"Y"</dmn:text>
+        </dmn:outputEntry>
+        <dmn:outputEntry id="_0F784A0A-7A98-4162-B43C-C3A9669493B3">
+          <dmn:text>"014"</dmn:text>
+        </dmn:outputEntry>
+        <dmn:annotationEntry>
+          <dmn:text>"Absent >10"</dmn:text>
+        </dmn:annotationEntry>
+      </dmn:rule>
       <dmn:rule id="_6882E8B6-2AB1-4619-91CF-8695BB14F19D">
         <dmn:inputEntry id="_B8BB6487-0522-45F3-954B-A5D1AD118590">
-          <dmn:text>-</dmn:text>
+          <dmn:text>10</dmn:text>
         </dmn:inputEntry>
         <dmn:inputEntry id="_D666C8FE-528B-4313-B5BF-220D8821FFA1">
-          <dmn:text>-</dmn:text>
+          <dmn:text>5</dmn:text>
         </dmn:inputEntry>
         <dmn:outputEntry id="_EF8226DD-8E77-4D73-B62A-D0DFFF813CBF">
+          <dmn:text>"Y"</dmn:text>
+        </dmn:outputEntry>
+        <dmn:outputEntry id="_466CEF15-F897-45D4-A0F8-70293703BB4B">
+          <dmn:text>"014"</dmn:text>
+        </dmn:outputEntry>
+        <dmn:annotationEntry>
+          <dmn:text>"Bailout=5 &amp; Absent=10"</dmn:text>
+        </dmn:annotationEntry>
+      </dmn:rule>
+      <dmn:rule id="_418768C7-99AE-42EE-AC1A-E42D6C1AF7E6">
+        <dmn:inputEntry id="_E9EA5D81-9D49-4355-8457-14E3A6775EBC">
+          <dmn:text>&lt;10</dmn:text>
+        </dmn:inputEntry>
+        <dmn:inputEntry id="_145E6A30-8F62-4DFC-9952-E60960507C54">
+          <dmn:text>5</dmn:text>
+        </dmn:inputEntry>
+        <dmn:outputEntry id="_A3117AC1-68D1-4DCA-951D-F1629472D032">
+          <dmn:text>"N"</dmn:text>
+        </dmn:outputEntry>
+        <dmn:outputEntry id="_2243D0C9-F4AB-4331-A043-971BBD906C66">
+          <dmn:text>"000"</dmn:text>
+        </dmn:outputEntry>
+        <dmn:annotationEntry>
           <dmn:text></dmn:text>
+        </dmn:annotationEntry>
+      </dmn:rule>
+      <dmn:rule id="_D594A9DB-1AA4-4267-A2B9-C70D69095137">
+        <dmn:inputEntry id="_3F410F7C-41FB-4B93-87A2-81128A6BA51B">
+          <dmn:text>10</dmn:text>
+        </dmn:inputEntry>
+        <dmn:inputEntry id="_1EB07632-C5B3-42B5-ADA7-76867C21AA15">
+          <dmn:text>&lt;5</dmn:text>
+        </dmn:inputEntry>
+        <dmn:outputEntry id="_A7ED3F8E-50C0-429C-BD8E-26AB9203BE55">
+          <dmn:text>"N"</dmn:text>
+        </dmn:outputEntry>
+        <dmn:outputEntry id="_989C168F-8C28-4A0E-8E98-583930CB0A62">
+          <dmn:text>"000"</dmn:text>
+        </dmn:outputEntry>
+        <dmn:annotationEntry>
+          <dmn:text></dmn:text>
+        </dmn:annotationEntry>
+      </dmn:rule>
+      <dmn:rule id="_D5EF530D-0EFF-4C05-AD0E-1F0BD17F7C4B">
+        <dmn:inputEntry id="_6851E962-A0E0-4F57-81EC-3FF9783C061E">
+          <dmn:text>&lt;10</dmn:text>
+        </dmn:inputEntry>
+        <dmn:inputEntry id="_A6A72BA6-C565-4A7C-B03B-4D8A510D8058">
+          <dmn:text>&lt;5</dmn:text>
+        </dmn:inputEntry>
+        <dmn:outputEntry id="_9845D9CC-A6A6-41D1-BDAD-3F9587000339">
+          <dmn:text>"N"</dmn:text>
+        </dmn:outputEntry>
+        <dmn:outputEntry id="_CF7BBBEE-D131-40BD-BC20-CFFAE233BD99">
+          <dmn:text>"000"</dmn:text>
         </dmn:outputEntry>
         <dmn:annotationEntry>
           <dmn:text></dmn:text>
@@ -68,6 +157,7 @@
             <kie:width>100.0</kie:width>
             <kie:width>100.0</kie:width>
             <kie:width>100.0</kie:width>
+            <kie:width>242.0</kie:width>
           </kie:ComponentWidths>
         </kie:ComponentsWidthsExtension>
       </di:extension>
