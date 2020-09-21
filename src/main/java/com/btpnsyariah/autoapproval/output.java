@@ -6,12 +6,33 @@ package com.btpnsyariah.autoapproval;
 
 public class output implements java.io.Serializable {
 
-    static final long serialVersionUID = 1L;
+	static final long serialVersionUID = 1L;
 
-    public output() {
-    }
+	private java.lang.String autoReject;
+	private java.lang.String rejectCode;
 
+	public output() {
+	}
 
+	public java.lang.String getAutoReject() {
+		return this.autoReject;
+	}
 
+	public void setAutoReject(java.lang.String autoReject) {
+		this.autoReject = autoReject;
+	}
+
+	public java.lang.String getRejectCode() {
+		return this.rejectCode;
+	}
+
+	public void setRejectCode(java.lang.String rejectCode) {
+		this.rejectCode = rejectCode;
+	}
+
+	public output(java.lang.String autoReject, java.lang.String rejectCode) {
+		this.autoReject = autoReject;
+		this.rejectCode = rejectCode;
+	}
 
 }
