@@ -9,6 +9,26 @@
       <dmn:typeRef>string</dmn:typeRef>
     </dmn:itemComponent>
   </dmn:itemDefinition>
+  <dmn:itemDefinition id="_6A25AF1A-52F8-46A8-940E-9908337F9601" name="maritalStatus" isCollection="true">
+    <dmn:itemComponent id="_B6710053-610D-4223-B192-0738FF8BEEFA" name="Single" isCollection="false">
+      <dmn:typeRef>number</dmn:typeRef>
+      <dmn:allowedValues kie:constraintType="enumeration" id="_01863EE4-E30B-48FB-A697-4213AA6E0A98">
+        <dmn:text>710</dmn:text>
+      </dmn:allowedValues>
+    </dmn:itemComponent>
+    <dmn:itemComponent id="_79F36461-0520-485B-B6DD-D9C3AE9BFF2C" name="Married" isCollection="false">
+      <dmn:typeRef>number</dmn:typeRef>
+      <dmn:allowedValues kie:constraintType="expression" id="_63281422-492C-4363-9228-9CC06BB369CB">
+        <dmn:text>714</dmn:text>
+      </dmn:allowedValues>
+    </dmn:itemComponent>
+    <dmn:itemComponent id="_E8EA6433-97D1-4A9B-B128-7358CFC7BA48" name="Widowed" isCollection="false">
+      <dmn:typeRef>number</dmn:typeRef>
+      <dmn:allowedValues kie:constraintType="expression" id="_4632B987-FFD9-4332-834E-D85E1CF78841">
+        <dmn:text>715</dmn:text>
+      </dmn:allowedValues>
+    </dmn:itemComponent>
+  </dmn:itemDefinition>
   <dmn:inputData id="_9AF44EA6-8030-4FC0-91CA-1FA7B4B9EE6E" name="age">
     <dmn:extensionElements/>
     <dmn:variable id="_4C257CB0-11F2-4493-804D-EC048ECC18B1" name="age" typeRef="number"/>
