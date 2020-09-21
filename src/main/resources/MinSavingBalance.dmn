@@ -19,11 +19,6 @@
       <dmn:requiredInput href="#_A4CB5485-4C15-454D-82C9-A46D510211C3"/>
     </dmn:informationRequirement>
     <dmn:decisionTable id="_A8B8C7D6-CBBE-4ED9-8774-BC3B1481D51F" hitPolicy="UNIQUE" preferredOrientation="Rule-as-Row">
-      <dmn:input id="_A09A7CF2-2A60-4241-AE36-AB0FB66A4B1C">
-        <dmn:inputExpression id="_F143EC9B-F1C5-4F90-8561-6A18D8809679" typeRef="number">
-          <dmn:text>outstanding</dmn:text>
-        </dmn:inputExpression>
-      </dmn:input>
       <dmn:input id="_FC35CC3D-C8A0-4516-A01D-EA4CBFBC8A9A">
         <dmn:inputExpression id="_98692361-6DF5-459D-8BFB-3C2138E680B6" typeRef="number">
           <dmn:text>savingBalance</dmn:text>
@@ -33,9 +28,6 @@
       <dmn:output id="_4B512979-C577-476D-82F1-C035A9CD5908" name="rejectCode" typeRef="string"/>
       <dmn:annotation name="annotation"/>
       <dmn:rule id="_D6AB473F-E79B-4B74-B492-3A80C4E74865">
-        <dmn:inputEntry id="_314D290C-916F-42A5-B30D-AF235CEB58AB">
-          <dmn:text>-</dmn:text>
-        </dmn:inputEntry>
         <dmn:inputEntry id="_D263FB55-E974-4014-A590-A480827FAC24">
           <dmn:text>&lt;(0.5*outstanding)</dmn:text>
         </dmn:inputEntry>
@@ -50,9 +42,6 @@
         </dmn:annotationEntry>
       </dmn:rule>
       <dmn:rule id="_D557A241-E85F-4379-9DDE-E891B4B75B6C">
-        <dmn:inputEntry id="_F07F7BCD-4A51-4CE5-A5DB-B0795E08AA03">
-          <dmn:text>-</dmn:text>
-        </dmn:inputEntry>
         <dmn:inputEntry id="_BF576AB1-5D32-4FA6-92D2-C07D5CE74667">
           <dmn:text>&gt;=(0.5*outstanding)</dmn:text>
         </dmn:inputEntry>
@@ -82,7 +71,6 @@
         <kie:ComponentsWidthsExtension>
           <kie:ComponentWidths dmnElementRef="_A8B8C7D6-CBBE-4ED9-8774-BC3B1481D51F">
             <kie:width>50.0</kie:width>
-            <kie:width>100.0</kie:width>
             <kie:width>157.0</kie:width>
             <kie:width>100.0</kie:width>
             <kie:width>100.0</kie:width>
