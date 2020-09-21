@@ -78,6 +78,16 @@
     <dmn:extensionElements/>
     <dmn:variable id="_9E1D05E3-3B7E-4BE7-96F0-1B7AE0A4C63B" name="savingBalance" typeRef="number"/>
   </dmn:inputData>
+  <dmn:businessKnowledgeModel id="_BD790BBF-9E61-457E-B152-49A0804DF30B" name="BusinessKnowledgeModel-1">
+    <dmn:extensionElements/>
+    <dmn:variable id="_C36D8965-EAB2-4BDE-8EAF-03C3048D59BD" name="BusinessKnowledgeModel-1" typeRef="number"/>
+    <dmn:encapsulatedLogic id="_F9F341D3-9505-4B15-8B33-F7406229505D" kind="FEEL">
+      <dmn:formalParameter id="_42602132-807A-44F9-935B-76EF589106AA" name="outstanding" typeRef="number"/>
+      <dmn:literalExpression id="_C3E1B526-E182-4DA0-AC0B-0CDC57435A26">
+        <dmn:text>0.5 * outstanding</dmn:text>
+      </dmn:literalExpression>
+    </dmn:encapsulatedLogic>
+  </dmn:businessKnowledgeModel>
   <dmndi:DMNDI>
     <dmndi:DMNDiagram>
       <di:extension>
@@ -91,6 +101,13 @@
           </kie:ComponentWidths>
           <kie:ComponentWidths dmnElementRef="_68E11BCB-E223-4863-9B50-DE2B1B8D7D4C">
             <kie:width>300.0</kie:width>
+          </kie:ComponentWidths>
+          <kie:ComponentWidths dmnElementRef="_C3E1B526-E182-4DA0-AC0B-0CDC57435A26">
+            <kie:width>150.0</kie:width>
+          </kie:ComponentWidths>
+          <kie:ComponentWidths dmnElementRef="_F9F341D3-9505-4B15-8B33-F7406229505D">
+            <kie:width>50.0</kie:width>
+            <kie:width>150.0</kie:width>
           </kie:ComponentWidths>
         </kie:ComponentsWidthsExtension>
       </di:extension>
@@ -109,7 +126,7 @@
           <dmndi:StrokeColor red="0" green="0" blue="0"/>
           <dmndi:FontColor red="0" green="0" blue="0"/>
         </dmndi:DMNStyle>
-        <dc:Bounds x="300" y="300" width="100" height="50"/>
+        <dc:Bounds x="300.29906542056074" y="300" width="100" height="50"/>
         <dmndi:DMNLabel/>
       </dmndi:DMNShape>
       <dmndi:DMNShape id="dmnshape-_BA3102C8-2E28-46A4-AE9D-5F677E1BB84D" dmnElementRef="_BA3102C8-2E28-46A4-AE9D-5F677E1BB84D" isCollapsed="false">
@@ -130,6 +147,15 @@
         <dc:Bounds x="125" y="182" width="100" height="50"/>
         <dmndi:DMNLabel/>
       </dmndi:DMNShape>
+      <dmndi:DMNShape id="dmnshape-_BD790BBF-9E61-457E-B152-49A0804DF30B" dmnElementRef="_BD790BBF-9E61-457E-B152-49A0804DF30B" isCollapsed="false">
+        <dmndi:DMNStyle>
+          <dmndi:FillColor red="255" green="255" blue="255"/>
+          <dmndi:StrokeColor red="0" green="0" blue="0"/>
+          <dmndi:FontColor red="0" green="0" blue="0"/>
+        </dmndi:DMNStyle>
+        <dc:Bounds x="476" y="299" width="100" height="50"/>
+        <dmndi:DMNLabel/>
+      </dmndi:DMNShape>
       <dmndi:DMNEdge id="dmnedge-_E6FFA570-0098-4845-B180-C13336ACC370" dmnElementRef="_E6FFA570-0098-4845-B180-C13336ACC370">
         <di:waypoint x="175" y="207"/>
         <di:waypoint x="267" y="115"/>
@@ -139,7 +165,7 @@
         <di:waypoint x="267" y="115"/>
       </dmndi:DMNEdge>
       <dmndi:DMNEdge id="dmnedge-_B7AD497B-3480-4A90-B8D6-8DFC8E8C3A78" dmnElementRef="_B7AD497B-3480-4A90-B8D6-8DFC8E8C3A78">
-        <di:waypoint x="350" y="325"/>
+        <di:waypoint x="350.29906542056074" y="325"/>
         <di:waypoint x="351" y="232"/>
       </dmndi:DMNEdge>
     </dmndi:DMNDiagram>
