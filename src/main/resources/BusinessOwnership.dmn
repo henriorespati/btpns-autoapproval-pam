@@ -1,6 +1,17 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <dmn:definitions xmlns:dmn="http://www.omg.org/spec/DMN/20180521/MODEL/" xmlns="https://kiegroup.org/dmn/_D57E7197-E15F-4998-BC3F-241DC9C36799" xmlns:di="http://www.omg.org/spec/DMN/20180521/DI/" xmlns:kie="http://www.drools.org/kie/dmn/1.2" xmlns:feel="http://www.omg.org/spec/DMN/20180521/FEEL/" xmlns:dmndi="http://www.omg.org/spec/DMN/20180521/DMNDI/" xmlns:dc="http://www.omg.org/spec/DMN/20180521/DC/" id="_6D59EF12-3446-479A-88FF-CC7FEAB26FCC" name="BusinessOwnership" expressionLanguage="http://www.omg.org/spec/DMN/20180521/FEEL/" typeLanguage="http://www.omg.org/spec/DMN/20180521/FEEL/" namespace="https://kiegroup.org/dmn/_D57E7197-E15F-4998-BC3F-241DC9C36799">
   <dmn:extensionElements/>
+  <dmn:itemDefinition id="_C24ADD39-8556-4E99-8C34-FECFB9119FE7" name="Insert a name" isCollection="false">
+    <dmn:typeRef>Any</dmn:typeRef>
+  </dmn:itemDefinition>
+  <dmn:itemDefinition id="_85ABB737-0698-4BCB-A48D-8B9AFAA126D1" name="output" isCollection="false">
+    <dmn:itemComponent id="_8A6DD333-B08A-43C7-8B46-0E4308952209" name="autoReject" isCollection="false">
+      <dmn:typeRef>string</dmn:typeRef>
+    </dmn:itemComponent>
+    <dmn:itemComponent id="_0796E1F8-F921-415E-A850-32033B071CFA" name="rejectCode" isCollection="false">
+      <dmn:typeRef>string</dmn:typeRef>
+    </dmn:itemComponent>
+  </dmn:itemDefinition>
   <dmn:inputData id="_C766A2A5-5E02-41D0-8955-E429C8BB4655" name="businessFlag">
     <dmn:extensionElements/>
     <dmn:variable id="_1C7CD8D1-6459-411B-AA4F-B7AAB728E092" name="businessFlag"/>
@@ -44,15 +55,6 @@
           </kie:ComponentWidths>
         </kie:ComponentsWidthsExtension>
       </di:extension>
-      <dmndi:DMNShape id="dmnshape-_F142C849-D594-452B-8796-A040E3B8046F" dmnElementRef="_F142C849-D594-452B-8796-A040E3B8046F" isCollapsed="false">
-        <dmndi:DMNStyle>
-          <dmndi:FillColor red="255" green="255" blue="255"/>
-          <dmndi:StrokeColor red="0" green="0" blue="0"/>
-          <dmndi:FontColor red="0" green="0" blue="0"/>
-        </dmndi:DMNStyle>
-        <dc:Bounds x="287" y="113" width="100" height="50"/>
-        <dmndi:DMNLabel/>
-      </dmndi:DMNShape>
       <dmndi:DMNShape id="dmnshape-_C766A2A5-5E02-41D0-8955-E429C8BB4655" dmnElementRef="_C766A2A5-5E02-41D0-8955-E429C8BB4655" isCollapsed="false">
         <dmndi:DMNStyle>
           <dmndi:FillColor red="255" green="255" blue="255"/>
@@ -60,6 +62,15 @@
           <dmndi:FontColor red="0" green="0" blue="0"/>
         </dmndi:DMNStyle>
         <dc:Bounds x="101" y="113" width="100" height="50"/>
+        <dmndi:DMNLabel/>
+      </dmndi:DMNShape>
+      <dmndi:DMNShape id="dmnshape-_F142C849-D594-452B-8796-A040E3B8046F" dmnElementRef="_F142C849-D594-452B-8796-A040E3B8046F" isCollapsed="false">
+        <dmndi:DMNStyle>
+          <dmndi:FillColor red="255" green="255" blue="255"/>
+          <dmndi:StrokeColor red="0" green="0" blue="0"/>
+          <dmndi:FontColor red="0" green="0" blue="0"/>
+        </dmndi:DMNStyle>
+        <dc:Bounds x="287" y="113" width="100" height="50"/>
         <dmndi:DMNLabel/>
       </dmndi:DMNShape>
       <dmndi:DMNEdge id="dmnedge-_13128D49-5D47-4166-B8DD-C1D5483372D6" dmnElementRef="_13128D49-5D47-4166-B8DD-C1D5483372D6">
