@@ -64,18 +64,15 @@
     <dmn:extensionElements/>
     <dmn:variable id="_D58C1302-819F-4415-AB7C-EEFBE95305BC" name="outstanding" typeRef="number"/>
   </dmn:inputData>
-  <dmn:decision id="_BA3102C8-2E28-46A4-AE9D-5F677E1BB84D" name="MinAmount">
+  <dmn:decision id="_BA3102C8-2E28-46A4-AE9D-5F677E1BB84D" name="minAmount">
     <dmn:extensionElements/>
-    <dmn:variable id="_8226C679-3D8E-40EA-9AC5-2CCF5AB6F92B" name="MinAmount" typeRef="number"/>
+    <dmn:variable id="_8226C679-3D8E-40EA-9AC5-2CCF5AB6F92B" name="minAmount" typeRef="number"/>
     <dmn:informationRequirement id="_B7AD497B-3480-4A90-B8D6-8DFC8E8C3A78">
       <dmn:requiredInput href="#_4F402B1F-0916-43AB-B8FA-BD21C13C0023"/>
     </dmn:informationRequirement>
-    <dmn:functionDefinition id="_7381A6B2-2218-4613-8C6C-A16B042E04F5" kind="FEEL">
-      <dmn:formalParameter id="_1EF3690E-853C-42EA-A97D-A570745DB690" name="outstanding" typeRef="number"/>
-      <dmn:literalExpression id="_0906338E-55C2-4ADB-9D92-1D37A3640092">
-        <dmn:text>0.5 * outstanding</dmn:text>
-      </dmn:literalExpression>
-    </dmn:functionDefinition>
+    <dmn:literalExpression id="_68E11BCB-E223-4863-9B50-DE2B1B8D7D4C">
+      <dmn:text>0.5 * outstanding</dmn:text>
+    </dmn:literalExpression>
   </dmn:decision>
   <dmn:inputData id="_A4CB5485-4C15-454D-82C9-A46D510211C3" name="savingBalance">
     <dmn:extensionElements/>
@@ -92,12 +89,8 @@
             <kie:width>100.0</kie:width>
             <kie:width>326.0</kie:width>
           </kie:ComponentWidths>
-          <kie:ComponentWidths dmnElementRef="_7381A6B2-2218-4613-8C6C-A16B042E04F5">
-            <kie:width>50.0</kie:width>
-            <kie:width>150.0</kie:width>
-          </kie:ComponentWidths>
-          <kie:ComponentWidths dmnElementRef="_0906338E-55C2-4ADB-9D92-1D37A3640092">
-            <kie:width>150.0</kie:width>
+          <kie:ComponentWidths dmnElementRef="_68E11BCB-E223-4863-9B50-DE2B1B8D7D4C">
+            <kie:width>300.0</kie:width>
           </kie:ComponentWidths>
         </kie:ComponentsWidthsExtension>
       </di:extension>
