@@ -1,11 +1,133 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <dmn:definitions xmlns:dmn="http://www.omg.org/spec/DMN/20180521/MODEL/" xmlns="https://kiegroup.org/dmn/_6F0E901E-9D0D-4603-ADFB-F7234EDDD0EB" xmlns:di="http://www.omg.org/spec/DMN/20180521/DI/" xmlns:kie="http://www.drools.org/kie/dmn/1.2" xmlns:feel="http://www.omg.org/spec/DMN/20180521/FEEL/" xmlns:dmndi="http://www.omg.org/spec/DMN/20180521/DMNDI/" xmlns:dc="http://www.omg.org/spec/DMN/20180521/DC/" id="_FF787FBB-BD03-4F70-8D8B-C9D1B710A20A" name="OverduePayment" expressionLanguage="http://www.omg.org/spec/DMN/20180521/FEEL/" typeLanguage="http://www.omg.org/spec/DMN/20180521/FEEL/" namespace="https://kiegroup.org/dmn/_6F0E901E-9D0D-4603-ADFB-F7234EDDD0EB">
   <dmn:extensionElements/>
+  <dmn:itemDefinition id="_9F0BB878-6B72-47EB-B5E4-0AFBBCBD311B" name="Insert a name" isCollection="false">
+    <dmn:typeRef>Any</dmn:typeRef>
+  </dmn:itemDefinition>
+  <dmn:itemDefinition id="_FE70860D-BAC2-4F9E-A112-07E0100EF8B5" name="output" isCollection="false">
+    <dmn:itemComponent id="_15840EB5-89C8-4AA1-99E9-76D3544A78E9" name="autoReject" isCollection="false">
+      <dmn:typeRef>string</dmn:typeRef>
+    </dmn:itemComponent>
+    <dmn:itemComponent id="_AECB1273-8BA2-497C-908A-920F22334A56" name="rejectCode" isCollection="false">
+      <dmn:typeRef>string</dmn:typeRef>
+    </dmn:itemComponent>
+  </dmn:itemDefinition>
+  <dmn:inputData id="_8DEDEFB8-549C-4F4D-AC50-9E6172BFCFDB" name="nextActionDate">
+    <dmn:extensionElements/>
+    <dmn:variable id="_5A121B94-E2CA-4930-99BC-0C1676BB8C69" name="nextActionDate" typeRef="date"/>
+  </dmn:inputData>
+  <dmn:decision id="_8698C5C6-D838-42F4-83AF-276F122E82DD" name="OverduePayment">
+    <dmn:extensionElements/>
+    <dmn:variable id="_0EFE27E4-F6A0-40F0-A910-DB9299F026A8" name="OverduePayment" typeRef="output"/>
+    <dmn:informationRequirement id="_11D36353-902C-4BA0-ABA6-5B6AFC80AE17">
+      <dmn:requiredInput href="#_1605CC65-10A4-4707-AD3A-B97F430349B9"/>
+    </dmn:informationRequirement>
+    <dmn:informationRequirement id="_446121CD-5B4C-4773-ABC0-A1628184D688">
+      <dmn:requiredInput href="#_8DEDEFB8-549C-4F4D-AC50-9E6172BFCFDB"/>
+    </dmn:informationRequirement>
+    <dmn:decisionTable id="_A33C5731-2CF2-4CFC-AE59-27E51A5FE5DA" hitPolicy="UNIQUE" preferredOrientation="Rule-as-Row">
+      <dmn:input id="_D986E53C-9375-4A74-992D-BCE12A263DC4">
+        <dmn:inputExpression id="_5E53C456-377C-4F24-B698-BF163C5E7F27" typeRef="date">
+          <dmn:text>lastPaymentDate</dmn:text>
+        </dmn:inputExpression>
+      </dmn:input>
+      <dmn:input id="_8B4EC7E6-312B-414D-A99F-E60B3E4D13B7">
+        <dmn:inputExpression id="_DEF5A5F9-EBC9-464E-9B85-486EC77BB443" typeRef="date">
+          <dmn:text>nextActionDate</dmn:text>
+        </dmn:inputExpression>
+      </dmn:input>
+      <dmn:output id="_4F8082AE-061A-44B6-AB55-E2C9B29D5866" name="autoReject" typeRef="string"/>
+      <dmn:output id="_64DB31EF-46ED-49B3-9CBB-1127315DCB7F" name="rejectCode" typeRef="string"/>
+      <dmn:annotation name="annotation"/>
+      <dmn:rule id="_7EB9D2AC-3AD1-46D3-8141-842B933C50A8">
+        <dmn:inputEntry id="_74761C89-ACDA-47A6-8168-B9D3D121BD67">
+          <dmn:text>&gt;(nextActionDate-1)</dmn:text>
+        </dmn:inputEntry>
+        <dmn:inputEntry id="_16B4FAFD-B471-4550-BC07-46771AF880B5">
+          <dmn:text>-</dmn:text>
+        </dmn:inputEntry>
+        <dmn:outputEntry id="_428DEA5F-A050-4D6B-86DD-68EF5FEAC2D2">
+          <dmn:text>"Y"</dmn:text>
+        </dmn:outputEntry>
+        <dmn:outputEntry id="_14DDD828-CDB1-4484-8725-456F98CD3EE4">
+          <dmn:text>"036"</dmn:text>
+        </dmn:outputEntry>
+        <dmn:annotationEntry>
+          <dmn:text>"Payment Overdue"</dmn:text>
+        </dmn:annotationEntry>
+      </dmn:rule>
+      <dmn:rule id="_5E9F2659-BB4D-481D-81AF-6D62382DE3BA">
+        <dmn:inputEntry id="_51FB425C-2D2B-4EEA-A1D7-9CDF6E891645">
+          <dmn:text>&lt;=(nextActionDate-1)</dmn:text>
+        </dmn:inputEntry>
+        <dmn:inputEntry id="_EA2D42EB-563A-4FAC-AA6F-D9D7609C87F5">
+          <dmn:text>-</dmn:text>
+        </dmn:inputEntry>
+        <dmn:outputEntry id="_2F739392-85BA-44F9-99B9-3B7D3FDC9A2F">
+          <dmn:text>"N"</dmn:text>
+        </dmn:outputEntry>
+        <dmn:outputEntry id="_CFD12515-7A84-4DE0-BCD8-314B571517B0">
+          <dmn:text>"000"</dmn:text>
+        </dmn:outputEntry>
+        <dmn:annotationEntry>
+          <dmn:text>"Payment made &lt;D-1"</dmn:text>
+        </dmn:annotationEntry>
+      </dmn:rule>
+    </dmn:decisionTable>
+  </dmn:decision>
+  <dmn:inputData id="_1605CC65-10A4-4707-AD3A-B97F430349B9" name="lastPaymentDate">
+    <dmn:extensionElements/>
+    <dmn:variable id="_B2E88FFB-9D23-4DBA-B976-79A41911F179" name="lastPaymentDate" typeRef="date"/>
+  </dmn:inputData>
   <dmndi:DMNDI>
     <dmndi:DMNDiagram>
       <di:extension>
-        <kie:ComponentsWidthsExtension/>
+        <kie:ComponentsWidthsExtension>
+          <kie:ComponentWidths dmnElementRef="_A33C5731-2CF2-4CFC-AE59-27E51A5FE5DA">
+            <kie:width>50.0</kie:width>
+            <kie:width>163.0</kie:width>
+            <kie:width>119.0</kie:width>
+            <kie:width>100.0</kie:width>
+            <kie:width>100.0</kie:width>
+            <kie:width>215.0</kie:width>
+          </kie:ComponentWidths>
+        </kie:ComponentsWidthsExtension>
       </di:extension>
+      <dmndi:DMNShape id="dmnshape-_1605CC65-10A4-4707-AD3A-B97F430349B9" dmnElementRef="_1605CC65-10A4-4707-AD3A-B97F430349B9" isCollapsed="false">
+        <dmndi:DMNStyle>
+          <dmndi:FillColor red="255" green="255" blue="255"/>
+          <dmndi:StrokeColor red="0" green="0" blue="0"/>
+          <dmndi:FontColor red="0" green="0" blue="0"/>
+        </dmndi:DMNStyle>
+        <dc:Bounds x="200" y="156" width="100" height="50"/>
+        <dmndi:DMNLabel/>
+      </dmndi:DMNShape>
+      <dmndi:DMNShape id="dmnshape-_8DEDEFB8-549C-4F4D-AC50-9E6172BFCFDB" dmnElementRef="_8DEDEFB8-549C-4F4D-AC50-9E6172BFCFDB" isCollapsed="false">
+        <dmndi:DMNStyle>
+          <dmndi:FillColor red="255" green="255" blue="255"/>
+          <dmndi:StrokeColor red="0" green="0" blue="0"/>
+          <dmndi:FontColor red="0" green="0" blue="0"/>
+        </dmndi:DMNStyle>
+        <dc:Bounds x="402" y="156" width="100" height="50"/>
+        <dmndi:DMNLabel/>
+      </dmndi:DMNShape>
+      <dmndi:DMNShape id="dmnshape-_8698C5C6-D838-42F4-83AF-276F122E82DD" dmnElementRef="_8698C5C6-D838-42F4-83AF-276F122E82DD" isCollapsed="false">
+        <dmndi:DMNStyle>
+          <dmndi:FillColor red="255" green="255" blue="255"/>
+          <dmndi:StrokeColor red="0" green="0" blue="0"/>
+          <dmndi:FontColor red="0" green="0" blue="0"/>
+        </dmndi:DMNStyle>
+        <dc:Bounds x="295" y="43" width="100" height="50"/>
+        <dmndi:DMNLabel/>
+      </dmndi:DMNShape>
+      <dmndi:DMNEdge id="dmnedge-_11D36353-902C-4BA0-ABA6-5B6AFC80AE17" dmnElementRef="_11D36353-902C-4BA0-ABA6-5B6AFC80AE17">
+        <di:waypoint x="300" y="181"/>
+        <di:waypoint x="295" y="68"/>
+      </dmndi:DMNEdge>
+      <dmndi:DMNEdge id="dmnedge-_446121CD-5B4C-4773-ABC0-A1628184D688" dmnElementRef="_446121CD-5B4C-4773-ABC0-A1628184D688">
+        <di:waypoint x="452" y="181"/>
+        <di:waypoint x="345" y="93"/>
+      </dmndi:DMNEdge>
     </dmndi:DMNDiagram>
   </dmndi:DMNDI>
 </dmn:definitions>
