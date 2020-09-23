@@ -1,11 +1,101 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <dmn:definitions xmlns:dmn="http://www.omg.org/spec/DMN/20180521/MODEL/" xmlns="https://kiegroup.org/dmn/_F444E4C4-4098-4DDD-B776-D87D486F509C" xmlns:di="http://www.omg.org/spec/DMN/20180521/DI/" xmlns:kie="http://www.drools.org/kie/dmn/1.2" xmlns:feel="http://www.omg.org/spec/DMN/20180521/FEEL/" xmlns:dmndi="http://www.omg.org/spec/DMN/20180521/DMNDI/" xmlns:dc="http://www.omg.org/spec/DMN/20180521/DC/" id="_F0AB9DAD-B41F-45F5-B5C0-CF32E8B7F742" name="LatestFinancingPlafond" expressionLanguage="http://www.omg.org/spec/DMN/20180521/FEEL/" typeLanguage="http://www.omg.org/spec/DMN/20180521/FEEL/" namespace="https://kiegroup.org/dmn/_F444E4C4-4098-4DDD-B776-D87D486F509C">
   <dmn:extensionElements/>
+  <dmn:itemDefinition id="_DF130464-BE14-44E9-8405-FC29AD9708AD" name="Insert a name" isCollection="false">
+    <dmn:typeRef>Any</dmn:typeRef>
+  </dmn:itemDefinition>
+  <dmn:itemDefinition id="_F6F05F0D-6935-4C3E-B127-B7EB33F9F7FF" name="output" isCollection="false">
+    <dmn:itemComponent id="_EBCD1468-7059-451A-A7C1-785636A5DA97" name="autoReject" isCollection="false">
+      <dmn:typeRef>string</dmn:typeRef>
+    </dmn:itemComponent>
+    <dmn:itemComponent id="_EAF813B8-B496-4132-80EC-7FFA2BA85D75" name="rejectCode" isCollection="false">
+      <dmn:typeRef>string</dmn:typeRef>
+    </dmn:itemComponent>
+  </dmn:itemDefinition>
+  <dmn:decision id="_E5D184C4-9F81-4C13-965A-DA6DA77DEFF6" name="MinLastPlafond">
+    <dmn:extensionElements/>
+    <dmn:variable id="_4A51A767-81C1-4355-A080-07A464BF00D3" name="MinLastPlafond" typeRef="output"/>
+    <dmn:informationRequirement id="_2EEB4E8D-E89D-4A60-AF32-F2099E751C63">
+      <dmn:requiredInput href="#_32D966EC-0F8E-44CC-8AD7-C375584CBA79"/>
+    </dmn:informationRequirement>
+    <dmn:decisionTable id="_4CDCF252-5EF3-47A2-8669-A12DBE90E411" hitPolicy="UNIQUE" preferredOrientation="Rule-as-Row">
+      <dmn:input id="_8223FDA4-E840-4F89-807F-E7615ABEE181">
+        <dmn:inputExpression id="_91A6B638-C9DE-4BAA-A8CA-2B52EDC5A93F" typeRef="number">
+          <dmn:text>lastPlafond</dmn:text>
+        </dmn:inputExpression>
+      </dmn:input>
+      <dmn:output id="_1D4B05C4-2EB1-4930-A8DF-9EFF0E29623D" name="autoReject" typeRef="string"/>
+      <dmn:output id="_A955C80B-53B0-4246-BE95-BF3F2C686FB1" name="rejectCode" typeRef="string"/>
+      <dmn:annotation name="annotation"/>
+      <dmn:rule id="_0AD01E25-4E52-4B4F-8AF4-D36646A0FFDB">
+        <dmn:inputEntry id="_735B5C48-7B5D-4D82-A50B-B7769153196B">
+          <dmn:text>&lt;10000000</dmn:text>
+        </dmn:inputEntry>
+        <dmn:outputEntry id="_BCB9A154-5B7F-4F68-A2B3-13F936FA7BCA">
+          <dmn:text>"Y"</dmn:text>
+        </dmn:outputEntry>
+        <dmn:outputEntry id="_B7ACC759-D6D8-4F79-BF62-4488AF1DB378">
+          <dmn:text>"037"</dmn:text>
+        </dmn:outputEntry>
+        <dmn:annotationEntry>
+          <dmn:text>"Last financing plafond &lt;10mil"</dmn:text>
+        </dmn:annotationEntry>
+      </dmn:rule>
+      <dmn:rule id="_2C705467-248B-4BBE-A4BF-0DCD8DF0F376">
+        <dmn:inputEntry id="_20AC85CD-DADC-4527-A838-D57FE99DFE7B">
+          <dmn:text>&gt;=10000000</dmn:text>
+        </dmn:inputEntry>
+        <dmn:outputEntry id="_73FB44F4-B057-400A-9F64-FCEB37E5AE14">
+          <dmn:text>"N"</dmn:text>
+        </dmn:outputEntry>
+        <dmn:outputEntry id="_F655D35E-57EF-478C-A18D-6E45B279D1DF">
+          <dmn:text>"000"</dmn:text>
+        </dmn:outputEntry>
+        <dmn:annotationEntry>
+          <dmn:text></dmn:text>
+        </dmn:annotationEntry>
+      </dmn:rule>
+    </dmn:decisionTable>
+  </dmn:decision>
+  <dmn:inputData id="_32D966EC-0F8E-44CC-8AD7-C375584CBA79" name="lastPlafond">
+    <dmn:extensionElements/>
+    <dmn:variable id="_4B81607B-D03F-4FBA-ADB2-22735B15E21B" name="lastPlafond" typeRef="number"/>
+  </dmn:inputData>
   <dmndi:DMNDI>
     <dmndi:DMNDiagram>
       <di:extension>
-        <kie:ComponentsWidthsExtension/>
+        <kie:ComponentsWidthsExtension>
+          <kie:ComponentWidths dmnElementRef="_4CDCF252-5EF3-47A2-8669-A12DBE90E411">
+            <kie:width>50.0</kie:width>
+            <kie:width>100.0</kie:width>
+            <kie:width>100.0</kie:width>
+            <kie:width>100.0</kie:width>
+            <kie:width>284.0</kie:width>
+          </kie:ComponentWidths>
+        </kie:ComponentsWidthsExtension>
       </di:extension>
+      <dmndi:DMNShape id="dmnshape-_32D966EC-0F8E-44CC-8AD7-C375584CBA79" dmnElementRef="_32D966EC-0F8E-44CC-8AD7-C375584CBA79" isCollapsed="false">
+        <dmndi:DMNStyle>
+          <dmndi:FillColor red="255" green="255" blue="255"/>
+          <dmndi:StrokeColor red="0" green="0" blue="0"/>
+          <dmndi:FontColor red="0" green="0" blue="0"/>
+        </dmndi:DMNStyle>
+        <dc:Bounds x="147" y="130" width="100" height="50"/>
+        <dmndi:DMNLabel/>
+      </dmndi:DMNShape>
+      <dmndi:DMNShape id="dmnshape-_E5D184C4-9F81-4C13-965A-DA6DA77DEFF6" dmnElementRef="_E5D184C4-9F81-4C13-965A-DA6DA77DEFF6" isCollapsed="false">
+        <dmndi:DMNStyle>
+          <dmndi:FillColor red="255" green="255" blue="255"/>
+          <dmndi:StrokeColor red="0" green="0" blue="0"/>
+          <dmndi:FontColor red="0" green="0" blue="0"/>
+        </dmndi:DMNStyle>
+        <dc:Bounds x="327" y="130" width="100" height="50"/>
+        <dmndi:DMNLabel/>
+      </dmndi:DMNShape>
+      <dmndi:DMNEdge id="dmnedge-_2EEB4E8D-E89D-4A60-AF32-F2099E751C63" dmnElementRef="_2EEB4E8D-E89D-4A60-AF32-F2099E751C63">
+        <di:waypoint x="247" y="155"/>
+        <di:waypoint x="327" y="155"/>
+      </dmndi:DMNEdge>
     </dmndi:DMNDiagram>
   </dmndi:DMNDI>
 </dmn:definitions>
