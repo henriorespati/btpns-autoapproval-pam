@@ -18,6 +18,13 @@
     <dmn:informationRequirement id="_6693D8FD-2328-44B5-A63F-B9A412D347B5">
       <dmn:requiredInput href="#_08AFCA75-2DD8-4AC4-9A64-15C3A4584B6E"/>
     </dmn:informationRequirement>
+    <dmn:functionDefinition id="_268104D2-BDBE-46E5-BA0F-F7CD2148A72D" kind="FEEL">
+      <dmn:formalParameter id="_BEB7D03D-1865-414B-A900-95B0DBC5A46F" name="customerNo" typeRef="string"/>
+      <dmn:formalParameter id="_39026ACF-2E60-4E0D-806E-0F26C6A4F0F0" name="applicationNo" typeRef="string"/>
+      <dmn:literalExpression id="_F5F01110-1E2B-45D1-9B3D-14C932E81466">
+        <dmn:text>if (customerNo != null &amp;&amp; applicationNo != null) then true else false</dmn:text>
+      </dmn:literalExpression>
+    </dmn:functionDefinition>
   </dmn:decision>
   <dmn:inputData id="_08AFCA75-2DD8-4AC4-9A64-15C3A4584B6E" name="customerNo">
     <dmn:extensionElements/>
@@ -79,6 +86,13 @@
     <dmndi:DMNDiagram>
       <di:extension>
         <kie:ComponentsWidthsExtension>
+          <kie:ComponentWidths dmnElementRef="_268104D2-BDBE-46E5-BA0F-F7CD2148A72D">
+            <kie:width>50.0</kie:width>
+            <kie:width>389.0</kie:width>
+          </kie:ComponentWidths>
+          <kie:ComponentWidths dmnElementRef="_F5F01110-1E2B-45D1-9B3D-14C932E81466">
+            <kie:width>389.0</kie:width>
+          </kie:ComponentWidths>
           <kie:ComponentWidths dmnElementRef="_97C71AB6-2CFB-4667-8FF5-F856F7CCBB49">
             <kie:width>50.0</kie:width>
             <kie:width>100.0</kie:width>
