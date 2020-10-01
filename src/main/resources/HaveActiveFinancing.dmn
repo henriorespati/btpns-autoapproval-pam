@@ -38,13 +38,8 @@ else false</dmn:text>
     </dmn:informationRequirement>
     <dmn:decisionTable id="_27B9476F-B589-4FC6-8229-463B0C87038F" hitPolicy="UNIQUE" preferredOrientation="Rule-as-Row">
       <dmn:input id="_A4A84C0B-B5E5-4A0E-A3D3-8D4C3C03766D">
-        <dmn:inputExpression id="_91DE5EE6-21C6-4EA9-96ED-64C33AD21A0A" typeRef="number">
-          <dmn:text>firstDigitCycleNo</dmn:text>
-        </dmn:inputExpression>
-      </dmn:input>
-      <dmn:input id="_F73D40D7-B04A-4ECB-8243-4F4A38B5C4CA">
-        <dmn:inputExpression id="_55F335B6-7BD5-4554-A28C-DD6DA299E4C3" typeRef="number">
-          <dmn:text>lastDigitCycleNo</dmn:text>
+        <dmn:inputExpression id="_91DE5EE6-21C6-4EA9-96ED-64C33AD21A0A" typeRef="boolean">
+          <dmn:text>CheckInput</dmn:text>
         </dmn:inputExpression>
       </dmn:input>
       <dmn:output id="_5164EEF4-7C09-46D5-89A3-1F211A502002" name="autoReject" typeRef="string"/>
@@ -52,16 +47,13 @@ else false</dmn:text>
       <dmn:annotation name="annotation"/>
       <dmn:rule id="_4FC78065-7190-4AE6-B9A9-79794B357B0E">
         <dmn:inputEntry id="_E0D3A206-BFAA-4B7F-A400-7ED0A7C172CD">
-          <dmn:text>-</dmn:text>
-        </dmn:inputEntry>
-        <dmn:inputEntry id="_ED022FF5-74E3-4C6A-B260-C7DF2AAAC76E">
-          <dmn:text>-</dmn:text>
+          <dmn:text>true</dmn:text>
         </dmn:inputEntry>
         <dmn:outputEntry id="_3EF55C06-E67A-4DB5-96DE-7C4A4566F284">
           <dmn:text>"Y"</dmn:text>
         </dmn:outputEntry>
         <dmn:outputEntry id="_D68FCA97-39AC-44D4-93EC-105917F9EC0D">
-          <dmn:text>"022", "026"</dmn:text>
+          <dmn:text>"022"</dmn:text>
         </dmn:outputEntry>
         <dmn:annotationEntry>
           <dmn:text></dmn:text>
@@ -69,10 +61,7 @@ else false</dmn:text>
       </dmn:rule>
       <dmn:rule id="_C50A7EA3-A3A9-4986-A227-E81BEECF7546">
         <dmn:inputEntry id="_747A9212-071A-4F12-8633-55201F79FEC1">
-          <dmn:text>&gt;0</dmn:text>
-        </dmn:inputEntry>
-        <dmn:inputEntry id="_3B87E348-5C87-48A9-91BE-97313A642302">
-          <dmn:text>&gt;0</dmn:text>
+          <dmn:text>false</dmn:text>
         </dmn:inputEntry>
         <dmn:outputEntry id="_4A71A7A9-051C-4E6C-B2D3-69870C513B5F">
           <dmn:text>"N"</dmn:text>
@@ -100,10 +89,9 @@ else false</dmn:text>
           <kie:ComponentWidths dmnElementRef="_27B9476F-B589-4FC6-8229-463B0C87038F">
             <kie:width>50.0</kie:width>
             <kie:width>128.0</kie:width>
-            <kie:width>127.0</kie:width>
             <kie:width>100.0</kie:width>
-            <kie:width>100.0</kie:width>
-            <kie:width>100.0</kie:width>
+            <kie:width>139.0</kie:width>
+            <kie:width>193.0</kie:width>
           </kie:ComponentWidths>
         </kie:ComponentsWidthsExtension>
       </di:extension>
