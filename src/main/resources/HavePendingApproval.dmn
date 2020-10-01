@@ -12,28 +12,36 @@
       <dmn:typeRef>string</dmn:typeRef>
     </dmn:itemComponent>
   </dmn:itemDefinition>
-  <dmn:inputData id="_08AFCA75-2DD8-4AC4-9A64-15C3A4584B6E" name="productCode">
+  <dmn:decision id="_F0313503-6C1C-4622-B653-7B1EEF80063F" name="CheckInput">
     <dmn:extensionElements/>
-    <dmn:variable id="_FD522CE5-9894-4EC3-8773-0C6D0A2EEE19" name="productCode" typeRef="string"/>
+    <dmn:variable id="_F55A1050-D1AF-4D40-B98E-4E77F93F2B01" name="CheckInput" typeRef="boolean"/>
+    <dmn:informationRequirement id="_6693D8FD-2328-44B5-A63F-B9A412D347B5">
+      <dmn:requiredInput href="#_08AFCA75-2DD8-4AC4-9A64-15C3A4584B6E"/>
+    </dmn:informationRequirement>
+  </dmn:decision>
+  <dmn:inputData id="_08AFCA75-2DD8-4AC4-9A64-15C3A4584B6E" name="customerNo">
+    <dmn:extensionElements/>
+    <dmn:variable id="_FD522CE5-9894-4EC3-8773-0C6D0A2EEE19" name="customerNo" typeRef="string"/>
   </dmn:inputData>
   <dmn:decision id="_8619A86E-F766-49C7-820C-902C240FE165" name="HavePendingApproval">
     <dmn:extensionElements/>
     <dmn:variable id="_1C7D72CB-D1AB-46A4-871A-BA6030DB4426" name="HavePendingApproval" typeRef="output"/>
-    <dmn:informationRequirement id="_5DC04B08-236C-4D41-83DE-608C4D481A1B">
-      <dmn:requiredInput href="#_08AFCA75-2DD8-4AC4-9A64-15C3A4584B6E"/>
+    <dmn:informationRequirement id="_9E7D6DB6-1F6C-46E0-86B7-5BD51CFEF5E9">
+      <dmn:requiredDecision href="#_F0313503-6C1C-4622-B653-7B1EEF80063F"/>
     </dmn:informationRequirement>
     <dmn:decisionTable id="_97C71AB6-2CFB-4667-8FF5-F856F7CCBB49" hitPolicy="UNIQUE" preferredOrientation="Rule-as-Row">
       <dmn:input id="_1B53E7BA-3575-4FD6-911E-3D77E6F2A4AA">
-        <dmn:inputExpression id="_FC6E2DBC-A26C-475B-B902-0AFCEEA17EBB" typeRef="string">
-          <dmn:text>productCode</dmn:text>
+        <dmn:inputExpression id="_FC6E2DBC-A26C-475B-B902-0AFCEEA17EBB" typeRef="boolean">
+          <dmn:text>CheckInput</dmn:text>
         </dmn:inputExpression>
       </dmn:input>
       <dmn:output id="_DFBAE2B7-37A4-47AE-B96A-9C46DA13D499" name="autoReject" typeRef="string"/>
       <dmn:output id="_7709D8DD-FCE3-44A5-B882-A7BC066281F3" name="rejectCode" typeRef="string"/>
+      <dmn:output id="_D21CF6C1-5372-440E-B984-3E9538D18675" name="deviationCode" typeRef="string"/>
       <dmn:annotation name="annotation"/>
       <dmn:rule id="_0643DF66-322B-41DD-BBD1-4AA3EDAA7217">
         <dmn:inputEntry id="_52DDFC9C-1CFE-4C7A-BE31-E3C681EF4D40">
-          <dmn:text></dmn:text>
+          <dmn:text>true</dmn:text>
         </dmn:inputEntry>
         <dmn:outputEntry id="_1E012189-9FE2-429D-B5EF-6DC8DDEA4BD4">
           <dmn:text>"Y"</dmn:text>
@@ -41,19 +49,25 @@
         <dmn:outputEntry id="_AC907C8E-6E21-4443-B6D2-EA234D415304">
           <dmn:text>"017"</dmn:text>
         </dmn:outputEntry>
+        <dmn:outputEntry id="_91EE7C3D-3ACB-441B-983B-DCA0A72F328A">
+          <dmn:text>""</dmn:text>
+        </dmn:outputEntry>
         <dmn:annotationEntry>
-          <dmn:text></dmn:text>
+          <dmn:text>"Customer has other financing with status 'Approved' or 'Pending Approval'"</dmn:text>
         </dmn:annotationEntry>
       </dmn:rule>
       <dmn:rule id="_6375C4E9-45B9-44A1-9233-864B44CB29E9">
         <dmn:inputEntry id="_56F3D6C2-85A6-4A90-800A-F0602A8B48A4">
-          <dmn:text>-</dmn:text>
+          <dmn:text>false</dmn:text>
         </dmn:inputEntry>
         <dmn:outputEntry id="_B9B1838C-D306-4FDE-ADC4-13F197DAE7ED">
           <dmn:text>"N"</dmn:text>
         </dmn:outputEntry>
         <dmn:outputEntry id="_1858EB79-CE2F-4568-B6C2-312637333C44">
           <dmn:text>"000"</dmn:text>
+        </dmn:outputEntry>
+        <dmn:outputEntry id="_270A0B12-D4E0-486E-8C58-668815D35CB1">
+          <dmn:text>""</dmn:text>
         </dmn:outputEntry>
         <dmn:annotationEntry>
           <dmn:text></dmn:text>
@@ -71,6 +85,7 @@
             <kie:width>100.0</kie:width>
             <kie:width>100.0</kie:width>
             <kie:width>100.0</kie:width>
+            <kie:width>393.0</kie:width>
           </kie:ComponentWidths>
         </kie:ComponentsWidthsExtension>
       </di:extension>
@@ -80,7 +95,16 @@
           <dmndi:StrokeColor red="0" green="0" blue="0"/>
           <dmndi:FontColor red="0" green="0" blue="0"/>
         </dmndi:DMNStyle>
-        <dc:Bounds x="169" y="92" width="100" height="50"/>
+        <dc:Bounds x="349" y="261" width="100" height="50"/>
+        <dmndi:DMNLabel/>
+      </dmndi:DMNShape>
+      <dmndi:DMNShape id="dmnshape-_F0313503-6C1C-4622-B653-7B1EEF80063F" dmnElementRef="_F0313503-6C1C-4622-B653-7B1EEF80063F" isCollapsed="false">
+        <dmndi:DMNStyle>
+          <dmndi:FillColor red="255" green="255" blue="255"/>
+          <dmndi:StrokeColor red="0" green="0" blue="0"/>
+          <dmndi:FontColor red="0" green="0" blue="0"/>
+        </dmndi:DMNStyle>
+        <dc:Bounds x="350" y="150" width="100" height="50"/>
         <dmndi:DMNLabel/>
       </dmndi:DMNShape>
       <dmndi:DMNShape id="dmnshape-_8619A86E-F766-49C7-820C-902C240FE165" dmnElementRef="_8619A86E-F766-49C7-820C-902C240FE165" isCollapsed="false">
@@ -89,12 +113,16 @@
           <dmndi:StrokeColor red="0" green="0" blue="0"/>
           <dmndi:FontColor red="0" green="0" blue="0"/>
         </dmndi:DMNStyle>
-        <dc:Bounds x="350" y="92" width="100" height="50"/>
+        <dc:Bounds x="354" y="39" width="91" height="50"/>
         <dmndi:DMNLabel/>
       </dmndi:DMNShape>
-      <dmndi:DMNEdge id="dmnedge-_5DC04B08-236C-4D41-83DE-608C4D481A1B" dmnElementRef="_5DC04B08-236C-4D41-83DE-608C4D481A1B">
-        <di:waypoint x="269" y="117"/>
-        <di:waypoint x="350" y="117"/>
+      <dmndi:DMNEdge id="dmnedge-_6693D8FD-2328-44B5-A63F-B9A412D347B5" dmnElementRef="_6693D8FD-2328-44B5-A63F-B9A412D347B5">
+        <di:waypoint x="399" y="261"/>
+        <di:waypoint x="400" y="200"/>
+      </dmndi:DMNEdge>
+      <dmndi:DMNEdge id="dmnedge-_9E7D6DB6-1F6C-46E0-86B7-5BD51CFEF5E9" dmnElementRef="_9E7D6DB6-1F6C-46E0-86B7-5BD51CFEF5E9">
+        <di:waypoint x="400" y="175"/>
+        <di:waypoint x="399.5" y="89"/>
       </dmndi:DMNEdge>
     </dmndi:DMNDiagram>
   </dmndi:DMNDI>
