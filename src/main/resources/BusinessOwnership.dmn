@@ -13,9 +13,9 @@
     <dmn:extensionElements/>
     <dmn:variable id="_1C7CD8D1-6459-411B-AA4F-B7AAB728E092" name="businessFlag" typeRef="boolean"/>
   </dmn:inputData>
-  <dmn:decision id="_F142C849-D594-452B-8796-A040E3B8046F" name="businessOwnership">
+  <dmn:decision id="_F142C849-D594-452B-8796-A040E3B8046F" name="BusinessOwnership">
     <dmn:extensionElements/>
-    <dmn:variable id="_814A393F-8A43-41A2-A7EB-9E2E5A51591D" name="businessOwnership" typeRef="output"/>
+    <dmn:variable id="_814A393F-8A43-41A2-A7EB-9E2E5A51591D" name="BusinessOwnership" typeRef="output"/>
     <dmn:informationRequirement id="_13128D49-5D47-4166-B8DD-C1D5483372D6">
       <dmn:requiredInput href="#_C766A2A5-5E02-41D0-8955-E429C8BB4655"/>
     </dmn:informationRequirement>
@@ -27,6 +27,7 @@
       </dmn:input>
       <dmn:output id="_979C8E11-FFF1-4726-BA12-44C7BC8CEC22" name="autoReject" typeRef="string"/>
       <dmn:output id="_4EE30DB2-FAE6-4DFB-8B48-CA4FF9E8FD92" name="rejectCode" typeRef="string"/>
+      <dmn:output id="_440347C4-BB7D-442D-9F2E-25D6C44A9671" name="deviationCode" typeRef="string"/>
       <dmn:annotation name="annotation-1"/>
       <dmn:rule id="_411B5DCA-C0C4-42D6-96BA-85A9D10C17EB">
         <dmn:inputEntry id="_DD6033F3-966D-4FE3-8075-6E1D4C6AA58E">
@@ -38,8 +39,11 @@
         <dmn:outputEntry id="_A13E2CF2-A146-4A37-B65E-8295D9DD38CA">
           <dmn:text>"006"</dmn:text>
         </dmn:outputEntry>
+        <dmn:outputEntry id="_B8A7960A-8E3E-496A-8B39-759A37AD8151">
+          <dmn:text>""</dmn:text>
+        </dmn:outputEntry>
         <dmn:annotationEntry>
-          <dmn:text>"Don't have business"</dmn:text>
+          <dmn:text>"Customer does not have businesses"</dmn:text>
         </dmn:annotationEntry>
       </dmn:rule>
       <dmn:rule id="_9A0C010B-912D-4D3B-B8B4-E71680246EFE">
@@ -51,6 +55,9 @@
         </dmn:outputEntry>
         <dmn:outputEntry id="_CA0EB188-A0D7-40D8-BCE2-8353BAEA0407">
           <dmn:text>"000"</dmn:text>
+        </dmn:outputEntry>
+        <dmn:outputEntry id="_05349A14-E627-4BA5-8B3F-51354F55551B">
+          <dmn:text>""</dmn:text>
         </dmn:outputEntry>
         <dmn:annotationEntry>
           <dmn:text></dmn:text>
@@ -64,6 +71,7 @@
         <kie:ComponentsWidthsExtension>
           <kie:ComponentWidths dmnElementRef="_45FB0364-3818-4DC2-8CAA-B45E0CB17405">
             <kie:width>50.0</kie:width>
+            <kie:width>100.0</kie:width>
             <kie:width>100.0</kie:width>
             <kie:width>100.0</kie:width>
             <kie:width>100.0</kie:width>
