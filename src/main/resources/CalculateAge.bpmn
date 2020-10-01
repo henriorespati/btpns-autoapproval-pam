@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<bpmn2:definitions xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.omg.org/bpmn20" xmlns:bpmn2="http://www.omg.org/spec/BPMN/20100524/MODEL" xmlns:bpmndi="http://www.omg.org/spec/BPMN/20100524/DI" xmlns:bpsim="http://www.bpsim.org/schemas/1.0" xmlns:dc="http://www.omg.org/spec/DD/20100524/DC" xmlns:di="http://www.omg.org/spec/DD/20100524/DI" xmlns:drools="http://www.jboss.org/drools" id="_L9eIkAP0EeudMYcFac7ocw" xsi:schemaLocation="http://www.omg.org/spec/BPMN/20100524/MODEL BPMN20.xsd http://www.jboss.org/drools drools.xsd http://www.bpsim.org/schemas/1.0 bpsim.xsd http://www.omg.org/spec/DD/20100524/DC DC.xsd http://www.omg.org/spec/DD/20100524/DI DI.xsd " exporter="jBPM Process Modeler" exporterVersion="2.0" targetNamespace="http://www.omg.org/bpmn20">
+<bpmn2:definitions xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.omg.org/bpmn20" xmlns:bpmn2="http://www.omg.org/spec/BPMN/20100524/MODEL" xmlns:bpmndi="http://www.omg.org/spec/BPMN/20100524/DI" xmlns:bpsim="http://www.bpsim.org/schemas/1.0" xmlns:dc="http://www.omg.org/spec/DD/20100524/DC" xmlns:di="http://www.omg.org/spec/DD/20100524/DI" xmlns:drools="http://www.jboss.org/drools" id="_tggTAAP3EeudMYcFac7ocw" xsi:schemaLocation="http://www.omg.org/spec/BPMN/20100524/MODEL BPMN20.xsd http://www.jboss.org/drools drools.xsd http://www.bpsim.org/schemas/1.0 bpsim.xsd http://www.omg.org/spec/DD/20100524/DC DC.xsd http://www.omg.org/spec/DD/20100524/DI DI.xsd " exporter="jBPM Process Modeler" exporterVersion="2.0" targetNamespace="http://www.omg.org/bpmn20">
   <bpmn2:itemDefinition id="_inputItem" structureRef="com.btpnsyariah.autoapproval.input"/>
   <bpmn2:itemDefinition id="_outputItem" structureRef="Integer"/>
   <bpmn2:process id="AutoApproval.CalculateAge" drools:packageName="org.jbpm" drools:version="1.0" drools:adHoc="false" name="CalculateAge" isExecutable="true" processType="Public">
@@ -39,13 +39,15 @@
       </bpmn2:extensionElements>
       <bpmn2:incoming>_5CFD37A2-1706-43D8-8050-8C893DBE5F1F</bpmn2:incoming>
       <bpmn2:outgoing>_E289BCEE-B4F5-4F9C-BDCB-319AFA5FD22A</bpmn2:outgoing>
-      <bpmn2:script><![CDATA[Date birthDate = kcontext.getVariable("input").getBirthDate();
-Date currentDate = LocalDate.now();
-kcontext.setVariable("output", Period.between(birthDate, currentDate).getYears());]]></bpmn2:script>
+      <bpmn2:script><![CDATA[java.time.LocalDate birthDate = input.getBirthDate()
+  .toInstant().atZone(java.time.ZoneId.systemDefault())
+  .toLocalDate();
+kcontext.setVariable("output", 
+  java.time.Period.between(birthDate, java.time.LocalDate.now()));]]></bpmn2:script>
     </bpmn2:scriptTask>
   </bpmn2:process>
-  <bpmndi:BPMNDiagram id="_L9eIkQP0EeudMYcFac7ocw">
-    <bpmndi:BPMNPlane id="_L9eIkgP0EeudMYcFac7ocw" bpmnElement="AutoApproval.CalculateAge">
+  <bpmndi:BPMNDiagram id="_tggTAQP3EeudMYcFac7ocw">
+    <bpmndi:BPMNPlane id="_tggTAgP3EeudMYcFac7ocw" bpmnElement="AutoApproval.CalculateAge">
       <bpmndi:BPMNShape id="shape__7DB9F4CD-1339-4AFE-A3C8-8DBD35003CCB" bpmnElement="_7DB9F4CD-1339-4AFE-A3C8-8DBD35003CCB">
         <dc:Bounds height="102.0" width="154.0" x="249.0" y="61.0"/>
       </bpmndi:BPMNShape>
@@ -65,12 +67,12 @@ kcontext.setVariable("output", Period.between(birthDate, currentDate).getYears()
       </bpmndi:BPMNEdge>
     </bpmndi:BPMNPlane>
   </bpmndi:BPMNDiagram>
-  <bpmn2:relationship id="_L9eIkwP0EeudMYcFac7ocw" type="BPSimData">
+  <bpmn2:relationship id="_tggTAwP3EeudMYcFac7ocw" type="BPSimData">
     <bpmn2:extensionElements>
       <bpsim:BPSimData>
         <bpsim:Scenario xsi:type="bpsim:Scenario" id="default" name="Simulationscenario">
           <bpsim:ScenarioParameters xsi:type="bpsim:ScenarioParameters"/>
-          <bpsim:ElementParameters xsi:type="bpsim:ElementParameters" elementRef="_7DB9F4CD-1339-4AFE-A3C8-8DBD35003CCB" id="_L9eIlAP0EeudMYcFac7ocw">
+          <bpsim:ElementParameters xsi:type="bpsim:ElementParameters" elementRef="_7DB9F4CD-1339-4AFE-A3C8-8DBD35003CCB" id="_tggTBAP3EeudMYcFac7ocw">
             <bpsim:TimeParameters xsi:type="bpsim:TimeParameters">
               <bpsim:ProcessingTime xsi:type="bpsim:Parameter">
                 <bpsim:NormalDistribution mean="0.0" standardDeviation="0.0"/>
@@ -90,7 +92,7 @@ kcontext.setVariable("output", Period.between(birthDate, currentDate).getYears()
               </bpsim:UnitCost>
             </bpsim:CostParameters>
           </bpsim:ElementParameters>
-          <bpsim:ElementParameters xsi:type="bpsim:ElementParameters" elementRef="_FAD6D68F-A039-4A31-845A-50BCC8D00D89" id="_L9eIlQP0EeudMYcFac7ocw">
+          <bpsim:ElementParameters xsi:type="bpsim:ElementParameters" elementRef="_FAD6D68F-A039-4A31-845A-50BCC8D00D89" id="_tggTBQP3EeudMYcFac7ocw">
             <bpsim:TimeParameters xsi:type="bpsim:TimeParameters">
               <bpsim:ProcessingTime xsi:type="bpsim:Parameter">
                 <bpsim:NormalDistribution mean="0.0" standardDeviation="0.0"/>
@@ -100,7 +102,7 @@ kcontext.setVariable("output", Period.between(birthDate, currentDate).getYears()
         </bpsim:Scenario>
       </bpsim:BPSimData>
     </bpmn2:extensionElements>
-    <bpmn2:source>_L9eIkAP0EeudMYcFac7ocw</bpmn2:source>
-    <bpmn2:target>_L9eIkAP0EeudMYcFac7ocw</bpmn2:target>
+    <bpmn2:source>_tggTAAP3EeudMYcFac7ocw</bpmn2:source>
+    <bpmn2:target>_tggTAAP3EeudMYcFac7ocw</bpmn2:target>
   </bpmn2:relationship>
 </bpmn2:definitions>
