@@ -5,10 +5,28 @@
     <dmn:extensionElements/>
     <dmn:variable id="_F81917A6-55AA-44BA-A594-4955B8F80031" name="plafond" typeRef="number"/>
   </dmn:inputData>
+  <dmn:businessKnowledgeModel id="_82948756-9706-47C9-B5B2-C2D27801FBD9" name="BusinessKnowledgeModel-1">
+    <dmn:extensionElements/>
+    <dmn:variable id="_90B3FB77-7680-438A-B1E6-5B08BFCEBEBE" name="BusinessKnowledgeModel-1" typeRef="context"/>
+    <dmn:encapsulatedLogic id="_215DED36-8631-4860-914F-932CAFF6CEBD" kind="FEEL">
+      <dmn:formalParameter id="_8827FB00-6EE5-4D46-802C-94C96F7CBD17" name="productCode" typeRef="string"/>
+      <dmn:literalExpression id="_C3E118CA-C701-46D8-BF61-53AF2EDD5D74">
+        <dmn:text>if(productCode = "PMDA") then {MIN_PLAFOND_HAS_BUSINESS:1500000,MAX_PLAFOND_HAS_BUSINESS:5000000,MIN_PLAFOND_HAS_NO_BUSINESS:1500000,MAX_PLAFOND_HAS_NO_BUSINESS:2000000}</dmn:text>
+      </dmn:literalExpression>
+    </dmn:encapsulatedLogic>
+  </dmn:businessKnowledgeModel>
   <dmndi:DMNDI>
     <dmndi:DMNDiagram>
       <di:extension>
-        <kie:ComponentsWidthsExtension/>
+        <kie:ComponentsWidthsExtension>
+          <kie:ComponentWidths dmnElementRef="_C3E118CA-C701-46D8-BF61-53AF2EDD5D74">
+            <kie:width>573.0</kie:width>
+          </kie:ComponentWidths>
+          <kie:ComponentWidths dmnElementRef="_215DED36-8631-4860-914F-932CAFF6CEBD">
+            <kie:width>50.0</kie:width>
+            <kie:width>573.0</kie:width>
+          </kie:ComponentWidths>
+        </kie:ComponentsWidthsExtension>
       </di:extension>
       <dmndi:DMNShape id="dmnshape-_5FBB6E8B-4054-4DE4-8E8D-F2D11EB580E9" dmnElementRef="_5FBB6E8B-4054-4DE4-8E8D-F2D11EB580E9" isCollapsed="false">
         <dmndi:DMNStyle>
@@ -17,6 +35,15 @@
           <dmndi:FontColor red="0" green="0" blue="0"/>
         </dmndi:DMNStyle>
         <dc:Bounds x="229" y="205" width="100" height="50"/>
+        <dmndi:DMNLabel/>
+      </dmndi:DMNShape>
+      <dmndi:DMNShape id="dmnshape-_82948756-9706-47C9-B5B2-C2D27801FBD9" dmnElementRef="_82948756-9706-47C9-B5B2-C2D27801FBD9" isCollapsed="false">
+        <dmndi:DMNStyle>
+          <dmndi:FillColor red="255" green="255" blue="255"/>
+          <dmndi:StrokeColor red="0" green="0" blue="0"/>
+          <dmndi:FontColor red="0" green="0" blue="0"/>
+        </dmndi:DMNStyle>
+        <dc:Bounds x="437" y="112" width="100" height="50"/>
         <dmndi:DMNLabel/>
       </dmndi:DMNShape>
     </dmndi:DMNDiagram>
