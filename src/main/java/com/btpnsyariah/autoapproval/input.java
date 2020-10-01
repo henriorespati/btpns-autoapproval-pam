@@ -6,12 +6,160 @@ package com.btpnsyariah.autoapproval;
 
 public class input implements java.io.Serializable {
 
-    static final long serialVersionUID = 1L;
+	static final long serialVersionUID = 1L;
 
-    public input() {
-    }
+	private java.lang.String financingReferenceId;
+	private java.lang.String channelId;
+	private java.lang.String cif;
+	private java.lang.String productCode;
+	private java.lang.String financingStatus;
+	private java.lang.String maritalStatus;
+	private java.lang.Boolean businessFlag;
+	private java.lang.Integer tenor;
+	private java.util.Date birthDate;
+	private java.lang.Double plafond;
+	private java.lang.String mms;
+	private java.lang.String notes;
+	private java.util.Date applicationDate;
+	private java.util.Date disbursementDate;
 
+	public input() {
+	}
 
+	public java.lang.String getFinancingReferenceId() {
+		return this.financingReferenceId;
+	}
 
+	public void setFinancingReferenceId(java.lang.String financingReferenceId) {
+		this.financingReferenceId = financingReferenceId;
+	}
+
+	public java.lang.String getChannelId() {
+		return this.channelId;
+	}
+
+	public void setChannelId(java.lang.String channelId) {
+		this.channelId = channelId;
+	}
+
+	public java.lang.String getCif() {
+		return this.cif;
+	}
+
+	public void setCif(java.lang.String cif) {
+		this.cif = cif;
+	}
+
+	public java.lang.String getProductCode() {
+		return this.productCode;
+	}
+
+	public void setProductCode(java.lang.String productCode) {
+		this.productCode = productCode;
+	}
+
+	public java.lang.String getFinancingStatus() {
+		return this.financingStatus;
+	}
+
+	public void setFinancingStatus(java.lang.String financingStatus) {
+		this.financingStatus = financingStatus;
+	}
+
+	public java.lang.String getMaritalStatus() {
+		return this.maritalStatus;
+	}
+
+	public void setMaritalStatus(java.lang.String maritalStatus) {
+		this.maritalStatus = maritalStatus;
+	}
+
+	public java.lang.Boolean getBusinessFlag() {
+		return this.businessFlag;
+	}
+
+	public void setBusinessFlag(java.lang.Boolean businessFlag) {
+		this.businessFlag = businessFlag;
+	}
+
+	public java.lang.Integer getTenor() {
+		return this.tenor;
+	}
+
+	public void setTenor(java.lang.Integer tenor) {
+		this.tenor = tenor;
+	}
+
+	public java.util.Date getBirthDate() {
+		return this.birthDate;
+	}
+
+	public void setBirthDate(java.util.Date birthDate) {
+		this.birthDate = birthDate;
+	}
+
+	public java.lang.Double getPlafond() {
+		return this.plafond;
+	}
+
+	public void setPlafond(java.lang.Double plafond) {
+		this.plafond = plafond;
+	}
+
+	public java.lang.String getMms() {
+		return this.mms;
+	}
+
+	public void setMms(java.lang.String mms) {
+		this.mms = mms;
+	}
+
+	public java.lang.String getNotes() {
+		return this.notes;
+	}
+
+	public void setNotes(java.lang.String notes) {
+		this.notes = notes;
+	}
+
+	public java.util.Date getApplicationDate() {
+		return this.applicationDate;
+	}
+
+	public void setApplicationDate(java.util.Date applicationDate) {
+		this.applicationDate = applicationDate;
+	}
+
+	public java.util.Date getDisbursementDate() {
+		return this.disbursementDate;
+	}
+
+	public void setDisbursementDate(java.util.Date disbursementDate) {
+		this.disbursementDate = disbursementDate;
+	}
+
+	public input(java.lang.String financingReferenceId,
+			java.lang.String channelId, java.lang.String cif,
+			java.lang.String productCode, java.lang.String financingStatus,
+			java.lang.String maritalStatus, java.lang.Boolean businessFlag,
+			java.lang.Integer tenor, java.util.Date birthDate,
+			java.lang.Double plafond, java.lang.String mms,
+			java.lang.String notes, java.util.Date applicationDate,
+			java.util.Date disbursementDate) {
+		this.financingReferenceId = financingReferenceId;
+		this.channelId = channelId;
+		this.cif = cif;
+		this.productCode = productCode;
+		this.financingStatus = financingStatus;
+		this.maritalStatus = maritalStatus;
+		this.businessFlag = businessFlag;
+		this.tenor = tenor;
+		this.birthDate = birthDate;
+		this.plafond = plafond;
+		this.mms = mms;
+		this.notes = notes;
+		this.applicationDate = applicationDate;
+		this.disbursementDate = disbursementDate;
+	}
 
 }
