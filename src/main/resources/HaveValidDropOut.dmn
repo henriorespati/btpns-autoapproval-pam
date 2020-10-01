@@ -25,7 +25,7 @@
       <dmn:formalParameter id="_8C5828D1-B3B2-4330-A67C-42239BCBB1B7" name="dropOutDate" typeRef="date"/>
       <dmn:formalParameter id="_67DF048D-B52C-4594-9681-7D741E9A8232" name="applicationDate" typeRef="date"/>
       <dmn:literalExpression id="_A1671C8E-EBB6-4127-A137-F320379B5E17">
-        <dmn:text>if (dropOutDate&lt;(date:mdy(applicationDate.month+6,applicationDate.day,applicationDate.year)) then true 
+        <dmn:text>if (dropOutDate&lt;(date:mdy(applicationDate.year+"-"+applicationDate.month+6+"-"+applicationDate.day)) then true 
 else false</dmn:text>
       </dmn:literalExpression>
     </dmn:functionDefinition>
