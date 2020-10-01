@@ -26,7 +26,7 @@
       </dmn:input>
       <dmn:input id="_FAA635D0-9712-4B5B-94AE-DEF1CBC10D80">
         <dmn:inputExpression id="_D3759AE1-7C6E-4389-A55D-484F06B447FA" typeRef="date">
-          <dmn:text>createDate</dmn:text>
+          <dmn:text>createdDate</dmn:text>
         </dmn:inputExpression>
       </dmn:input>
       <dmn:output id="_CC535BF7-B246-4D26-A3CC-564C4F3FCE56" name="autoReject" typeRef="string"/>
@@ -38,7 +38,7 @@
           <dmn:text>true</dmn:text>
         </dmn:inputEntry>
         <dmn:inputEntry id="_2AC888C2-0F22-45CA-BE47-8B0103BDE966">
-          <dmn:text>date and time()</dmn:text>
+          <dmn:text>date()</dmn:text>
         </dmn:inputEntry>
         <dmn:outputEntry id="_5A817F7D-5CCA-41E3-ACD6-4215C84EF46F">
           <dmn:text>"Y"</dmn:text>
@@ -99,16 +99,24 @@
     <dmn:extensionElements/>
     <dmn:variable id="_802518E2-3627-4A68-B695-FBC9ACC2C93D" name="customerNo" typeRef="string"/>
   </dmn:inputData>
+  <dmn:inputData id="_7A6CD305-36B9-4B21-A04D-FF415C6363AC" name="createdDate">
+    <dmn:extensionElements/>
+    <dmn:variable id="_6F39BF05-16FF-4C15-98CC-B829C9D70607" name="createdDate" typeRef="date"/>
+  </dmn:inputData>
   <dmn:decision id="_47EAD760-3A96-40A5-B30F-F45BB8A11E7F" name="CheckInput">
     <dmn:extensionElements/>
     <dmn:variable id="_DEC55883-CA7B-4FA0-B9A5-7D093A57B9B7" name="CheckInput" typeRef="boolean"/>
     <dmn:informationRequirement id="_47029CEB-E944-4A30-8471-1E1D6FF692FA">
       <dmn:requiredInput href="#_E5A73FA9-8CE2-459A-AF67-6AF0BDCCBD14"/>
     </dmn:informationRequirement>
+    <dmn:informationRequirement id="_A87983A9-0394-46F9-BF52-4FB2B4962128">
+      <dmn:requiredInput href="#_7A6CD305-36B9-4B21-A04D-FF415C6363AC"/>
+    </dmn:informationRequirement>
     <dmn:functionDefinition id="_543468BD-DDDD-4001-BC01-24EE594D2968" kind="FEEL">
       <dmn:formalParameter id="_CA22169F-5B39-4EF4-A675-7875FBBFFDB6" name="customerNo" typeRef="string"/>
+      <dmn:formalParameter id="_5DD7C8D9-CD45-46A7-BC0E-BB6EC258AE5B" name="createdDate" typeRef="date"/>
       <dmn:literalExpression id="_FE16C95F-85D5-4730-ABCE-3613701F6109">
-        <dmn:text>if (customerNo != null) then true
+        <dmn:text>if (customerNo != null &amp;&amp; createdDate != date and time()) then true
 else false</dmn:text>
       </dmn:literalExpression>
     </dmn:functionDefinition>
@@ -135,6 +143,15 @@ else false</dmn:text>
           </kie:ComponentWidths>
         </kie:ComponentsWidthsExtension>
       </di:extension>
+      <dmndi:DMNShape id="dmnshape-_7A6CD305-36B9-4B21-A04D-FF415C6363AC" dmnElementRef="_7A6CD305-36B9-4B21-A04D-FF415C6363AC" isCollapsed="false">
+        <dmndi:DMNStyle>
+          <dmndi:FillColor red="255" green="255" blue="255"/>
+          <dmndi:StrokeColor red="0" green="0" blue="0"/>
+          <dmndi:FontColor red="0" green="0" blue="0"/>
+        </dmndi:DMNStyle>
+        <dc:Bounds x="276" y="253" width="100" height="50"/>
+        <dmndi:DMNLabel/>
+      </dmndi:DMNShape>
       <dmndi:DMNShape id="dmnshape-_8357461A-B03D-41C2-A0FC-1611DD327333" dmnElementRef="_8357461A-B03D-41C2-A0FC-1611DD327333" isCollapsed="false">
         <dmndi:DMNStyle>
           <dmndi:FillColor red="255" green="255" blue="255"/>
@@ -150,7 +167,7 @@ else false</dmn:text>
           <dmndi:StrokeColor red="0" green="0" blue="0"/>
           <dmndi:FontColor red="0" green="0" blue="0"/>
         </dmndi:DMNStyle>
-        <dc:Bounds x="208.59813084112147" y="253" width="100" height="50"/>
+        <dc:Bounds x="105.59813084112147" y="253" width="100" height="50"/>
         <dmndi:DMNLabel/>
       </dmndi:DMNShape>
       <dmndi:DMNShape id="dmnshape-_47EAD760-3A96-40A5-B30F-F45BB8A11E7F" dmnElementRef="_47EAD760-3A96-40A5-B30F-F45BB8A11E7F" isCollapsed="false">
@@ -167,8 +184,12 @@ else false</dmn:text>
         <di:waypoint x="259" y="61"/>
       </dmndi:DMNEdge>
       <dmndi:DMNEdge id="dmnedge-_47029CEB-E944-4A30-8471-1E1D6FF692FA" dmnElementRef="_47029CEB-E944-4A30-8471-1E1D6FF692FA">
-        <di:waypoint x="258.5981308411215" y="278"/>
+        <di:waypoint x="155.59813084112147" y="278"/>
         <di:waypoint x="259" y="170"/>
+      </dmndi:DMNEdge>
+      <dmndi:DMNEdge id="dmnedge-_A87983A9-0394-46F9-BF52-4FB2B4962128" dmnElementRef="_A87983A9-0394-46F9-BF52-4FB2B4962128">
+        <di:waypoint x="326" y="253"/>
+        <di:waypoint x="259" y="195"/>
       </dmndi:DMNEdge>
     </dmndi:DMNDiagram>
   </dmndi:DMNDI>
