@@ -11,6 +11,8 @@ public class output implements java.io.Serializable {
 	private java.lang.String autoReject;
 	private java.lang.String rejectCode;
 
+	private java.lang.String deviationCode;
+
 	public output() {
 	}
 
@@ -30,9 +32,19 @@ public class output implements java.io.Serializable {
 		this.rejectCode = rejectCode;
 	}
 
-	public output(java.lang.String autoReject, java.lang.String rejectCode) {
+	public java.lang.String getDeviationCode() {
+		return this.deviationCode;
+	}
+
+	public void setDeviationCode(java.lang.String deviationCode) {
+		this.deviationCode = deviationCode;
+	}
+
+	public output(java.lang.String autoReject, java.lang.String rejectCode,
+			java.lang.String deviationCode) {
 		this.autoReject = autoReject;
 		this.rejectCode = rejectCode;
+		this.deviationCode = deviationCode;
 	}
 
 }
