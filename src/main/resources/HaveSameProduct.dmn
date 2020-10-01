@@ -68,17 +68,31 @@
       </dmn:rule>
     </dmn:decisionTable>
   </dmn:decision>
-  <dmn:decision id="_6088964D-FDC0-466E-845A-BF7A8DDC351C" name="Decision-1">
+  <dmn:decision id="_6088964D-FDC0-466E-845A-BF7A8DDC351C" name="CheckInput">
     <dmn:extensionElements/>
-    <dmn:variable id="_DD2B92B0-8EDF-48AD-8C69-5A19CDCFF75F" name="Decision-1"/>
+    <dmn:variable id="_DD2B92B0-8EDF-48AD-8C69-5A19CDCFF75F" name="CheckInput" typeRef="boolean"/>
     <dmn:informationRequirement id="_F60C8CDA-90DE-4B34-AB93-2A9F0792F7B3">
       <dmn:requiredInput href="#_13AD4A43-A708-47B5-BD9D-7BAD1CCF010B"/>
     </dmn:informationRequirement>
+    <dmn:functionDefinition id="_7F126DC1-0573-452B-A493-B3CBDC693DAC" kind="FEEL">
+      <dmn:formalParameter id="_8BBD4131-4AB1-4D6A-9B73-EF82361DB69F" name="productCode" typeRef="string"/>
+      <dmn:literalExpression id="_8718E3F8-7A44-42AC-8F49-9361C00CFA5F">
+        <dmn:text>if (productCode != null) then true
+else false</dmn:text>
+      </dmn:literalExpression>
+    </dmn:functionDefinition>
   </dmn:decision>
   <dmndi:DMNDI>
     <dmndi:DMNDiagram>
       <di:extension>
         <kie:ComponentsWidthsExtension>
+          <kie:ComponentWidths dmnElementRef="_7F126DC1-0573-452B-A493-B3CBDC693DAC">
+            <kie:width>50.0</kie:width>
+            <kie:width>437.0</kie:width>
+          </kie:ComponentWidths>
+          <kie:ComponentWidths dmnElementRef="_8718E3F8-7A44-42AC-8F49-9361C00CFA5F">
+            <kie:width>437.0</kie:width>
+          </kie:ComponentWidths>
           <kie:ComponentWidths dmnElementRef="_CAB9874E-BD6E-4F15-A1A4-A0161BEEE507">
             <kie:width>50.0</kie:width>
             <kie:width>155.0</kie:width>
