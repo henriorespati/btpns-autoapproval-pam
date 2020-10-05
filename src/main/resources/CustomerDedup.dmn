@@ -20,22 +20,36 @@
     </dmn:informationRequirement>
     <dmn:decisionTable id="_11D28216-1E81-43EA-888C-B0DC66E9F037" hitPolicy="UNIQUE" preferredOrientation="Rule-as-Row">
       <dmn:input id="_649CF980-E0A7-4542-AFC5-6D2EE5AF0D4E">
-        <dmn:inputExpression id="_DD59F9AE-0CB7-47AC-8484-4F8B18DEA77F" typeRef="string">
-          <dmn:text>gcn</dmn:text>
+        <dmn:inputExpression id="_DD59F9AE-0CB7-47AC-8484-4F8B18DEA77F" typeRef="boolean">
+          <dmn:text>InputCheck</dmn:text>
         </dmn:inputExpression>
       </dmn:input>
       <dmn:output id="_EC7DF329-2021-487C-AA49-41BE1E090853" name="autoReject" typeRef="string"/>
       <dmn:output id="_5A01CBA8-7BEB-4CD0-9C13-CF605B5EFCC2" name="rejectCode" typeRef="string"/>
-      <dmn:annotation name="annotation-1"/>
+      <dmn:annotation name="annotation"/>
+      <dmn:rule id="_84D431AC-DF75-40A1-B007-8A13982B4E04">
+        <dmn:inputEntry id="_1F653AD6-2A39-4E99-912D-EF8C0ED159E6">
+          <dmn:text>true</dmn:text>
+        </dmn:inputEntry>
+        <dmn:outputEntry id="_303F3343-4C10-4819-9CB0-4EFDFF9E7B0D">
+          <dmn:text>"Y"</dmn:text>
+        </dmn:outputEntry>
+        <dmn:outputEntry id="_F55F0EDF-7D27-4EA6-B88B-A91C52A3977B">
+          <dmn:text>"015"</dmn:text>
+        </dmn:outputEntry>
+        <dmn:annotationEntry>
+          <dmn:text></dmn:text>
+        </dmn:annotationEntry>
+      </dmn:rule>
       <dmn:rule id="_BB48D9A6-5EF6-4D29-B857-1F4456F0DC24">
         <dmn:inputEntry id="_87E82306-EA8E-4421-B3D0-4A337E6BAE2E">
-          <dmn:text>-</dmn:text>
+          <dmn:text>false</dmn:text>
         </dmn:inputEntry>
         <dmn:outputEntry id="_B6F2D253-F848-4A62-8680-3EB64FBF0ED0">
-          <dmn:text></dmn:text>
+          <dmn:text>"N"</dmn:text>
         </dmn:outputEntry>
         <dmn:outputEntry id="_4D1C4406-4B88-4B37-B05F-6E387E93E363">
-          <dmn:text></dmn:text>
+          <dmn:text>"000"</dmn:text>
         </dmn:outputEntry>
         <dmn:annotationEntry>
           <dmn:text></dmn:text>
