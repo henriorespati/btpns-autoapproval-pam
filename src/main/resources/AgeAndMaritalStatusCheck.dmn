@@ -9,33 +9,13 @@
       <dmn:typeRef>string</dmn:typeRef>
     </dmn:itemComponent>
   </dmn:itemDefinition>
-  <dmn:itemDefinition id="_6A25AF1A-52F8-46A8-940E-9908337F9601" name="maritalStatusType" isCollection="true">
-    <dmn:itemComponent id="_B6710053-610D-4223-B192-0738FF8BEEFA" name="Single" isCollection="false">
-      <dmn:typeRef>string</dmn:typeRef>
-      <dmn:allowedValues kie:constraintType="expression" id="_EA3B82E9-5A16-4A2D-9BBF-9A38D30FC5A5">
-        <dmn:text>"710"</dmn:text>
-      </dmn:allowedValues>
-    </dmn:itemComponent>
-    <dmn:itemComponent id="_79F36461-0520-485B-B6DD-D9C3AE9BFF2C" name="Married" isCollection="false">
-      <dmn:typeRef>string</dmn:typeRef>
-      <dmn:allowedValues kie:constraintType="expression" id="_09AA9D78-FF4D-4920-BBAF-9B32E61DF3F1">
-        <dmn:text>"714"</dmn:text>
-      </dmn:allowedValues>
-    </dmn:itemComponent>
-    <dmn:itemComponent id="_E8EA6433-97D1-4A9B-B128-7358CFC7BA48" name="Widowed" isCollection="false">
-      <dmn:typeRef>string</dmn:typeRef>
-      <dmn:allowedValues kie:constraintType="expression" id="_EC87EE31-ADD5-4F68-A7C4-9D4795FE1816">
-        <dmn:text>"715"</dmn:text>
-      </dmn:allowedValues>
-    </dmn:itemComponent>
-  </dmn:itemDefinition>
   <dmn:inputData id="_9AF44EA6-8030-4FC0-91CA-1FA7B4B9EE6E" name="age">
     <dmn:extensionElements/>
     <dmn:variable id="_4C257CB0-11F2-4493-804D-EC048ECC18B1" name="age" typeRef="number"/>
   </dmn:inputData>
   <dmn:inputData id="_A239132D-F885-4EF6-AF20-EA5502058B9C" name="maritalStatus">
     <dmn:extensionElements/>
-    <dmn:variable id="_16E9BD74-701D-4085-A43B-BE11FD6834E9" name="maritalStatus" typeRef="maritalStatusType"/>
+    <dmn:variable id="_16E9BD74-701D-4085-A43B-BE11FD6834E9" name="maritalStatus" typeRef="string"/>
   </dmn:inputData>
   <dmn:decision id="_333A5470-BD9B-4E47-8A03-5F250E5B23A3" name="AgeAndMaritalStatusCheck">
     <dmn:extensionElements/>
@@ -46,9 +26,9 @@
     <dmn:informationRequirement id="_9FC8CA3C-2160-4AFA-B652-00ABEF448DF8">
       <dmn:requiredInput href="#_9AF44EA6-8030-4FC0-91CA-1FA7B4B9EE6E"/>
     </dmn:informationRequirement>
-    <dmn:decisionTable id="_B2468725-1DA2-48AF-BF1B-6FE13CFBEE55" hitPolicy="ANY" preferredOrientation="Rule-as-Row">
+    <dmn:decisionTable id="_B2468725-1DA2-48AF-BF1B-6FE13CFBEE55" hitPolicy="UNIQUE" preferredOrientation="Rule-as-Row">
       <dmn:input id="_088DC68E-28AD-4184-915F-832ABED9FE28">
-        <dmn:inputExpression id="_A26575C2-93E5-4EDA-A469-4B2C4315C0B8" typeRef="maritalStatusType">
+        <dmn:inputExpression id="_A26575C2-93E5-4EDA-A469-4B2C4315C0B8" typeRef="string">
           <dmn:text>maritalStatus</dmn:text>
         </dmn:inputExpression>
       </dmn:input>
@@ -59,19 +39,23 @@
       </dmn:input>
       <dmn:output id="_A72766AE-299E-4906-B1FC-1FFA99C42778" name="autoReject" typeRef="string"/>
       <dmn:output id="_2490938E-E39B-4405-849D-D45087CA7A19" name="rejectCode" typeRef="string"/>
+      <dmn:output id="_4F2E7DBB-50F4-4C1F-A258-10ECA7F3A828" name="deviationCode" typeRef="string"/>
       <dmn:annotation name="annotation"/>
-      <dmn:rule id="_4B49D52F-ADAC-47F4-867F-EBDC21665A46">
-        <dmn:inputEntry id="_3A3878A9-DD33-452C-AE8C-568C9BA12A95">
+      <dmn:rule id="_315F939B-4E51-4EFA-BD3B-A2044DBB2356">
+        <dmn:inputEntry id="_BB7446C8-010E-4D33-ABDB-588F97A627B4">
           <dmn:text>"710", "715"</dmn:text>
         </dmn:inputEntry>
-        <dmn:inputEntry id="_7A432199-0F71-4B51-A89B-9D49870AE583">
+        <dmn:inputEntry id="_4CA0F0C4-6BAB-4FA5-991D-7F38D7DBCAAD">
           <dmn:text>&lt;21</dmn:text>
         </dmn:inputEntry>
-        <dmn:outputEntry id="_D99DAB99-C68A-42E2-884B-8D8CBEE7BDC2">
+        <dmn:outputEntry id="_B63AD7C3-AE63-4011-9681-37146BFE00F6">
           <dmn:text>"Y"</dmn:text>
         </dmn:outputEntry>
-        <dmn:outputEntry id="_2974BC56-54F1-4998-8E92-8F37BB2C955D">
+        <dmn:outputEntry id="_F3176A15-9D22-4342-A956-DF7830CB223F">
           <dmn:text>"001"</dmn:text>
+        </dmn:outputEntry>
+        <dmn:outputEntry id="_0E4AFF7F-2994-420A-AA65-833D44FDCCE8">
+          <dmn:text>""</dmn:text>
         </dmn:outputEntry>
         <dmn:annotationEntry>
           <dmn:text>"Single or Widowed, &lt;21"</dmn:text>
@@ -90,6 +74,9 @@
         <dmn:outputEntry id="_A09F5959-A9D9-47AF-9892-E9496308ACC2">
           <dmn:text>"001"</dmn:text>
         </dmn:outputEntry>
+        <dmn:outputEntry id="_4B9A9CB6-2B98-4185-B8EB-F11788FE6ED0">
+          <dmn:text>""</dmn:text>
+        </dmn:outputEntry>
         <dmn:annotationEntry>
           <dmn:text>"Married, &lt;18"</dmn:text>
         </dmn:annotationEntry>
@@ -107,25 +94,11 @@
         <dmn:outputEntry id="_9B33D09C-C547-40AA-B0F4-696E29396F0E">
           <dmn:text>"001"</dmn:text>
         </dmn:outputEntry>
+        <dmn:outputEntry id="_895880D8-882A-4282-B5C6-8085EEBE15F4">
+          <dmn:text>""</dmn:text>
+        </dmn:outputEntry>
         <dmn:annotationEntry>
           <dmn:text>">60"</dmn:text>
-        </dmn:annotationEntry>
-      </dmn:rule>
-      <dmn:rule id="_17837011-B8A9-4316-A0E2-C058714DDA80">
-        <dmn:inputEntry id="_A5D5CA52-ED97-4FCC-9B5D-89447855CFEC">
-          <dmn:text>"710", "715"</dmn:text>
-        </dmn:inputEntry>
-        <dmn:inputEntry id="_33EE825E-3B82-4172-998C-0E072D01EFE5">
-          <dmn:text>[21..60]</dmn:text>
-        </dmn:inputEntry>
-        <dmn:outputEntry id="_9E872E6D-0305-421F-AC92-07B42FB575B1">
-          <dmn:text>"N"</dmn:text>
-        </dmn:outputEntry>
-        <dmn:outputEntry id="_889FCFAE-FDB0-4B5B-AEAE-816910C5C112">
-          <dmn:text>"000"</dmn:text>
-        </dmn:outputEntry>
-        <dmn:annotationEntry>
-          <dmn:text></dmn:text>
         </dmn:annotationEntry>
       </dmn:rule>
       <dmn:rule id="_F1CAA33B-01B4-409A-A72F-8D340ED1BCD9">
@@ -133,13 +106,36 @@
           <dmn:text>"714"</dmn:text>
         </dmn:inputEntry>
         <dmn:inputEntry id="_ED0B6E59-8AE1-4556-AFCF-4104A5A064C0">
-          <dmn:text>[18..60]</dmn:text>
+          <dmn:text>[ 18 .. 21 )</dmn:text>
         </dmn:inputEntry>
         <dmn:outputEntry id="_4CBF632E-BBD6-4D80-8A60-3CC6F9B044BA">
           <dmn:text>"N"</dmn:text>
         </dmn:outputEntry>
         <dmn:outputEntry id="_1FDFDFB7-1DD7-43FB-BFA1-76856BBE77E3">
           <dmn:text>"000"</dmn:text>
+        </dmn:outputEntry>
+        <dmn:outputEntry id="_AF48DBE2-F9F7-4B54-8EBD-334F47B2F35E">
+          <dmn:text>""</dmn:text>
+        </dmn:outputEntry>
+        <dmn:annotationEntry>
+          <dmn:text></dmn:text>
+        </dmn:annotationEntry>
+      </dmn:rule>
+      <dmn:rule id="_173DCF03-C942-4E5A-B02D-1013651B0326">
+        <dmn:inputEntry id="_2732184A-C8B7-4BAB-8774-72B564396F04">
+          <dmn:text>-</dmn:text>
+        </dmn:inputEntry>
+        <dmn:inputEntry id="_80FDD7AE-26B3-42B4-8CB9-0B47B085207D">
+          <dmn:text>[ 21 .. 60 ]</dmn:text>
+        </dmn:inputEntry>
+        <dmn:outputEntry id="_79CB1EAA-D168-4409-AA31-ACAACACA0C79">
+          <dmn:text>"N"</dmn:text>
+        </dmn:outputEntry>
+        <dmn:outputEntry id="_285927D9-2F0F-42B8-9CFC-559A88CDBB1C">
+          <dmn:text>"000"</dmn:text>
+        </dmn:outputEntry>
+        <dmn:outputEntry id="_FC5B1311-E3B9-42B6-8898-525639AC3F7D">
+          <dmn:text>""</dmn:text>
         </dmn:outputEntry>
         <dmn:annotationEntry>
           <dmn:text></dmn:text>
@@ -153,7 +149,8 @@
         <kie:ComponentsWidthsExtension>
           <kie:ComponentWidths dmnElementRef="_B2468725-1DA2-48AF-BF1B-6FE13CFBEE55">
             <kie:width>50.0</kie:width>
-            <kie:width>123.0</kie:width>
+            <kie:width>258.0</kie:width>
+            <kie:width>107.0</kie:width>
             <kie:width>100.0</kie:width>
             <kie:width>100.0</kie:width>
             <kie:width>100.0</kie:width>
