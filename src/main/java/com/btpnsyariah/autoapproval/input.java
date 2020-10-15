@@ -23,6 +23,8 @@ public class input implements java.io.Serializable {
 	private java.util.Date applicationDate;
 	private java.util.Date disbursementDate;
 
+	private java.lang.String noAppId;
+
 	public input() {
 	}
 
@@ -138,6 +140,14 @@ public class input implements java.io.Serializable {
 		this.disbursementDate = disbursementDate;
 	}
 
+	public java.lang.String getNoAppId() {
+		return this.noAppId;
+	}
+
+	public void setNoAppId(java.lang.String noAppId) {
+		this.noAppId = noAppId;
+	}
+
 	public input(java.lang.String financingReferenceId,
 			java.lang.String channelId, java.lang.String cif,
 			java.lang.String productCode, java.lang.String financingStatus,
@@ -145,7 +155,7 @@ public class input implements java.io.Serializable {
 			java.lang.Integer tenor, java.util.Date birthDate,
 			java.lang.Double plafond, java.lang.String mms,
 			java.lang.String notes, java.util.Date applicationDate,
-			java.util.Date disbursementDate) {
+			java.util.Date disbursementDate, java.lang.String noAppId) {
 		this.financingReferenceId = financingReferenceId;
 		this.channelId = channelId;
 		this.cif = cif;
@@ -160,6 +170,7 @@ public class input implements java.io.Serializable {
 		this.notes = notes;
 		this.applicationDate = applicationDate;
 		this.disbursementDate = disbursementDate;
+		this.noAppId = noAppId;
 	}
 
 }
