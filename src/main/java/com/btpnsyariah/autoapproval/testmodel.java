@@ -6,12 +6,23 @@ package com.btpnsyariah.autoapproval;
 
 public class testmodel implements java.io.Serializable {
 
-    static final long serialVersionUID = 1L;
+	static final long serialVersionUID = 1L;
 
-    public testmodel() {
-    }
+	private java.util.Date date;
 
+	public testmodel() {
+	}
 
+	public java.util.Date getDate() {
+		return this.date;
+	}
 
+	public void setDate(java.util.Date date) {
+		this.date = date;
+	}
+
+	public testmodel(java.util.Date date) {
+		this.date = date;
+	}
 
 }
