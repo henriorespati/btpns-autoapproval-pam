@@ -135,11 +135,11 @@
       <dmn:formalParameter id="_7ED1E864-1EB8-404F-B61D-D0656262DAC0" name="businessFlag" typeRef="boolean"/>
       <dmn:literalExpression id="_C1155169-8CCE-4180-8657-613F3D463941">
         <dmn:text>if(businessFlag = true) then
-    if(plafond >= get value(plafondMatrix,"MIN_PLAFOND_HAS_BUSINESS") and plafond &lt;= get value(plafondMatrix,"MAX_PLAFOND_HAS_BUSINESS")) then false 
+    if(plafond in [get value(plafondMatrix,"MIN_PLAFOND_HAS_BUSINESS")..get value(plafondMatrix,"MAX_PLAFOND_HAS_BUSINESS")]) then false 
     else true
 else 
 if(businessFlag = false) then
-    if(plafond >= get value(plafondMatrix,"MIN_PLAFOND_HAS_NO_BUSINESS") and plafond &lt;= get value(plafondMatrix,"MAX_PLAFOND_HAS_NO_BUSINESS")) then false 
+    if(plafond in [get value(plafondMatrix,"MIN_PLAFOND_HAS_NO_BUSINESS")..get value(plafondMatrix,"MAX_PLAFOND_HAS_NO_BUSINESS")]) then false 
     else true
 else true</dmn:text>
       </dmn:literalExpression>
