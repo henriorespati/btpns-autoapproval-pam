@@ -65,6 +65,22 @@
     <dmn:extensionElements/>
     <dmn:variable id="_F81917A6-55AA-44BA-A594-4955B8F80031" name="plafond" typeRef="number"/>
   </dmn:inputData>
+  <dmn:businessKnowledgeModel id="_E8F1B9FE-54E2-425F-8228-0A45DB894FE5" name="EvaluateBKM">
+    <dmn:extensionElements/>
+    <dmn:variable id="_A3277A6F-9113-4969-8584-E82A2A008DCC" name="EvaluateBKM" typeRef="boolean"/>
+    <dmn:encapsulatedLogic id="_C377964D-6768-477A-8A21-E0790F8E3675" kind="FEEL">
+      <dmn:formalParameter id="_633CB879-A374-4839-A660-96DCDF7FFEC2" name="plafond" typeRef="number"/>
+      <dmn:formalParameter id="_7F129DB7-2082-49A6-B27B-83DC5C478AC8" name="plafondMatrix" typeRef="context"/>
+      <dmn:formalParameter id="_C6F97572-B96D-45AF-AC54-5FD89EFC5067" name="businessFlag" typeRef="boolean"/>
+      <dmn:literalExpression id="_59424268-BA92-411E-9260-1E81D4530CC1">
+        <dmn:text>if businessFlag = true then
+    plafond in [get value(plafondMatrix,"MIN_PLAFOND_HAS_BUSINESS")..get value(plafondMatrix,"MAX_PLAFOND_HAS_BUSINESS")]
+else if businessFlag = false then
+    plafond in [get value(plafondMatrix,"MIN_PLAFOND_HAS_NO_BUSINESS")..get value(plafondMatrix,"MAX_PLAFOND_HAS_NO_BUSINESS")]
+else true</dmn:text>
+      </dmn:literalExpression>
+    </dmn:encapsulatedLogic>
+  </dmn:businessKnowledgeModel>
   <dmn:decision id="_46FFA9AB-3A95-4B8F-98A0-EED845D13954" name="PlafondLimit">
     <dmn:extensionElements/>
     <dmn:variable id="_4760122C-F2D6-4059-A51F-7BC832D0B8ED" name="PlafondLimit" typeRef="output"/>
@@ -160,6 +176,13 @@ else true</dmn:text>
             <kie:width>100.0</kie:width>
             <kie:width>100.0</kie:width>
           </kie:ComponentWidths>
+          <kie:ComponentWidths dmnElementRef="_59424268-BA92-411E-9260-1E81D4530CC1">
+            <kie:width>635.0</kie:width>
+          </kie:ComponentWidths>
+          <kie:ComponentWidths dmnElementRef="_C377964D-6768-477A-8A21-E0790F8E3675">
+            <kie:width>50.0</kie:width>
+            <kie:width>635.0</kie:width>
+          </kie:ComponentWidths>
           <kie:ComponentWidths dmnElementRef="_E4BB7CEB-46C1-48A5-AB3C-A7B44C93D612">
             <kie:width>50.0</kie:width>
             <kie:width>1304.0</kie:width>
@@ -212,6 +235,15 @@ else true</dmn:text>
           <dmndi:FontColor red="0" green="0" blue="0"/>
         </dmndi:DMNStyle>
         <dc:Bounds x="225" y="50" width="100" height="50"/>
+        <dmndi:DMNLabel/>
+      </dmndi:DMNShape>
+      <dmndi:DMNShape id="dmnshape-_E8F1B9FE-54E2-425F-8228-0A45DB894FE5" dmnElementRef="_E8F1B9FE-54E2-425F-8228-0A45DB894FE5" isCollapsed="false">
+        <dmndi:DMNStyle>
+          <dmndi:FillColor red="255" green="255" blue="255"/>
+          <dmndi:StrokeColor red="0" green="0" blue="0"/>
+          <dmndi:FontColor red="0" green="0" blue="0"/>
+        </dmndi:DMNStyle>
+        <dc:Bounds x="542" y="100" width="100" height="50"/>
         <dmndi:DMNLabel/>
       </dmndi:DMNShape>
       <dmndi:DMNShape id="dmnshape-_F0782857-077B-4972-AA25-16BCF350DA2A" dmnElementRef="_F0782857-077B-4972-AA25-16BCF350DA2A" isCollapsed="false">
