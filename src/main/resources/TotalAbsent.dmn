@@ -20,8 +20,8 @@
     </dmn:informationRequirement>
     <dmn:decisionTable id="_9325D1BD-4649-4DD7-91A5-36F077350509" hitPolicy="UNIQUE" preferredOrientation="Rule-as-Row">
       <dmn:input id="_842A0A73-04D2-49B3-B600-6F8C01245850">
-        <dmn:inputExpression id="_2109DAC6-0D28-4AAD-87D4-DBA8AF1C8CCB" typeRef="number">
-          <dmn:text>absent</dmn:text>
+        <dmn:inputExpression id="_2109DAC6-0D28-4AAD-87D4-DBA8AF1C8CCB" typeRef="boolean">
+          <dmn:text>check</dmn:text>
         </dmn:inputExpression>
       </dmn:input>
       <dmn:output id="_82454464-EF9E-4AA3-B98B-B2B042D320F6" name="autoReject" typeRef="string"/>
@@ -29,7 +29,7 @@
       <dmn:annotation name="annotation"/>
       <dmn:rule id="_4E2AB824-BCEE-4392-8E11-DB157BF926F5">
         <dmn:inputEntry id="_7845D6B2-EEA1-4F30-A800-1149E91210EB">
-          <dmn:text>&gt;0</dmn:text>
+          <dmn:text>true</dmn:text>
         </dmn:inputEntry>
         <dmn:outputEntry id="_CDB680E9-2DED-4475-9552-1B586E8C69B3">
           <dmn:text>"Y"</dmn:text>
@@ -43,7 +43,7 @@
       </dmn:rule>
       <dmn:rule id="_D00642E4-AFAB-485F-818A-3CFB047FA262">
         <dmn:inputEntry id="_BA5F7C5A-7830-4B11-8635-A61B9299CE13">
-          <dmn:text>&lt;=0</dmn:text>
+          <dmn:text>false</dmn:text>
         </dmn:inputEntry>
         <dmn:outputEntry id="_DC886F21-8D6A-4958-8804-D920692E5103">
           <dmn:text>"N"</dmn:text>
@@ -57,9 +57,9 @@
       </dmn:rule>
     </dmn:decisionTable>
   </dmn:decision>
-  <dmn:inputData id="_8A2773AA-4A90-49FD-A54C-B1DD0DE23859" name="absent">
+  <dmn:inputData id="_8A2773AA-4A90-49FD-A54C-B1DD0DE23859" name="check">
     <dmn:extensionElements/>
-    <dmn:variable id="_ABA7CE56-C2A7-4975-A343-2187588ACB9A" name="absent" typeRef="number"/>
+    <dmn:variable id="_ABA7CE56-C2A7-4975-A343-2187588ACB9A" name="check" typeRef="boolean"/>
   </dmn:inputData>
   <dmndi:DMNDI>
     <dmndi:DMNDiagram>
