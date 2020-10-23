@@ -25,7 +25,7 @@
       <dmn:formalParameter id="_8C5828D1-B3B2-4330-A67C-42239BCBB1B7" name="dropOutDate" typeRef="date"/>
       <dmn:formalParameter id="_67DF048D-B52C-4594-9681-7D741E9A8232" name="applicationDate" typeRef="date"/>
       <dmn:literalExpression id="_A1671C8E-EBB6-4127-A137-F320379B5E17">
-        <dmn:text>if (dropOutDate&lt;applicationDate) then true 
+        <dmn:text>if (years and months duration(date(dropOutDate), date(applicationDate)) > "P6M") then true 
 else false</dmn:text>
       </dmn:literalExpression>
     </dmn:functionDefinition>
@@ -117,7 +117,7 @@ else false</dmn:text>
           <dmndi:StrokeColor red="0" green="0" blue="0"/>
           <dmndi:FontColor red="0" green="0" blue="0"/>
         </dmndi:DMNStyle>
-        <dc:Bounds x="257" y="193" width="100" height="50"/>
+        <dc:Bounds x="137" y="225" width="100" height="50"/>
         <dmndi:DMNLabel/>
       </dmndi:DMNShape>
       <dmndi:DMNShape id="dmnshape-_DAEE2524-8303-438E-92E6-266BD41F441B" dmnElementRef="_DAEE2524-8303-438E-92E6-266BD41F441B" isCollapsed="false">
@@ -126,7 +126,7 @@ else false</dmn:text>
           <dmndi:StrokeColor red="0" green="0" blue="0"/>
           <dmndi:FontColor red="0" green="0" blue="0"/>
         </dmndi:DMNStyle>
-        <dc:Bounds x="360" y="329" width="108" height="50"/>
+        <dc:Bounds x="225" y="400" width="108" height="50"/>
         <dmndi:DMNLabel/>
       </dmndi:DMNShape>
       <dmndi:DMNShape id="dmnshape-_3F77151B-215F-4119-892C-3FF3F4FC13F4" dmnElementRef="_3F77151B-215F-4119-892C-3FF3F4FC13F4" isCollapsed="false">
@@ -135,7 +135,7 @@ else false</dmn:text>
           <dmndi:StrokeColor red="0" green="0" blue="0"/>
           <dmndi:FontColor red="0" green="0" blue="0"/>
         </dmndi:DMNStyle>
-        <dc:Bounds x="158" y="329" width="100" height="50"/>
+        <dc:Bounds x="50" y="400" width="100" height="50"/>
         <dmndi:DMNLabel/>
       </dmndi:DMNShape>
       <dmndi:DMNShape id="dmnshape-_41F9448C-AD8E-4948-80B7-5CDAA4AEEBA1" dmnElementRef="_41F9448C-AD8E-4948-80B7-5CDAA4AEEBA1" isCollapsed="false">
@@ -144,20 +144,20 @@ else false</dmn:text>
           <dmndi:StrokeColor red="0" green="0" blue="0"/>
           <dmndi:FontColor red="0" green="0" blue="0"/>
         </dmndi:DMNStyle>
-        <dc:Bounds x="257" y="31" width="100" height="50"/>
+        <dc:Bounds x="137" y="50" width="100" height="50"/>
         <dmndi:DMNLabel/>
       </dmndi:DMNShape>
       <dmndi:DMNEdge id="dmnedge-_24BC371C-4F0F-4518-B10C-38FD800A7859" dmnElementRef="_24BC371C-4F0F-4518-B10C-38FD800A7859">
-        <di:waypoint x="258" y="354"/>
-        <di:waypoint x="307" y="218"/>
+        <di:waypoint x="150" y="425"/>
+        <di:waypoint x="187" y="250"/>
       </dmndi:DMNEdge>
       <dmndi:DMNEdge id="dmnedge-_C8D7741E-4F56-4FBB-8932-30C09077477D" dmnElementRef="_C8D7741E-4F56-4FBB-8932-30C09077477D">
-        <di:waypoint x="414" y="354"/>
-        <di:waypoint x="307" y="218"/>
+        <di:waypoint x="279" y="425"/>
+        <di:waypoint x="187" y="250"/>
       </dmndi:DMNEdge>
       <dmndi:DMNEdge id="dmnedge-_BE64D42E-3177-4D31-B9FF-1C052C9A216F" dmnElementRef="_BE64D42E-3177-4D31-B9FF-1C052C9A216F">
-        <di:waypoint x="307" y="218"/>
-        <di:waypoint x="307" y="81"/>
+        <di:waypoint x="187" y="250"/>
+        <di:waypoint x="187" y="100"/>
       </dmndi:DMNEdge>
     </dmndi:DMNDiagram>
   </dmndi:DMNDI>
