@@ -1,13 +1,21 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <dmn:definitions xmlns:dmn="http://www.omg.org/spec/DMN/20180521/MODEL/" xmlns="https://kiegroup.org/dmn/_6B147632-DFAD-4A02-9B82-E5934F57C93D" xmlns:di="http://www.omg.org/spec/DMN/20180521/DI/" xmlns:kie="http://www.drools.org/kie/dmn/1.2" xmlns:feel="http://www.omg.org/spec/DMN/20180521/FEEL/" xmlns:dmndi="http://www.omg.org/spec/DMN/20180521/DMNDI/" xmlns:dc="http://www.omg.org/spec/DMN/20180521/DC/" id="_901C6622-1234-448D-9A54-67AC8F7A358B" name="ProductRuleSetMap" expressionLanguage="http://www.omg.org/spec/DMN/20180521/FEEL/" typeLanguage="http://www.omg.org/spec/DMN/20180521/FEEL/" namespace="https://kiegroup.org/dmn/_6B147632-DFAD-4A02-9B82-E5934F57C93D">
   <dmn:extensionElements/>
+  <dmn:itemDefinition id="_28DEA303-7AD2-498B-8279-B3A8FBC9E0B8" name="ruleset" isCollection="false">
+    <dmn:itemComponent id="_45CA97C9-BE34-4DC4-BA38-47BCB5217411" name="setName" isCollection="false">
+      <dmn:typeRef>string</dmn:typeRef>
+    </dmn:itemComponent>
+    <dmn:itemComponent id="_48F43274-DE1D-4F2F-936F-9D1DA2A29729" name="productCycle" isCollection="false">
+      <dmn:typeRef>number</dmn:typeRef>
+    </dmn:itemComponent>
+  </dmn:itemDefinition>
   <dmn:inputData id="_ECD0BE4B-4730-46D3-81DC-6F9CCB46D093" name="productCode">
     <dmn:extensionElements/>
     <dmn:variable id="_60147A1D-C7E8-4180-AED5-01E244B0ACA3" name="productCode" typeRef="string"/>
   </dmn:inputData>
   <dmn:decision id="_EDB99BEC-3F29-4365-BB9B-556A0C865F73" name="ProductRuleSetMap">
     <dmn:extensionElements/>
-    <dmn:variable id="_4A7F7D41-9AF3-4BD5-B6A5-E05548A643EB" name="ProductRuleSetMap" typeRef="string"/>
+    <dmn:variable id="_4A7F7D41-9AF3-4BD5-B6A5-E05548A643EB" name="ProductRuleSetMap" typeRef="ruleset"/>
     <dmn:informationRequirement id="_AE4E6C9F-AE58-4BB1-B92D-E37092B8E98F">
       <dmn:requiredInput href="#_ECD0BE4B-4730-46D3-81DC-6F9CCB46D093"/>
     </dmn:informationRequirement>
@@ -17,7 +25,8 @@
           <dmn:text>productCode</dmn:text>
         </dmn:inputExpression>
       </dmn:input>
-      <dmn:output id="_B0EB5186-A871-454A-80FD-4091B4C20D97"/>
+      <dmn:output id="_B0EB5186-A871-454A-80FD-4091B4C20D97" name="setName" typeRef="string"/>
+      <dmn:output id="_4DF4C28A-CA5D-4551-9333-D8D9A28C6713" name="productCycle" typeRef="number"/>
       <dmn:annotation name="annotation-1"/>
       <dmn:rule id="_5646A10D-D8C0-4E65-94D0-6A6B84AA7A50">
         <dmn:inputEntry id="_1155E5DB-5569-44C1-999E-367AA01FB9AA">
@@ -25,6 +34,9 @@
         </dmn:inputEntry>
         <dmn:outputEntry id="_8B39F67F-1B9E-480C-9997-A0BD1401B9C5">
           <dmn:text>"PMD_AWAL"</dmn:text>
+        </dmn:outputEntry>
+        <dmn:outputEntry id="_74DACA01-451E-4035-A863-FCF0A6EA3877">
+          <dmn:text>11</dmn:text>
         </dmn:outputEntry>
         <dmn:annotationEntry>
           <dmn:text></dmn:text>
@@ -37,6 +49,9 @@
         <dmn:outputEntry id="_F1CBB053-1EF0-4A32-BC08-AEFECBA1C26E">
           <dmn:text>"PMD_AWAL"</dmn:text>
         </dmn:outputEntry>
+        <dmn:outputEntry id="_D8C8FBF5-5A25-41E2-B3F6-C4F0542838DD">
+          <dmn:text>11</dmn:text>
+        </dmn:outputEntry>
         <dmn:annotationEntry>
           <dmn:text></dmn:text>
         </dmn:annotationEntry>
@@ -47,6 +62,9 @@
         </dmn:inputEntry>
         <dmn:outputEntry id="_01D6E24D-7976-4417-970F-D96C52B1924D">
           <dmn:text>"PMD_LJT"</dmn:text>
+        </dmn:outputEntry>
+        <dmn:outputEntry id="_A3F4B6AB-2B11-4DD9-8366-FEF75BD60A2B">
+          <dmn:text>12</dmn:text>
         </dmn:outputEntry>
         <dmn:annotationEntry>
           <dmn:text></dmn:text>
@@ -59,6 +77,9 @@
         <dmn:outputEntry id="_A350545E-5832-4592-AA2C-0B81D5F016DE">
           <dmn:text>"PMD_LJT"</dmn:text>
         </dmn:outputEntry>
+        <dmn:outputEntry id="_8C8D6727-5691-4572-9A0C-31763FBDF97E">
+          <dmn:text>13</dmn:text>
+        </dmn:outputEntry>
         <dmn:annotationEntry>
           <dmn:text></dmn:text>
         </dmn:annotationEntry>
@@ -69,6 +90,9 @@
         </dmn:inputEntry>
         <dmn:outputEntry id="_89EDA1F9-8295-481D-8F00-447D180D7995">
           <dmn:text>"PMD_LJT"</dmn:text>
+        </dmn:outputEntry>
+        <dmn:outputEntry id="_E23F8EF9-78C4-4640-87CD-A39CE280816A">
+          <dmn:text>14</dmn:text>
         </dmn:outputEntry>
         <dmn:annotationEntry>
           <dmn:text></dmn:text>
@@ -81,6 +105,9 @@
         <dmn:outputEntry id="_165A4E86-A3E0-410E-A084-C95EEDC61A4A">
           <dmn:text>"PMD_LJT"</dmn:text>
         </dmn:outputEntry>
+        <dmn:outputEntry id="_634FC0B5-DDAA-44B4-B3C6-6DB818520108">
+          <dmn:text>15</dmn:text>
+        </dmn:outputEntry>
         <dmn:annotationEntry>
           <dmn:text></dmn:text>
         </dmn:annotationEntry>
@@ -91,6 +118,9 @@
         </dmn:inputEntry>
         <dmn:outputEntry id="_42689822-4D6A-45CC-A090-F65AEC02C66E">
           <dmn:text>"PMD_LJT"</dmn:text>
+        </dmn:outputEntry>
+        <dmn:outputEntry id="_FB8355DC-F838-4322-AC35-1BFE3DA19D2F">
+          <dmn:text>16</dmn:text>
         </dmn:outputEntry>
         <dmn:annotationEntry>
           <dmn:text></dmn:text>
@@ -103,6 +133,9 @@
         <dmn:outputEntry id="_3CD3280F-1CC4-4A50-9FA8-2BAB9FEF0399">
           <dmn:text>"PMD_LJT"</dmn:text>
         </dmn:outputEntry>
+        <dmn:outputEntry id="_80F1141E-4C89-4389-A116-C1A7199E4983">
+          <dmn:text>17</dmn:text>
+        </dmn:outputEntry>
         <dmn:annotationEntry>
           <dmn:text></dmn:text>
         </dmn:annotationEntry>
@@ -113,6 +146,9 @@
         </dmn:inputEntry>
         <dmn:outputEntry id="_50A52899-6011-49DF-A61A-B93873F5EB0D">
           <dmn:text>"PMD_LJT"</dmn:text>
+        </dmn:outputEntry>
+        <dmn:outputEntry id="_1F8CF743-6A2E-44E8-BD50-74DCE8EE2328">
+          <dmn:text>18</dmn:text>
         </dmn:outputEntry>
         <dmn:annotationEntry>
           <dmn:text></dmn:text>
@@ -125,6 +161,9 @@
         <dmn:outputEntry id="_A07307BA-3E5E-4E85-B36A-3A5A1D37EF78">
           <dmn:text>"PMD_LJT"</dmn:text>
         </dmn:outputEntry>
+        <dmn:outputEntry id="_2BAD2F1C-3FD8-4924-8C54-533F05539E0B">
+          <dmn:text>12</dmn:text>
+        </dmn:outputEntry>
         <dmn:annotationEntry>
           <dmn:text></dmn:text>
         </dmn:annotationEntry>
@@ -135,6 +174,9 @@
         </dmn:inputEntry>
         <dmn:outputEntry id="_22A10811-071D-46AC-85F1-108DBF738758">
           <dmn:text>"PMD_LJT"</dmn:text>
+        </dmn:outputEntry>
+        <dmn:outputEntry id="_E9CE0BFE-1EC0-48C3-8AC0-CE8EDE667341">
+          <dmn:text>13</dmn:text>
         </dmn:outputEntry>
         <dmn:annotationEntry>
           <dmn:text></dmn:text>
@@ -147,6 +189,9 @@
         <dmn:outputEntry id="_C054EDD3-852A-4850-BB43-025DD026CE61">
           <dmn:text>"PMD_LJT"</dmn:text>
         </dmn:outputEntry>
+        <dmn:outputEntry id="_0816917A-D578-442A-8CDE-0C83EA13A0C2">
+          <dmn:text>14</dmn:text>
+        </dmn:outputEntry>
         <dmn:annotationEntry>
           <dmn:text></dmn:text>
         </dmn:annotationEntry>
@@ -157,6 +202,9 @@
         </dmn:inputEntry>
         <dmn:outputEntry id="_4A64E276-510E-4985-ADEB-F5071D7F1642">
           <dmn:text>"PMD_LJT"</dmn:text>
+        </dmn:outputEntry>
+        <dmn:outputEntry id="_21D0A06E-9375-48A3-966A-29B12B082E54">
+          <dmn:text>15</dmn:text>
         </dmn:outputEntry>
         <dmn:annotationEntry>
           <dmn:text></dmn:text>
@@ -169,6 +217,9 @@
         <dmn:outputEntry id="_B2B984D6-80FB-4039-80C6-3DFA2661CC6E">
           <dmn:text>"PMD_LJT"</dmn:text>
         </dmn:outputEntry>
+        <dmn:outputEntry id="_BFCD4EBB-654B-4F31-8A4A-03D436DFB6E8">
+          <dmn:text>16</dmn:text>
+        </dmn:outputEntry>
         <dmn:annotationEntry>
           <dmn:text></dmn:text>
         </dmn:annotationEntry>
@@ -179,6 +230,9 @@
         </dmn:inputEntry>
         <dmn:outputEntry id="_2734A374-1CC9-4192-B113-0725B587CF2A">
           <dmn:text>"PMD_LJT"</dmn:text>
+        </dmn:outputEntry>
+        <dmn:outputEntry id="_09D6F354-28C1-4361-BF42-B6FFE06069B2">
+          <dmn:text>17</dmn:text>
         </dmn:outputEntry>
         <dmn:annotationEntry>
           <dmn:text></dmn:text>
@@ -191,6 +245,9 @@
         <dmn:outputEntry id="_A84B30CE-4177-4121-8DF6-BF227A8AF1D6">
           <dmn:text>"PMD_LJT"</dmn:text>
         </dmn:outputEntry>
+        <dmn:outputEntry id="_466D24A4-D2BF-4E45-8DDF-FEA78CF2B449">
+          <dmn:text>18</dmn:text>
+        </dmn:outputEntry>
         <dmn:annotationEntry>
           <dmn:text></dmn:text>
         </dmn:annotationEntry>
@@ -201,6 +258,9 @@
         </dmn:inputEntry>
         <dmn:outputEntry id="_4C2AE583-6BF2-4501-A4E1-0B44CD656A52">
           <dmn:text>"PMD_LJT"</dmn:text>
+        </dmn:outputEntry>
+        <dmn:outputEntry id="_7319C087-073E-4BD0-8787-DD928CE8E659">
+          <dmn:text>21</dmn:text>
         </dmn:outputEntry>
         <dmn:annotationEntry>
           <dmn:text></dmn:text>
@@ -213,6 +273,9 @@
         <dmn:outputEntry id="_67EEC083-58E9-496D-B7FA-3CB3FD178789">
           <dmn:text>"PMD_LJT"</dmn:text>
         </dmn:outputEntry>
+        <dmn:outputEntry id="_9E1A29EC-6D45-44BA-9407-3592CBE58CDB">
+          <dmn:text>21</dmn:text>
+        </dmn:outputEntry>
         <dmn:annotationEntry>
           <dmn:text></dmn:text>
         </dmn:annotationEntry>
@@ -223,6 +286,9 @@
         </dmn:inputEntry>
         <dmn:outputEntry id="_1E3E7391-1326-41C3-A9B3-782B5CF2F668">
           <dmn:text>"PMD_LJT"</dmn:text>
+        </dmn:outputEntry>
+        <dmn:outputEntry id="_D55DF505-7197-4422-9D7F-85B5C8CDB3EA">
+          <dmn:text>21</dmn:text>
         </dmn:outputEntry>
         <dmn:annotationEntry>
           <dmn:text></dmn:text>
@@ -235,6 +301,9 @@
         <dmn:outputEntry id="_01175A19-3D02-42FB-85F1-3175CA1B5D9C">
           <dmn:text>"PMD_LJT"</dmn:text>
         </dmn:outputEntry>
+        <dmn:outputEntry id="_1EC8DEEE-58AE-4E1C-8871-7537EA4A1B54">
+          <dmn:text>22</dmn:text>
+        </dmn:outputEntry>
         <dmn:annotationEntry>
           <dmn:text></dmn:text>
         </dmn:annotationEntry>
@@ -245,6 +314,9 @@
         </dmn:inputEntry>
         <dmn:outputEntry id="_25879ED6-5176-4B9E-AB60-C12FA4172699">
           <dmn:text>"PMD_LJT"</dmn:text>
+        </dmn:outputEntry>
+        <dmn:outputEntry id="_CDB96C39-13FF-4ECF-90E6-4D7D29B29B3F">
+          <dmn:text>23</dmn:text>
         </dmn:outputEntry>
         <dmn:annotationEntry>
           <dmn:text></dmn:text>
@@ -257,6 +329,9 @@
         <dmn:outputEntry id="_9A43A50F-0B13-4964-8BC7-D24B034AA405">
           <dmn:text>"PMD_LJT"</dmn:text>
         </dmn:outputEntry>
+        <dmn:outputEntry id="_BBB3888A-820F-4C13-98E7-F05C2C19B4B0">
+          <dmn:text>24</dmn:text>
+        </dmn:outputEntry>
         <dmn:annotationEntry>
           <dmn:text></dmn:text>
         </dmn:annotationEntry>
@@ -267,6 +342,9 @@
         </dmn:inputEntry>
         <dmn:outputEntry id="_50665041-7453-4586-B905-59CDAA5FDFE4">
           <dmn:text>"PMD_LJT"</dmn:text>
+        </dmn:outputEntry>
+        <dmn:outputEntry id="_944E039C-4EAB-4551-BBF8-BD786DEF93C4">
+          <dmn:text>22</dmn:text>
         </dmn:outputEntry>
         <dmn:annotationEntry>
           <dmn:text></dmn:text>
@@ -279,6 +357,9 @@
         <dmn:outputEntry id="_D43A15DD-D633-47C0-B3A8-FF639047EDDE">
           <dmn:text>"PMD_LJT"</dmn:text>
         </dmn:outputEntry>
+        <dmn:outputEntry id="_2D50E2C3-022D-4677-8220-0978E7FEAA42">
+          <dmn:text>22</dmn:text>
+        </dmn:outputEntry>
         <dmn:annotationEntry>
           <dmn:text></dmn:text>
         </dmn:annotationEntry>
@@ -289,6 +370,9 @@
         </dmn:inputEntry>
         <dmn:outputEntry id="_BB7A32F0-7917-4CA9-9F2F-88B0F57E9935">
           <dmn:text>"PMD_LJT"</dmn:text>
+        </dmn:outputEntry>
+        <dmn:outputEntry id="_EBB3DBAF-A539-4BCA-B8E2-4594B6FF1F66">
+          <dmn:text>23</dmn:text>
         </dmn:outputEntry>
         <dmn:annotationEntry>
           <dmn:text></dmn:text>
@@ -301,6 +385,9 @@
         <dmn:outputEntry id="_A3DC6E7F-E4BB-4689-A948-B574DAC946B5">
           <dmn:text>"PMD_LJT"</dmn:text>
         </dmn:outputEntry>
+        <dmn:outputEntry id="_108A505F-48E0-4DF8-B0F5-064BA05EA144">
+          <dmn:text>23</dmn:text>
+        </dmn:outputEntry>
         <dmn:annotationEntry>
           <dmn:text></dmn:text>
         </dmn:annotationEntry>
@@ -311,6 +398,9 @@
         </dmn:inputEntry>
         <dmn:outputEntry id="_73AF4DC1-CB16-4BBB-AD28-3744008C708A">
           <dmn:text>"PMD_LJT"</dmn:text>
+        </dmn:outputEntry>
+        <dmn:outputEntry id="_D59EFD99-C618-4C08-84A9-429056FBACBA">
+          <dmn:text>24</dmn:text>
         </dmn:outputEntry>
         <dmn:annotationEntry>
           <dmn:text></dmn:text>
@@ -323,6 +413,9 @@
         <dmn:outputEntry id="_017A937E-5A0E-45FD-AAF7-E496626A8B8A">
           <dmn:text>"PMD_LJT"</dmn:text>
         </dmn:outputEntry>
+        <dmn:outputEntry id="_40ED175F-E09F-4B37-A310-CB171735B243">
+          <dmn:text>24</dmn:text>
+        </dmn:outputEntry>
         <dmn:annotationEntry>
           <dmn:text></dmn:text>
         </dmn:annotationEntry>
@@ -333,6 +426,9 @@
         </dmn:inputEntry>
         <dmn:outputEntry id="_2AA3C9D5-F6A9-4481-A191-383F69026A96">
           <dmn:text>"PMD_LJT"</dmn:text>
+        </dmn:outputEntry>
+        <dmn:outputEntry id="_07B9F02D-337D-4403-BCAC-37DAFD47EF42">
+          <dmn:text></dmn:text>
         </dmn:outputEntry>
         <dmn:annotationEntry>
           <dmn:text></dmn:text>
@@ -345,6 +441,9 @@
         <dmn:outputEntry id="_ED839298-C967-4FCB-9E48-F49870A0B861">
           <dmn:text>"PMD_LJT"</dmn:text>
         </dmn:outputEntry>
+        <dmn:outputEntry id="_CDD25DF8-2FF4-4A06-8C76-7C581E18DF0D">
+          <dmn:text></dmn:text>
+        </dmn:outputEntry>
         <dmn:annotationEntry>
           <dmn:text></dmn:text>
         </dmn:annotationEntry>
@@ -355,6 +454,9 @@
         </dmn:inputEntry>
         <dmn:outputEntry id="_F5888F69-0BBB-4480-A306-5ABC3E7DA2B1">
           <dmn:text>"PMD_LJT"</dmn:text>
+        </dmn:outputEntry>
+        <dmn:outputEntry id="_59AD8C59-935D-4029-A75D-5020FC0975EB">
+          <dmn:text>12</dmn:text>
         </dmn:outputEntry>
         <dmn:annotationEntry>
           <dmn:text></dmn:text>
@@ -367,6 +469,9 @@
         <dmn:outputEntry id="_36737930-74C2-43B4-A1CF-18138E34E9A8">
           <dmn:text>"PMD_LJT"</dmn:text>
         </dmn:outputEntry>
+        <dmn:outputEntry id="_3384473C-650C-4177-942D-37F2A8638C4E">
+          <dmn:text>13</dmn:text>
+        </dmn:outputEntry>
         <dmn:annotationEntry>
           <dmn:text></dmn:text>
         </dmn:annotationEntry>
@@ -377,6 +482,9 @@
         </dmn:inputEntry>
         <dmn:outputEntry id="_A8055607-F81F-4B20-8429-828CD382F62D">
           <dmn:text>"PMD_LJT"</dmn:text>
+        </dmn:outputEntry>
+        <dmn:outputEntry id="_95FF125B-8DD4-4D49-A376-F505DCE6BA0F">
+          <dmn:text>14</dmn:text>
         </dmn:outputEntry>
         <dmn:annotationEntry>
           <dmn:text></dmn:text>
@@ -389,6 +497,9 @@
         <dmn:outputEntry id="_C1C8CBB1-74B7-41C3-B2B3-A1F1FBC7E24D">
           <dmn:text>"PMD_LJT"</dmn:text>
         </dmn:outputEntry>
+        <dmn:outputEntry id="_7C0FAFC8-A6E0-4AEA-B0A5-2C015DAEA084">
+          <dmn:text>15</dmn:text>
+        </dmn:outputEntry>
         <dmn:annotationEntry>
           <dmn:text></dmn:text>
         </dmn:annotationEntry>
@@ -399,6 +510,9 @@
         </dmn:inputEntry>
         <dmn:outputEntry id="_EAF356FF-26C3-47A6-9767-EE72A0770759">
           <dmn:text>"PMD_LJT"</dmn:text>
+        </dmn:outputEntry>
+        <dmn:outputEntry id="_E53EF8DE-358F-4415-A2C1-9ECFBBB5572E">
+          <dmn:text>16</dmn:text>
         </dmn:outputEntry>
         <dmn:annotationEntry>
           <dmn:text></dmn:text>
@@ -411,6 +525,9 @@
         <dmn:outputEntry id="_782B1921-3714-45F4-8946-86BEFEB66425">
           <dmn:text>"PMD_LJT"</dmn:text>
         </dmn:outputEntry>
+        <dmn:outputEntry id="_545BCB17-7068-4AA0-9C9B-71366FCFC1B6">
+          <dmn:text>17</dmn:text>
+        </dmn:outputEntry>
         <dmn:annotationEntry>
           <dmn:text></dmn:text>
         </dmn:annotationEntry>
@@ -421,6 +538,9 @@
         </dmn:inputEntry>
         <dmn:outputEntry id="_870B2BF6-00BA-4618-954B-9A6DD46C2FFE">
           <dmn:text>"PMD_LJT"</dmn:text>
+        </dmn:outputEntry>
+        <dmn:outputEntry id="_C7B958A6-86A7-432C-810E-4A3200275D6F">
+          <dmn:text>18</dmn:text>
         </dmn:outputEntry>
         <dmn:annotationEntry>
           <dmn:text></dmn:text>
@@ -433,6 +553,9 @@
         <dmn:outputEntry id="_303ACB93-B007-4F1E-A040-7941839E6364">
           <dmn:text>"PMD_LJT"</dmn:text>
         </dmn:outputEntry>
+        <dmn:outputEntry id="_36F8846D-0FDE-47C1-9865-30B71739374A">
+          <dmn:text></dmn:text>
+        </dmn:outputEntry>
         <dmn:annotationEntry>
           <dmn:text></dmn:text>
         </dmn:annotationEntry>
@@ -443,6 +566,9 @@
         </dmn:inputEntry>
         <dmn:outputEntry id="_90A49C89-8FE8-4B28-81C2-0EA66BC20134">
           <dmn:text>"PMD_LJT"</dmn:text>
+        </dmn:outputEntry>
+        <dmn:outputEntry id="_7ACBED2B-7B6A-43FF-BA61-6D3D5651E0F0">
+          <dmn:text></dmn:text>
         </dmn:outputEntry>
         <dmn:annotationEntry>
           <dmn:text></dmn:text>
@@ -455,6 +581,9 @@
         <dmn:outputEntry id="_AF7BAE3E-B264-4D7F-9577-0D82B3447A18">
           <dmn:text>"PMD_LJT"</dmn:text>
         </dmn:outputEntry>
+        <dmn:outputEntry id="_1DDA7575-0080-48E1-BA25-13E598B60830">
+          <dmn:text>20</dmn:text>
+        </dmn:outputEntry>
         <dmn:annotationEntry>
           <dmn:text></dmn:text>
         </dmn:annotationEntry>
@@ -465,6 +594,9 @@
         </dmn:inputEntry>
         <dmn:outputEntry id="_DBB12379-AF35-4797-A620-28F7908F787A">
           <dmn:text>"PMD_LJT"</dmn:text>
+        </dmn:outputEntry>
+        <dmn:outputEntry id="_E2C2B2B3-C78D-4815-87D0-B0AD66BD9651">
+          <dmn:text>20</dmn:text>
         </dmn:outputEntry>
         <dmn:annotationEntry>
           <dmn:text></dmn:text>
@@ -477,6 +609,9 @@
         <dmn:outputEntry id="_E620C672-26A1-4350-9CC3-FBA8F43F7ABC">
           <dmn:text>"PMD_LJT"</dmn:text>
         </dmn:outputEntry>
+        <dmn:outputEntry id="_4678A987-3A73-4635-82BD-0AAFBD373860">
+          <dmn:text>20</dmn:text>
+        </dmn:outputEntry>
         <dmn:annotationEntry>
           <dmn:text></dmn:text>
         </dmn:annotationEntry>
@@ -487,6 +622,9 @@
         </dmn:inputEntry>
         <dmn:outputEntry id="_4ADFDFE1-9550-457D-A32A-03E7626B4725">
           <dmn:text>"PMD_LJT"</dmn:text>
+        </dmn:outputEntry>
+        <dmn:outputEntry id="_B9A2F5A9-A6C8-43E5-822D-229C0C90C7F7">
+          <dmn:text>110</dmn:text>
         </dmn:outputEntry>
         <dmn:annotationEntry>
           <dmn:text></dmn:text>
@@ -499,6 +637,9 @@
         <dmn:outputEntry id="_CD6C4F59-8080-4D40-95E6-0ED1D49BAD86">
           <dmn:text>"PMD_LJT"</dmn:text>
         </dmn:outputEntry>
+        <dmn:outputEntry id="_16653D76-B6F5-4858-BEE4-A3BA20E0993B">
+          <dmn:text>110</dmn:text>
+        </dmn:outputEntry>
         <dmn:annotationEntry>
           <dmn:text></dmn:text>
         </dmn:annotationEntry>
@@ -509,6 +650,9 @@
         </dmn:inputEntry>
         <dmn:outputEntry id="_F9552CD1-9C0A-4EFE-9C01-95000224FB89">
           <dmn:text>"PMD_LJT"</dmn:text>
+        </dmn:outputEntry>
+        <dmn:outputEntry id="_2C808C09-DB67-45E3-B37B-11065F015846">
+          <dmn:text>110</dmn:text>
         </dmn:outputEntry>
         <dmn:annotationEntry>
           <dmn:text></dmn:text>
@@ -521,6 +665,9 @@
         <dmn:outputEntry id="_5165D6A3-A502-4D27-AD94-33BA685A854C">
           <dmn:text>"PMD_LJT"</dmn:text>
         </dmn:outputEntry>
+        <dmn:outputEntry id="_54BCFD59-BF51-4ED7-A697-BAABB9936CF5">
+          <dmn:text>104</dmn:text>
+        </dmn:outputEntry>
         <dmn:annotationEntry>
           <dmn:text></dmn:text>
         </dmn:annotationEntry>
@@ -531,6 +678,9 @@
         </dmn:inputEntry>
         <dmn:outputEntry id="_C0D4258D-4E3A-4983-BC7C-85C9E387C997">
           <dmn:text>"PMD_LJT_KHS"</dmn:text>
+        </dmn:outputEntry>
+        <dmn:outputEntry id="_EC420E1D-3A32-41EB-ACF4-5E26783AD8A4">
+          <dmn:text>31</dmn:text>
         </dmn:outputEntry>
         <dmn:annotationEntry>
           <dmn:text></dmn:text>
@@ -543,6 +693,9 @@
         <dmn:outputEntry id="_4278B540-117A-4AD7-8FAE-164A2302695B">
           <dmn:text>"PMD_LJT_KHS"</dmn:text>
         </dmn:outputEntry>
+        <dmn:outputEntry id="_91001398-B6A9-4EB5-95F5-328B102F803C">
+          <dmn:text>31</dmn:text>
+        </dmn:outputEntry>
         <dmn:annotationEntry>
           <dmn:text></dmn:text>
         </dmn:annotationEntry>
@@ -553,6 +706,9 @@
         </dmn:inputEntry>
         <dmn:outputEntry id="_FBB0EEFA-7830-4BED-80B0-C9ACCDB878F5">
           <dmn:text>"PMD_LJT_KHS"</dmn:text>
+        </dmn:outputEntry>
+        <dmn:outputEntry id="_A7A1E30E-7CB5-4340-A678-5C4DA2CB4F35">
+          <dmn:text>31</dmn:text>
         </dmn:outputEntry>
         <dmn:annotationEntry>
           <dmn:text></dmn:text>
@@ -565,6 +721,9 @@
         <dmn:outputEntry id="_E81913A0-0160-4FDA-950C-E9648F166112">
           <dmn:text>"PMD_LJT_KHS"</dmn:text>
         </dmn:outputEntry>
+        <dmn:outputEntry id="_71E05268-D3FD-43E3-AFCA-FD7F2C6FC1ED">
+          <dmn:text>31</dmn:text>
+        </dmn:outputEntry>
         <dmn:annotationEntry>
           <dmn:text></dmn:text>
         </dmn:annotationEntry>
@@ -575,6 +734,9 @@
         </dmn:inputEntry>
         <dmn:outputEntry id="_7990282A-2F39-4336-A7C0-F38E4D8C885E">
           <dmn:text>"PMD_LJT_KHS"</dmn:text>
+        </dmn:outputEntry>
+        <dmn:outputEntry id="_36FF9A46-22E7-427E-B327-E72D489FFA52">
+          <dmn:text>31</dmn:text>
         </dmn:outputEntry>
         <dmn:annotationEntry>
           <dmn:text></dmn:text>
@@ -587,6 +749,9 @@
         <dmn:outputEntry id="_0BF398AA-508A-436A-BC30-9DC9D7D7DC20">
           <dmn:text>"PMD_LJT_KHS"</dmn:text>
         </dmn:outputEntry>
+        <dmn:outputEntry id="_E590F322-9E12-4410-9CD6-15AF2FAF186D">
+          <dmn:text>31</dmn:text>
+        </dmn:outputEntry>
         <dmn:annotationEntry>
           <dmn:text></dmn:text>
         </dmn:annotationEntry>
@@ -597,6 +762,9 @@
         </dmn:inputEntry>
         <dmn:outputEntry id="_3D26FF15-F863-4C30-A596-93A3CF6168BC">
           <dmn:text>"PMD_LJT_KHS"</dmn:text>
+        </dmn:outputEntry>
+        <dmn:outputEntry id="_E0252584-3101-4A46-AEC0-199B7D937166">
+          <dmn:text>302</dmn:text>
         </dmn:outputEntry>
         <dmn:annotationEntry>
           <dmn:text></dmn:text>
@@ -609,6 +777,9 @@
         <dmn:outputEntry id="_8A7CBE5B-8040-4288-9220-2C94FBD968FF">
           <dmn:text>"PMD_LJT_KHS"</dmn:text>
         </dmn:outputEntry>
+        <dmn:outputEntry id="_265A792F-BF50-4127-B8E9-A1047EE6D72E">
+          <dmn:text>302</dmn:text>
+        </dmn:outputEntry>
         <dmn:annotationEntry>
           <dmn:text></dmn:text>
         </dmn:annotationEntry>
@@ -619,6 +790,9 @@
         </dmn:inputEntry>
         <dmn:outputEntry id="_AC51DCC2-111D-468F-A3BD-6374F18A8DA3">
           <dmn:text>"PMD_LJT_KHS"</dmn:text>
+        </dmn:outputEntry>
+        <dmn:outputEntry id="_7E49A6D5-35C9-4D83-8AD1-3B04CE0F05FF">
+          <dmn:text>302</dmn:text>
         </dmn:outputEntry>
         <dmn:annotationEntry>
           <dmn:text></dmn:text>
@@ -631,6 +805,9 @@
         <dmn:outputEntry id="_2B9B848C-008B-47E8-9914-AFF7249778FE">
           <dmn:text>"PMD_MTG"</dmn:text>
         </dmn:outputEntry>
+        <dmn:outputEntry id="_4732B43D-8E9D-4BC0-9D38-B9AF9A1423A5">
+          <dmn:text></dmn:text>
+        </dmn:outputEntry>
         <dmn:annotationEntry>
           <dmn:text></dmn:text>
         </dmn:annotationEntry>
@@ -641,6 +818,9 @@
         </dmn:inputEntry>
         <dmn:outputEntry id="_3AAA07CD-FF18-4EE6-8D0B-D38D567E7A4D">
           <dmn:text>"PMD_MTG"</dmn:text>
+        </dmn:outputEntry>
+        <dmn:outputEntry id="_8EAFE769-28A0-492D-990F-9E9D5FBB39DD">
+          <dmn:text></dmn:text>
         </dmn:outputEntry>
         <dmn:annotationEntry>
           <dmn:text></dmn:text>
@@ -653,6 +833,9 @@
         <dmn:outputEntry id="_358539C6-863F-4DC1-9E22-270727DBA3A7">
           <dmn:text>"PMD_MTG"</dmn:text>
         </dmn:outputEntry>
+        <dmn:outputEntry id="_86C884A8-FE8A-4420-9219-C1A16BE91F73">
+          <dmn:text></dmn:text>
+        </dmn:outputEntry>
         <dmn:annotationEntry>
           <dmn:text></dmn:text>
         </dmn:annotationEntry>
@@ -663,6 +846,9 @@
         </dmn:inputEntry>
         <dmn:outputEntry id="_ABD851C4-58AB-4482-9F12-D545FAFB0FD1">
           <dmn:text>"PMD_MTG"</dmn:text>
+        </dmn:outputEntry>
+        <dmn:outputEntry id="_03713164-E9A4-4A5F-89F3-C9C886BCF5FB">
+          <dmn:text></dmn:text>
         </dmn:outputEntry>
         <dmn:annotationEntry>
           <dmn:text></dmn:text>
@@ -675,6 +861,9 @@
         <dmn:outputEntry id="_5EA1D338-B906-4FE9-B863-6D10876C46D1">
           <dmn:text>"PMD_MTG"</dmn:text>
         </dmn:outputEntry>
+        <dmn:outputEntry id="_A67197B8-18B2-44C8-B5F5-ADBFF97A5B00">
+          <dmn:text></dmn:text>
+        </dmn:outputEntry>
         <dmn:annotationEntry>
           <dmn:text></dmn:text>
         </dmn:annotationEntry>
@@ -685,6 +874,9 @@
         </dmn:inputEntry>
         <dmn:outputEntry id="_4F337339-BE12-4857-B41A-3107426B9DD1">
           <dmn:text>"PMD_MTG"</dmn:text>
+        </dmn:outputEntry>
+        <dmn:outputEntry id="_F066D5FE-D799-4AFD-8C5A-957E2C84A587">
+          <dmn:text></dmn:text>
         </dmn:outputEntry>
         <dmn:annotationEntry>
           <dmn:text></dmn:text>
@@ -697,6 +889,9 @@
         <dmn:outputEntry id="_17B5E905-4C8C-4A52-8B72-258BD3106352">
           <dmn:text>"PMD_MTG"</dmn:text>
         </dmn:outputEntry>
+        <dmn:outputEntry id="_66441B2D-A265-4560-9540-905E50851EE4">
+          <dmn:text></dmn:text>
+        </dmn:outputEntry>
         <dmn:annotationEntry>
           <dmn:text></dmn:text>
         </dmn:annotationEntry>
@@ -707,6 +902,9 @@
         </dmn:inputEntry>
         <dmn:outputEntry id="_5C49497A-2DF3-4C90-90CA-8B0FAE5848E1">
           <dmn:text>"PMD_MTG"</dmn:text>
+        </dmn:outputEntry>
+        <dmn:outputEntry id="_47143ED0-1056-4F62-AD6D-73B1430EE1A8">
+          <dmn:text></dmn:text>
         </dmn:outputEntry>
         <dmn:annotationEntry>
           <dmn:text></dmn:text>
@@ -719,6 +917,9 @@
         <dmn:outputEntry id="_24CEB486-D050-4A48-A051-D890E89FB175">
           <dmn:text>"PMD_SM"</dmn:text>
         </dmn:outputEntry>
+        <dmn:outputEntry id="_43878A54-A592-43B2-B355-1ACB962B1736">
+          <dmn:text></dmn:text>
+        </dmn:outputEntry>
         <dmn:annotationEntry>
           <dmn:text></dmn:text>
         </dmn:annotationEntry>
@@ -729,6 +930,9 @@
         </dmn:inputEntry>
         <dmn:outputEntry id="_4016CF88-3FDD-499C-B5DC-E8A2CDAFE0CD">
           <dmn:text>"PMD_TU_AWAL"</dmn:text>
+        </dmn:outputEntry>
+        <dmn:outputEntry id="_4A2C5A65-FC6E-4732-966A-22CA53BFCB96">
+          <dmn:text></dmn:text>
         </dmn:outputEntry>
         <dmn:annotationEntry>
           <dmn:text></dmn:text>
@@ -741,6 +945,9 @@
         <dmn:outputEntry id="_DEA7E0EB-25AD-4E62-B237-3438E12FE895">
           <dmn:text>"PMD_TU_LJT"</dmn:text>
         </dmn:outputEntry>
+        <dmn:outputEntry id="_061E97BF-BB3A-4E89-A21B-6E3FBBCFDFC0">
+          <dmn:text></dmn:text>
+        </dmn:outputEntry>
         <dmn:annotationEntry>
           <dmn:text></dmn:text>
         </dmn:annotationEntry>
@@ -751,6 +958,9 @@
         </dmn:inputEntry>
         <dmn:outputEntry id="_8ADDD5F9-29C0-4049-BA48-CDD9D9414332">
           <dmn:text>"PMD_TU_LJT"</dmn:text>
+        </dmn:outputEntry>
+        <dmn:outputEntry id="_4A39BB51-D51B-4183-B6CE-71052434F287">
+          <dmn:text></dmn:text>
         </dmn:outputEntry>
         <dmn:annotationEntry>
           <dmn:text></dmn:text>
@@ -763,6 +973,9 @@
         <dmn:outputEntry id="_9C016318-6E11-4F6B-A7BF-A817F854DD1A">
           <dmn:text>"PMD_TU_LJT"</dmn:text>
         </dmn:outputEntry>
+        <dmn:outputEntry id="_6304A928-727F-4D10-B71E-A5A5C385C13D">
+          <dmn:text></dmn:text>
+        </dmn:outputEntry>
         <dmn:annotationEntry>
           <dmn:text></dmn:text>
         </dmn:annotationEntry>
@@ -773,6 +986,9 @@
         </dmn:inputEntry>
         <dmn:outputEntry id="_C03D104F-A388-4336-809E-527C7A56E5B4">
           <dmn:text>"PMD_TU_LJT"</dmn:text>
+        </dmn:outputEntry>
+        <dmn:outputEntry id="_3BD7B896-0A4A-46DF-A770-68D3725EB0DD">
+          <dmn:text></dmn:text>
         </dmn:outputEntry>
         <dmn:annotationEntry>
           <dmn:text></dmn:text>
@@ -785,6 +1001,9 @@
         <dmn:outputEntry id="_F56F6617-8772-4E94-BF44-2D3D4A1D90A0">
           <dmn:text>"PMD_TU_MPN"</dmn:text>
         </dmn:outputEntry>
+        <dmn:outputEntry id="_B51B405B-917A-476E-9BBC-325FDC0DA7FB">
+          <dmn:text></dmn:text>
+        </dmn:outputEntry>
         <dmn:annotationEntry>
           <dmn:text></dmn:text>
         </dmn:annotationEntry>
@@ -795,6 +1014,9 @@
         </dmn:inputEntry>
         <dmn:outputEntry id="_3C58D50F-4FA9-4E67-BA6F-BB24A0F3F2FC">
           <dmn:text>"PMD_TU_MPN"</dmn:text>
+        </dmn:outputEntry>
+        <dmn:outputEntry id="_495FDBFB-8C4E-4697-8619-06EAAF38BF6D">
+          <dmn:text></dmn:text>
         </dmn:outputEntry>
         <dmn:annotationEntry>
           <dmn:text></dmn:text>
@@ -807,6 +1029,9 @@
         <dmn:outputEntry id="_02727BF4-FAE5-4BB7-A983-2CF8AD7E4C39">
           <dmn:text>"PMD_TU_MPN"</dmn:text>
         </dmn:outputEntry>
+        <dmn:outputEntry id="_0139F6DB-EEB2-48FB-95EE-5B1C9CF69DB3">
+          <dmn:text></dmn:text>
+        </dmn:outputEntry>
         <dmn:annotationEntry>
           <dmn:text></dmn:text>
         </dmn:annotationEntry>
@@ -817,6 +1042,9 @@
         </dmn:inputEntry>
         <dmn:outputEntry id="_7E7220A5-CFE6-4829-833F-15AB84180948">
           <dmn:text>"PMD_TU_MPN"</dmn:text>
+        </dmn:outputEntry>
+        <dmn:outputEntry id="_81F731FC-285A-428C-8BC9-0F353BF44FC5">
+          <dmn:text></dmn:text>
         </dmn:outputEntry>
         <dmn:annotationEntry>
           <dmn:text></dmn:text>
@@ -833,18 +1061,10 @@
             <kie:width>100.0</kie:width>
             <kie:width>175.0</kie:width>
             <kie:width>100.0</kie:width>
+            <kie:width>100.0</kie:width>
           </kie:ComponentWidths>
         </kie:ComponentsWidthsExtension>
       </di:extension>
-      <dmndi:DMNShape id="dmnshape-_EDB99BEC-3F29-4365-BB9B-556A0C865F73" dmnElementRef="_EDB99BEC-3F29-4365-BB9B-556A0C865F73" isCollapsed="false">
-        <dmndi:DMNStyle>
-          <dmndi:FillColor red="255" green="255" blue="255"/>
-          <dmndi:StrokeColor red="0" green="0" blue="0"/>
-          <dmndi:FontColor red="0" green="0" blue="0"/>
-        </dmndi:DMNStyle>
-        <dc:Bounds x="367" y="152" width="100" height="50"/>
-        <dmndi:DMNLabel/>
-      </dmndi:DMNShape>
       <dmndi:DMNShape id="dmnshape-_ECD0BE4B-4730-46D3-81DC-6F9CCB46D093" dmnElementRef="_ECD0BE4B-4730-46D3-81DC-6F9CCB46D093" isCollapsed="false">
         <dmndi:DMNStyle>
           <dmndi:FillColor red="255" green="255" blue="255"/>
@@ -852,6 +1072,15 @@
           <dmndi:FontColor red="0" green="0" blue="0"/>
         </dmndi:DMNStyle>
         <dc:Bounds x="173" y="151" width="100" height="50"/>
+        <dmndi:DMNLabel/>
+      </dmndi:DMNShape>
+      <dmndi:DMNShape id="dmnshape-_EDB99BEC-3F29-4365-BB9B-556A0C865F73" dmnElementRef="_EDB99BEC-3F29-4365-BB9B-556A0C865F73" isCollapsed="false">
+        <dmndi:DMNStyle>
+          <dmndi:FillColor red="255" green="255" blue="255"/>
+          <dmndi:StrokeColor red="0" green="0" blue="0"/>
+          <dmndi:FontColor red="0" green="0" blue="0"/>
+        </dmndi:DMNStyle>
+        <dc:Bounds x="367" y="152" width="100" height="50"/>
         <dmndi:DMNLabel/>
       </dmndi:DMNShape>
       <dmndi:DMNEdge id="dmnedge-_AE4E6C9F-AE58-4BB1-B92D-E37092B8E98F" dmnElementRef="_AE4E6C9F-AE58-4BB1-B92D-E37092B8E98F">
