@@ -33,7 +33,7 @@
       <dmn:formalParameter id="_B99D7357-E635-4FE9-9BFA-17433B676342" name="existingCycleNo" typeRef="number"/>
       <dmn:formalParameter id="_64BB7EA3-D6C5-47F1-AE55-464C216ADC6D" name="productCode" typeRef="string"/>
       <dmn:literalExpression id="_AF3B6D0A-1202-4C95-89A4-4340D9AB3FEA">
-        <dmn:text>if (ruleset.productCycle - existingCycleNo = 1) then true
+        <dmn:text>if (ruleset(productCode).productCycle - existingCycleNo = 1) then true
 else false</dmn:text>
       </dmn:literalExpression>
     </dmn:functionDefinition>
