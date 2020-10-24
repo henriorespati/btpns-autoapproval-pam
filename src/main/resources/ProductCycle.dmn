@@ -25,15 +25,15 @@
     <dmn:informationRequirement id="_8C6D6CD0-7C67-45B5-A568-AD8431B0D695">
       <dmn:requiredInput href="#_EDA70094-BC7A-4BD9-8CD0-C8EA7781874B"/>
     </dmn:informationRequirement>
-    <dmn:knowledgeRequirement id="_FA3729ED-1DFC-41FC-9496-DE738FD8BA49">
-      <dmn:requiredKnowledge href="#_2C5CE98D-C784-44C0-8486-6F3EEFD0F74D"/>
-    </dmn:knowledgeRequirement>
+    <dmn:informationRequirement id="_6400B314-4889-4089-9E32-F7F78738CAC8">
+      <dmn:requiredDecision href="https://kiegroup.org/dmn/_6B147632-DFAD-4A02-9B82-E5934F57C93D#_EDB99BEC-3F29-4365-BB9B-556A0C865F73"/>
+    </dmn:informationRequirement>
     <dmn:functionDefinition id="_4A29D595-EF2A-4B10-A273-15D858C32299" kind="FEEL">
-      <dmn:formalParameter id="_B1F4B136-B32D-4B61-AEB4-4DF66D4AB960" name="ruleset" typeRef="ProductRuleSetMap.ruleset"/>
+      <dmn:formalParameter id="_B1F4B136-B32D-4B61-AEB4-4DF66D4AB960" name="ProductRuleSetMap" typeRef="ProductRuleSetMap.ruleset"/>
       <dmn:formalParameter id="_B99D7357-E635-4FE9-9BFA-17433B676342" name="existingCycleNo" typeRef="number"/>
       <dmn:formalParameter id="_64BB7EA3-D6C5-47F1-AE55-464C216ADC6D" name="productCode" typeRef="string"/>
       <dmn:literalExpression id="_AF3B6D0A-1202-4C95-89A4-4340D9AB3FEA">
-        <dmn:text>if (ruleset(productCode).productCycle - existingCycleNo = 1) then true
+        <dmn:text>if (ProductRuleSetMap(productCode).productCycle - existingCycleNo = 1) then true
 else false</dmn:text>
       </dmn:literalExpression>
     </dmn:functionDefinition>
@@ -90,16 +90,6 @@ else false</dmn:text>
       </dmn:rule>
     </dmn:decisionTable>
   </dmn:decision>
-  <dmn:businessKnowledgeModel id="_2C5CE98D-C784-44C0-8486-6F3EEFD0F74D" name="ruleset">
-    <dmn:extensionElements/>
-    <dmn:variable id="_04B9FC95-1BA1-4568-8FA8-BE5BC653E0F0" name="ruleset" typeRef="ProductRuleSetMap.ruleset"/>
-    <dmn:encapsulatedLogic id="_6A4E634D-189F-4304-8CE1-79855A1D9468" kind="FEEL">
-      <dmn:formalParameter id="_15A065BD-87E8-4180-AF6B-648C8CC0E7E7" name="productCode" typeRef="string"/>
-      <dmn:literalExpression id="_D736D46E-23B9-4392-BFCB-0BF114755C0B">
-        <dmn:text></dmn:text>
-      </dmn:literalExpression>
-    </dmn:encapsulatedLogic>
-  </dmn:businessKnowledgeModel>
   <dmn:inputData id="_EDA70094-BC7A-4BD9-8CD0-C8EA7781874B" name="productCode">
     <dmn:extensionElements/>
     <dmn:variable id="_74AEA812-A3CC-4171-9DC1-35503337FD50" name="productCode" typeRef="string"/>
@@ -127,13 +117,6 @@ else false</dmn:text>
             <kie:width>100.0</kie:width>
             <kie:width>100.0</kie:width>
           </kie:ComponentWidths>
-          <kie:ComponentWidths dmnElementRef="_D736D46E-23B9-4392-BFCB-0BF114755C0B">
-            <kie:width>150.0</kie:width>
-          </kie:ComponentWidths>
-          <kie:ComponentWidths dmnElementRef="_6A4E634D-189F-4304-8CE1-79855A1D9468">
-            <kie:width>50.0</kie:width>
-            <kie:width>150.0</kie:width>
-          </kie:ComponentWidths>
         </kie:ComponentsWidthsExtension>
       </di:extension>
       <dmndi:DMNShape id="dmnshape-_F72DAB9C-465A-4DA9-9AAA-87F45013B204" dmnElementRef="_F72DAB9C-465A-4DA9-9AAA-87F45013B204" isCollapsed="false">
@@ -154,7 +137,7 @@ else false</dmn:text>
         <dc:Bounds x="225" y="50" width="100" height="50"/>
         <dmndi:DMNLabel/>
       </dmndi:DMNShape>
-      <dmndi:DMNShape id="dmnshape-_2C5CE98D-C784-44C0-8486-6F3EEFD0F74D" dmnElementRef="_2C5CE98D-C784-44C0-8486-6F3EEFD0F74D" isCollapsed="false">
+      <dmndi:DMNShape id="dmnshape-_EDB99BEC-3F29-4365-BB9B-556A0C865F73" dmnElementRef="included1:_EDB99BEC-3F29-4365-BB9B-556A0C865F73" isCollapsed="false">
         <dmndi:DMNStyle>
           <dmndi:FillColor red="255" green="255" blue="255"/>
           <dmndi:StrokeColor red="0" green="0" blue="0"/>
@@ -189,7 +172,7 @@ else false</dmn:text>
         <di:waypoint x="275" y="400"/>
         <di:waypoint x="275" y="250"/>
       </dmndi:DMNEdge>
-      <dmndi:DMNEdge id="dmnedge-_FA3729ED-1DFC-41FC-9496-DE738FD8BA49" dmnElementRef="_FA3729ED-1DFC-41FC-9496-DE738FD8BA49">
+      <dmndi:DMNEdge id="dmnedge-_6400B314-4889-4089-9E32-F7F78738CAC8" dmnElementRef="_6400B314-4889-4089-9E32-F7F78738CAC8">
         <di:waypoint x="450" y="425"/>
         <di:waypoint x="275" y="250"/>
       </dmndi:DMNEdge>
