@@ -76,9 +76,9 @@
     <dmn:extensionElements/>
     <dmn:variable id="_49106740-0011-44E3-A774-6E64AB56E984" name="lastActionDate" typeRef="date"/>
   </dmn:inputData>
-  <dmn:inputData id="_68213F6F-377B-437F-8A05-EAEBF99C6146" name="lastInstallmentNumber">
+  <dmn:inputData id="_68213F6F-377B-437F-8A05-EAEBF99C6146" name="lastInstallmentNo">
     <dmn:extensionElements/>
-    <dmn:variable id="_1BE15DA3-A37E-4CA2-A6F9-A6FB82DB0A74" name="lastInstallmentNumber" typeRef="number"/>
+    <dmn:variable id="_1BE15DA3-A37E-4CA2-A6F9-A6FB82DB0A74" name="lastInstallmentNo" typeRef="number"/>
   </dmn:inputData>
   <dmn:decision id="_6497794F-32D5-4FB1-8748-655AF0CA8146" name="MinPRSDisbursePlan">
     <dmn:extensionElements/>
@@ -201,6 +201,14 @@ else false</dmn:text>
     <dmn:informationRequirement id="_197460FD-6955-4145-9337-943200831BFD">
       <dmn:requiredInput href="#_68213F6F-377B-437F-8A05-EAEBF99C6146"/>
     </dmn:informationRequirement>
+    <dmn:functionDefinition id="_5675926F-BE0D-4856-AA65-F6E46E598599" kind="FEEL">
+      <dmn:formalParameter id="_A8FA755E-359F-4B78-9505-E95EB3AEF35C" name="MinPRS" typeRef="number"/>
+      <dmn:formalParameter id="_7DAF8031-9005-4A9B-A7C2-CA9F1A8BD09D" name="lastInstallmentNo" typeRef="number"/>
+      <dmn:literalExpression id="_5907424E-C4A9-4F02-B14E-971BAA3450FB">
+        <dmn:text>if (lastInstallmentNo >= MinPRS) then true
+else false</dmn:text>
+      </dmn:literalExpression>
+    </dmn:functionDefinition>
   </dmn:decision>
   <dmndi:DMNDI>
     <dmndi:DMNDiagram>
@@ -221,6 +229,13 @@ else false</dmn:text>
             <kie:width>100.0</kie:width>
             <kie:width>100.0</kie:width>
             <kie:width>100.0</kie:width>
+          </kie:ComponentWidths>
+          <kie:ComponentWidths dmnElementRef="_5675926F-BE0D-4856-AA65-F6E46E598599">
+            <kie:width>50.0</kie:width>
+            <kie:width>460.0</kie:width>
+          </kie:ComponentWidths>
+          <kie:ComponentWidths dmnElementRef="_5907424E-C4A9-4F02-B14E-971BAA3450FB">
+            <kie:width>460.0</kie:width>
           </kie:ComponentWidths>
           <kie:ComponentWidths dmnElementRef="_4A12419D-5E4F-42F3-B58C-30D596483891">
             <kie:width>50.0</kie:width>
