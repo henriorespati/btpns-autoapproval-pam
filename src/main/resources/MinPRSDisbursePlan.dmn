@@ -70,6 +70,17 @@
           <dmn:text></dmn:text>
         </dmn:annotationEntry>
       </dmn:rule>
+      <dmn:rule id="_C61E205A-11B1-436A-AC83-E793F9193233">
+        <dmn:inputEntry id="_EEA3DBFA-24D6-4AB5-8BA8-FE01669122BB">
+          <dmn:text>-</dmn:text>
+        </dmn:inputEntry>
+        <dmn:outputEntry id="_CB8E8509-4F66-4916-A010-FAA08AFD7BD5">
+          <dmn:text>0</dmn:text>
+        </dmn:outputEntry>
+        <dmn:annotationEntry>
+          <dmn:text></dmn:text>
+        </dmn:annotationEntry>
+      </dmn:rule>
     </dmn:decisionTable>
   </dmn:decision>
   <dmn:inputData id="_A89B1BC9-A3F5-426F-A6FE-0C4AC48C997F" name="lastActionDate">
@@ -205,7 +216,7 @@ else false</dmn:text>
       <dmn:formalParameter id="_A8FA755E-359F-4B78-9505-E95EB3AEF35C" name="MinPRS" typeRef="number"/>
       <dmn:formalParameter id="_7DAF8031-9005-4A9B-A7C2-CA9F1A8BD09D" name="lastInstallmentNo" typeRef="number"/>
       <dmn:literalExpression id="_5907424E-C4A9-4F02-B14E-971BAA3450FB">
-        <dmn:text>if (lastInstallmentNo >= MinPRS) then true
+        <dmn:text>if (MinPRS > 0 and lastInstallmentNo >= MinPRS) then true
 else false</dmn:text>
       </dmn:literalExpression>
     </dmn:functionDefinition>
