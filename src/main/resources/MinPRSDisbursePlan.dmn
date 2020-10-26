@@ -213,10 +213,10 @@ else false</dmn:text>
       <dmn:requiredInput href="#_68213F6F-377B-437F-8A05-EAEBF99C6146"/>
     </dmn:informationRequirement>
     <dmn:functionDefinition id="_5675926F-BE0D-4856-AA65-F6E46E598599" kind="FEEL">
-      <dmn:formalParameter id="_A8FA755E-359F-4B78-9505-E95EB3AEF35C" name="MinPRS" typeRef="number"/>
+      <dmn:formalParameter id="_A8FA755E-359F-4B78-9505-E95EB3AEF35C" name="MaxPRS" typeRef="number"/>
       <dmn:formalParameter id="_7DAF8031-9005-4A9B-A7C2-CA9F1A8BD09D" name="lastInstallmentNo" typeRef="number"/>
       <dmn:literalExpression id="_5907424E-C4A9-4F02-B14E-971BAA3450FB">
-        <dmn:text>if (MinPRS > 0 and lastInstallmentNo >= MinPRS) then true
+        <dmn:text>if (MaxPRS > 0 and lastInstallmentNo &lt;= MaxPRS) then true
 else false</dmn:text>
       </dmn:literalExpression>
     </dmn:functionDefinition>
