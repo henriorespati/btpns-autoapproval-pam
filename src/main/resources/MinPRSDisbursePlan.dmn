@@ -126,6 +126,14 @@
     <dmn:informationRequirement id="_14393A30-FF6B-41D6-B6C5-B0C25FD807E3">
       <dmn:requiredInput href="#_A89B1BC9-A3F5-426F-A6FE-0C4AC48C997F"/>
     </dmn:informationRequirement>
+    <dmn:functionDefinition id="_96DC607F-CFEA-4336-9EDA-6DC1672A751F" kind="FEEL">
+      <dmn:formalParameter id="_C9C03512-96D9-4852-A660-54B8B30CC775" name="lastActionDate" typeRef="date"/>
+      <dmn:formalParameter id="_EB6C7FE2-9ABC-4B08-B296-F8F082FD6903" name="disbursementDate" typeRef="date"/>
+      <dmn:literalExpression id="_9A8A0804-6EBB-4129-A866-294BA044EE1F">
+        <dmn:text>if (disbursementDate >= lastActionDate) then true
+else false</dmn:text>
+      </dmn:literalExpression>
+    </dmn:functionDefinition>
   </dmn:decision>
   <dmn:inputData id="_B32190E5-090A-4BE5-B3AC-CAB155C7A2FA" name="disbursementDate">
     <dmn:extensionElements/>
@@ -145,6 +153,13 @@
     <dmndi:DMNDiagram>
       <di:extension>
         <kie:ComponentsWidthsExtension>
+          <kie:ComponentWidths dmnElementRef="_96DC607F-CFEA-4336-9EDA-6DC1672A751F">
+            <kie:width>50.0</kie:width>
+            <kie:width>528.0</kie:width>
+          </kie:ComponentWidths>
+          <kie:ComponentWidths dmnElementRef="_9A8A0804-6EBB-4129-A866-294BA044EE1F">
+            <kie:width>528.0</kie:width>
+          </kie:ComponentWidths>
           <kie:ComponentWidths dmnElementRef="_45D2A281-8A6C-457C-91DE-FD5E10C41660">
             <kie:width>50.0</kie:width>
             <kie:width>100.0</kie:width>
