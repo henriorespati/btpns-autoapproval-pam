@@ -6,12 +6,70 @@ package com.btpnsyariah.autoapproval;
 
 public class response implements java.io.Serializable {
 
-    static final long serialVersionUID = 1L;
+	static final long serialVersionUID = 1L;
 
-    public response() {
-    }
+	private java.util.Date transmissionDateAndTime;
+	private java.lang.String retrievalReferenceNumber;
+	private java.lang.String channelDstn;
+	private java.util.List<com.btpnsyariah.autoapproval.output> scoringResult;
+	private java.lang.String status;
 
+	public response() {
+	}
 
+	public java.util.Date getTransmissionDateAndTime() {
+		return this.transmissionDateAndTime;
+	}
 
+	public void setTransmissionDateAndTime(
+			java.util.Date transmissionDateAndTime) {
+		this.transmissionDateAndTime = transmissionDateAndTime;
+	}
+
+	public java.lang.String getRetrievalReferenceNumber() {
+		return this.retrievalReferenceNumber;
+	}
+
+	public void setRetrievalReferenceNumber(
+			java.lang.String retrievalReferenceNumber) {
+		this.retrievalReferenceNumber = retrievalReferenceNumber;
+	}
+
+	public java.lang.String getChannelDstn() {
+		return this.channelDstn;
+	}
+
+	public void setChannelDstn(java.lang.String channelDstn) {
+		this.channelDstn = channelDstn;
+	}
+
+	public java.util.List<com.btpnsyariah.autoapproval.output> getScoringResult() {
+		return this.scoringResult;
+	}
+
+	public void setScoringResult(
+			java.util.List<com.btpnsyariah.autoapproval.output> scoringResult) {
+		this.scoringResult = scoringResult;
+	}
+
+	public java.lang.String getStatus() {
+		return this.status;
+	}
+
+	public void setStatus(java.lang.String status) {
+		this.status = status;
+	}
+
+	public response(java.util.Date transmissionDateAndTime,
+			java.lang.String retrievalReferenceNumber,
+			java.lang.String channelDstn,
+			java.util.List<com.btpnsyariah.autoapproval.output> scoringResult,
+			java.lang.String status) {
+		this.transmissionDateAndTime = transmissionDateAndTime;
+		this.retrievalReferenceNumber = retrievalReferenceNumber;
+		this.channelDstn = channelDstn;
+		this.scoringResult = scoringResult;
+		this.status = status;
+	}
 
 }
