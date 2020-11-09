@@ -19,6 +19,8 @@ public class scoringResult implements java.io.Serializable {
 	private java.lang.String rejectCode;
 
 	private java.lang.String rejectDesc;
+	
+	private java.util.HashMap<String,String> rejectDescMap = new java.util.HashMap<String,String>();
 
 	private java.lang.String deviationCode;
 
@@ -27,6 +29,10 @@ public class scoringResult implements java.io.Serializable {
 	private java.util.HashMap<String,String> deviationDescMap = new java.util.HashMap<String,String>();
 
 	public void init() {
+	    this.rejectDescMap.put("001", "Usia tidak sesuai");
+	    this.rejectDescMap.put("002", "Plafond tidak sesuai / tidak ada informasi usaha");
+	    this.rejectDescMap.put("003", "Di bawah angsuran ke 12");
+	    
 	    this.deviationDescMap.put("D01", "plafon");
 	    this.deviationDescMap.put("D02", "mangkir");
 	    this.deviationDescMap.put("D03", "nasabah 1 rumah dengan nasabah lain");
@@ -70,14 +76,15 @@ public class scoringResult implements java.io.Serializable {
 
 	public void setRejectCode(java.lang.String rejectCode) {
 		this.rejectCode = rejectCode;
+		setRejectDesc(rejectCode);
 	}
 
 	public java.lang.String getRejectDesc() {
 		return this.rejectDesc;
 	}
 
-	public void setRejectDesc(java.lang.String rejectDesc) {
-		this.rejectDesc = rejectDesc;
+	public void setRejectDesc(java.lang.String rejectCode) {
+		this.rejectDesc = this.rejectDescMap.get(rejectCode);
 	}
 
 	public java.lang.String getDeviationCode() {
