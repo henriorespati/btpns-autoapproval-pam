@@ -9,9 +9,22 @@ public class output implements java.io.Serializable {
 	static final long serialVersionUID = 1L;
 
 	private java.lang.String autoReject;
+
+	private java.lang.String scoringRule;
+
+	private java.lang.String param;
+
+	private java.lang.String value;
+
+	private java.lang.String result;
+	
 	private java.lang.String rejectCode;
 
+	private java.lang.String rejectDesc;
+	
 	private java.lang.String deviationCode;
+
+	private java.lang.String deviationDesc;
 
 	public output() {
 	}
@@ -24,27 +37,88 @@ public class output implements java.io.Serializable {
 		this.autoReject = autoReject;
 	}
 
-	public java.lang.String getRejectCode() {
+	public java.lang.String getScoringRule() {
+		return this.scoringRule;
+	}
+
+	public void setScoringRule(java.lang.String scoringRule) {
+		this.scoringRule = scoringRule;
+	}
+
+	public java.lang.String getParam() {
+		return this.param;
+	}
+
+	public void setParam(java.lang.String param) {
+		this.param = param;
+	}
+
+	public java.lang.String getValue() {
+		return this.value;
+	}
+
+	public void setValue(java.lang.String value) {
+		this.value = value;
+	}
+
+	public java.lang.String getResult() {
+		return this.result;
+	}
+
+	public void setResult(java.lang.String result) {
+		this.result = result;
+	}
+
+    public java.lang.String getRejectCode() {
 		return this.rejectCode;
 	}
 
 	public void setRejectCode(java.lang.String rejectCode) {
 		this.rejectCode = rejectCode;
 	}
+	
+	public java.lang.String getRejectDesc() {
+		return this.rejectDesc;
+	}
 
-	public java.lang.String getDeviationCode() {
+	public void setRejectDesc(java.lang.String rejectDesc) {
+		this.rejectDesc = rejectDesc;
+	}
+
+    public java.lang.String getDeviationCode() {
 		return this.deviationCode;
 	}
 
 	public void setDeviationCode(java.lang.String deviationCode) {
 		this.deviationCode = deviationCode;
 	}
+	
+	public java.lang.String getDeviationDesc() {
+		return this.deviationDesc;
+	}
 
-	public output(java.lang.String autoReject, java.lang.String rejectCode,
-			java.lang.String deviationCode) {
+	public void setDeviationDesc(java.lang.String deviationDesc) {
+		this.deviationDesc = deviationDesc;
+	}
+
+	public output(java.lang.String autoReject, 
+			java.lang.String scoringRule,
+			java.lang.String param, 
+			java.lang.String value,
+			java.lang.String result, 
+			java.lang.String rejectCode,
+			java.lang.String rejectDesc,
+			java.lang.String deviationCode,
+			java.lang.String deviationDesc) {
 		this.autoReject = autoReject;
+		this.scoringRule = scoringRule;
+		this.param = param;
+		this.value = value;
+		this.result = result;
 		this.rejectCode = rejectCode;
+		this.rejectDesc = rejectDesc;
 		this.deviationCode = deviationCode;
+		this.deviationDesc = deviationDesc;
 	}
 
 }
