@@ -23,8 +23,13 @@ public class scoringResult implements java.io.Serializable {
 	private java.lang.String deviationCode;
 
 	private java.lang.String deviationDesc;
+	
+	private java.util.HashMap<String,String> deviationDescMap = new java.util.HashMap<String,String>();
 
-	public output() {
+	public void init() {
+	    this.deviationDescMap.put("D01", "plafon");
+	    this.deviationDescMap.put("D02", "mangkir");
+	    this.deviationDescMap.put("D03", "nasabah 1 rumah dengan nasabah lain");
 	}
 
 	public java.lang.String getScoringRule() {
@@ -81,23 +86,26 @@ public class scoringResult implements java.io.Serializable {
 
 	public void setDeviationCode(java.lang.String deviationCode) {
 		this.deviationCode = deviationCode;
+		setDeviationDesc(deviationCode);
 	}
 
 	public java.lang.String getDeviationDesc() {
 		return this.deviationDesc;
 	}
 
-	public void setDeviationDesc(java.lang.String deviationDesc) {
-		this.deviationDesc = deviationDesc;
+	public void setDeviationDesc(java.lang.String deviationCode) {
+		this.deviationDesc = this.deviationDescMap.get(deviationCode);
 	}
 
 	public scoringResult() {
+	    init();
 	}
 
 	public scoringResult(java.lang.String scoringRule, java.lang.String param,
 			java.lang.String value, java.lang.String result,
-			java.lang.String rejectCode, java.lang.String rejectDesc,
-			java.lang.String deviationCode, java.lang.String deviationDesc) {
+			java.lang.String rejectCode,
+			java.lang.String deviationCode) {
+	    init();
 		this.scoringRule = scoringRule;
 		this.param = param;
 		this.value = value;
