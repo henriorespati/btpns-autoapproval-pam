@@ -11,8 +11,9 @@ public class response implements java.io.Serializable {
 	private java.util.Date transmissionDateAndTime;
 	private java.lang.String retrievalReferenceNumber;
 	private java.lang.String channelDstn;
-	private java.util.List<com.btpnsyariah.autoapproval.output> scoringResult;
 	private java.lang.String status;
+
+	private java.util.List<com.btpnsyariah.autoapproval.scoringResult> scoringResult;
 
 	public response() {
 	}
@@ -43,15 +44,6 @@ public class response implements java.io.Serializable {
 		this.channelDstn = channelDstn;
 	}
 
-	public java.util.List<com.btpnsyariah.autoapproval.output> getScoringResult() {
-		return this.scoringResult;
-	}
-
-	public void setScoringResult(
-			java.util.List<com.btpnsyariah.autoapproval.output> scoringResult) {
-		this.scoringResult = scoringResult;
-	}
-
 	public java.lang.String getStatus() {
 		return this.status;
 	}
@@ -60,16 +52,26 @@ public class response implements java.io.Serializable {
 		this.status = status;
 	}
 
-	public response(java.util.Date transmissionDateAndTime,
+	public java.util.List<com.btpnsyariah.autoapproval.scoringResult> getScoringResult() {
+		return this.scoringResult;
+	}
+
+	public void setScoringResult(
+			java.util.List<com.btpnsyariah.autoapproval.scoringResult> scoringResult) {
+		this.scoringResult = scoringResult;
+	}
+
+	public response(
+			java.util.Date transmissionDateAndTime,
 			java.lang.String retrievalReferenceNumber,
 			java.lang.String channelDstn,
-			java.util.List<com.btpnsyariah.autoapproval.output> scoringResult,
-			java.lang.String status) {
+			java.lang.String status,
+			java.util.List<com.btpnsyariah.autoapproval.scoringResult> scoringResult) {
 		this.transmissionDateAndTime = transmissionDateAndTime;
 		this.retrievalReferenceNumber = retrievalReferenceNumber;
 		this.channelDstn = channelDstn;
-		this.scoringResult = scoringResult;
 		this.status = status;
+		this.scoringResult = scoringResult;
 	}
 
 }
