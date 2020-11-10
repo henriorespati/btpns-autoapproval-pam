@@ -11,7 +11,7 @@
   </dmn:itemDefinition>
   <dmn:inputData id="_C766A2A5-5E02-41D0-8955-E429C8BB4655" name="businessFlag">
     <dmn:extensionElements/>
-    <dmn:variable id="_1C7CD8D1-6459-411B-AA4F-B7AAB728E092" name="businessFlag" typeRef="boolean"/>
+    <dmn:variable id="_1C7CD8D1-6459-411B-AA4F-B7AAB728E092" name="businessFlag" typeRef="string"/>
   </dmn:inputData>
   <dmn:decision id="_F142C849-D594-452B-8796-A040E3B8046F" name="BusinessOwnership">
     <dmn:extensionElements/>
@@ -21,7 +21,7 @@
     </dmn:informationRequirement>
     <dmn:decisionTable id="_45FB0364-3818-4DC2-8CAA-B45E0CB17405" hitPolicy="UNIQUE" preferredOrientation="Rule-as-Row">
       <dmn:input id="_0829A253-04B2-418D-816B-5B44DC6F16A1">
-        <dmn:inputExpression id="_420B6ECA-7595-48B7-ACE4-C339ED6B11A3" typeRef="boolean">
+        <dmn:inputExpression id="_420B6ECA-7595-48B7-ACE4-C339ED6B11A3" typeRef="string">
           <dmn:text>businessFlag</dmn:text>
         </dmn:inputExpression>
       </dmn:input>
@@ -31,7 +31,7 @@
       <dmn:annotation name="annotation-1"/>
       <dmn:rule id="_411B5DCA-C0C4-42D6-96BA-85A9D10C17EB">
         <dmn:inputEntry id="_DD6033F3-966D-4FE3-8075-6E1D4C6AA58E">
-          <dmn:text>false</dmn:text>
+          <dmn:text>"0"</dmn:text>
         </dmn:inputEntry>
         <dmn:outputEntry id="_470665C8-AEA6-4F16-AB9C-7C10CFEDBDFD">
           <dmn:text>"Y"</dmn:text>
@@ -48,7 +48,7 @@
       </dmn:rule>
       <dmn:rule id="_9A0C010B-912D-4D3B-B8B4-E71680246EFE">
         <dmn:inputEntry id="_DCEF6E9A-0492-409B-AB90-6D021A593017">
-          <dmn:text>true</dmn:text>
+          <dmn:text>"1"</dmn:text>
         </dmn:inputEntry>
         <dmn:outputEntry id="_2FF4FB22-114E-4716-A55C-79A1FFEE48B9">
           <dmn:text>"N"</dmn:text>
