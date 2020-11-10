@@ -66,7 +66,7 @@ public class response implements java.io.Serializable {
         return "{transmissionDateAndTime:" + transmissionDateAndTime.toString() + ", " +
             "retrievalReferenceNumber:" + retrievalReferenceNumber + ", " +
             "channelDstn:" + channelDstn + ", " +
-            "scoringResult:" + scoringResult.get(0).toString() + ", " +
+            "scoringResult:" + scoringResult.toString() + ", " +
             "status:" + status + "}"; 
     }
 
