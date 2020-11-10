@@ -14,7 +14,7 @@ public class input implements java.io.Serializable {
 	private java.lang.String productCode;
 	private java.lang.String financingStatus;
 	private java.lang.String maritalStatus;
-	private java.lang.Boolean businessFlag;
+	private java.lang.String businessFlag;
 	private java.lang.Integer tenor;
 	private java.util.Date birthDate;
 	private java.lang.Double plafond;
@@ -76,11 +76,11 @@ public class input implements java.io.Serializable {
 		this.maritalStatus = maritalStatus;
 	}
 
-	public java.lang.Boolean getBusinessFlag() {
+	public java.lang.String getBusinessFlag() {
 		return this.businessFlag;
 	}
 
-	public void setBusinessFlag(java.lang.Boolean businessFlag) {
+	public void setBusinessFlag(java.lang.String businessFlag) {
 		this.businessFlag = businessFlag;
 	}
 
@@ -151,7 +151,7 @@ public class input implements java.io.Serializable {
 	public input(java.lang.String financingReferenceId,
 			java.lang.String channelId, java.lang.String cif,
 			java.lang.String productCode, java.lang.String financingStatus,
-			java.lang.String maritalStatus, java.lang.Boolean businessFlag,
+			java.lang.String maritalStatus, java.lang.String businessFlag,
 			java.lang.Integer tenor, java.util.Date birthDate,
 			java.lang.Double plafond, java.lang.String mms,
 			java.lang.String notes, java.util.Date applicationDate,
