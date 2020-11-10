@@ -103,6 +103,18 @@ public class scoringResult implements java.io.Serializable {
 	public void setDeviationDesc(java.lang.String deviationCode) {
 		this.deviationDesc = this.deviationDescMap.get(deviationCode);
 	}
+	
+	@Override
+    public String toString() {
+        return "{scoringRule:" + scoringRule + ", " +
+            "param:" + param + ", " +
+            "value:" + value + ", " +
+            "result:" + result + ", " +
+            "rejectCode:" + rejectCode + ", " +
+            "deviationCode:" + deviationCode +
+            "}";
+        
+    }
 
 	public scoringResult() {
 	    init();
