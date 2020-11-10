@@ -147,6 +147,23 @@ public class input implements java.io.Serializable {
 	public void setNoAppId(java.lang.String noAppId) {
 		this.noAppId = noAppId;
 	}
+	
+	@Override
+    public String toString() { 
+        return "{financingReferenceId:" + financingReferenceId + ", " +
+            "channelId:" + channelId + ", " +
+            "cif:" + cif + ", " +
+            "scoringResult:" + scoringResult.toString() + ", " +
+            "maritalStatus:" + maritalStatus + ", " +
+            "businessFlag:" + businessFlag + ", " +
+            "tenor:" + tenor.toString() + ", " +
+            "birthDate:" + birthDate.toString() + ", " +
+            "plafond:" + plafond.toString() + ", " +
+            "notes:" + notes + ", " +
+            "applicationDate:" + applicationDate.toString() + ", " +
+            "disbursementDate:" + disbursementDate.toString() + ", " +
+            "noAppId:" + noAppId + "}"; 
+    }
 
 	public input(java.lang.String financingReferenceId,
 			java.lang.String channelId, java.lang.String cif,
