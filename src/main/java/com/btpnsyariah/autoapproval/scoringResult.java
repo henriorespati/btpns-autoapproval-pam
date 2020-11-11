@@ -40,7 +40,7 @@ public class scoringResult implements java.io.Serializable {
         this.rejectDescMap.put("009", "Saldo tabungan tidak mencukupi");
         this.rejectDescMap.put("010", "Angsuran terakhir dari pembiayaan berjalan belum terbayar");
         this.rejectDescMap.put("011", "Percepatan pencairan / tidak sesuai jadwal PRS");
-        this.rejectDescMap.put("012", "Pembiayaan sebelumnya menunggak / "over tenor"");
+        this.rejectDescMap.put("012", "Pembiayaan sebelumnya menunggak / over tenor");
         this.rejectDescMap.put("013", "Belum memiliki tabungan dengan status pending");
         this.rejectDescMap.put("014", "Kategori Nasabah = D");
         this.rejectDescMap.put("015", "Terdapat kesamaan data dengan CIF [ccc] di wisma [www], pastikan apakah nasabah yg sama. Pastikan input data KTP dan nama ibu kandung dengan benar atau ajukan kembali dengan CIF [ccc]");
