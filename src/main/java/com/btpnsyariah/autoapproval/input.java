@@ -147,7 +147,7 @@ public class input implements java.io.Serializable {
 		this.noAppId = noAppId;
 	}
 	
-	@Override
+	/*@Override
     public String toString() { 
         return "{financingReferenceId:" + financingReferenceId + ", " +
             "channelId:" + channelId + ", " +
@@ -164,7 +164,7 @@ public class input implements java.io.Serializable {
             "applicationDate:" + applicationDate.toString() + ", " +
             "disbursementDate:" + disbursementDate.toString() + ", " +
             "noAppId:" + noAppId + "}"; 
-    }
+    }*/
 
 	public input(java.lang.String financingReferenceId,
 			java.lang.String channelId, java.lang.String cif,
