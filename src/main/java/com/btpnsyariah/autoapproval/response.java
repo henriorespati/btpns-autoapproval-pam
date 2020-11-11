@@ -63,11 +63,11 @@ public class response implements java.io.Serializable {
 	
 	@Override
     public String toString() { 
-        return "{transmissionDateAndTime:" + (transmissionDateAndTime!=null)?transmissionDateAndTime.toString():"" + ", " +
-            "retrievalReferenceNumber:" + (retrievalReferenceNumber!=null)?retrievalReferenceNumber:"" + ", " +
-            "channelDstn:" + (channelDstn!=null)?channelDstn:"" + ", " +
-            "scoringResult:" + (scoringResult!=null)?scoringResult.toString():"" + ", " +
-            "status:" + (status!=null)?status:"" + "}"; 
+        return "{transmissionDateAndTime:" + ((transmissionDateAndTime!=null)?transmissionDateAndTime.toString():"") + ", " +
+            "retrievalReferenceNumber:" + ((retrievalReferenceNumber!=null)?retrievalReferenceNumber:"") + ", " +
+            "channelDstn:" + ((channelDstn!=null)?channelDstn:"") + ", " +
+            "scoringResult:" + ((scoringResult!=null)?scoringResult.toString():"") + ", " +
+            "status:" + ((status!=null)?status:"") + "}"; 
     }
 
 	public response(
