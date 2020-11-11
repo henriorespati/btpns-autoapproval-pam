@@ -22,8 +22,10 @@ public class input implements java.io.Serializable {
 	private java.lang.String notes;
 	private java.util.Date applicationDate;
 	private java.util.Date disbursementDate;
-
 	private java.lang.String noAppId;
+	
+	public input() {
+	}
 
 	public java.lang.String getFinancingReferenceId() {
 		return this.financingReferenceId;
@@ -163,9 +165,6 @@ public class input implements java.io.Serializable {
             "disbursementDate:" + disbursementDate.toString() + ", " +
             "noAppId:" + noAppId + "}"; 
     }
-    
-	public input() {
-	}
 
 	public input(java.lang.String financingReferenceId,
 			java.lang.String channelId, java.lang.String cif,
