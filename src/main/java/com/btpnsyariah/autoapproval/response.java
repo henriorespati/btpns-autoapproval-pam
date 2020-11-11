@@ -60,6 +60,15 @@ public class response implements java.io.Serializable {
 			java.util.List<com.btpnsyariah.autoapproval.scoringResult> scoringResult) {
 		this.scoringResult = scoringResult;
 	}
+	
+	@Override
+    public String toString() { 
+        return "{transmissionDateAndTime:" + (transmissionDateAndTime!=null)?transmissionDateAndTime.toString():"" + ", " +
+            "retrievalReferenceNumber:" + (retrievalReferenceNumber!=null)?retrievalReferenceNumber:"" + ", " +
+            "channelDstn:" + (channelDstn!=null)?channelDstn:"" + ", " +
+            "scoringResult:" + (scoringResult!=null)?scoringResult.toString():"" + ", " +
+            "status:" + (status!=null)?status:"" + "}"; 
+    }
 
 	public response(
 			java.util.Date transmissionDateAndTime,
