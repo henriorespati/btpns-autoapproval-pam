@@ -111,7 +111,9 @@ public class scoringResult implements java.io.Serializable {
             "value:" + value + ", " +
             "result:" + result + ", " +
             "rejectCode:" + rejectCode + ", " +
-            "deviationCode:" + deviationCode +
+            "rejectDesc:" + rejectDesc + ", " +
+            "deviationCode:" + deviationCode + ", " +
+            "deviationDesc:" + deviationDesc +
             "}";
         
     }
