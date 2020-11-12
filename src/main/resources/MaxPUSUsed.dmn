@@ -20,8 +20,8 @@
     </dmn:informationRequirement>
     <dmn:decisionTable id="_70B21ACF-1925-4AEB-8163-5D9A5FC84813" hitPolicy="UNIQUE" preferredOrientation="Rule-as-Row">
       <dmn:input id="_F19E0152-93E0-4811-AD7C-C3B1C6FBBCAC">
-        <dmn:inputExpression id="_F6BD4061-826D-409E-BC1D-E00D8706BC41" typeRef="boolean">
-          <dmn:text>check</dmn:text>
+        <dmn:inputExpression id="_F6BD4061-826D-409E-BC1D-E00D8706BC41" typeRef="number">
+          <dmn:text>bailout</dmn:text>
         </dmn:inputExpression>
       </dmn:input>
       <dmn:output id="_AB1F76EE-519B-4614-ACEC-D0FE57B5C187" name="autoReject" typeRef="string"/>
@@ -30,7 +30,7 @@
       <dmn:annotation name="annotation"/>
       <dmn:rule id="_27678C2F-4BA9-4436-9776-07B08EDD9DF4">
         <dmn:inputEntry id="_29F80AA3-F42F-4B8D-A0F8-F0E3A72B9E08">
-          <dmn:text>true</dmn:text>
+          <dmn:text>&gt;0</dmn:text>
         </dmn:inputEntry>
         <dmn:outputEntry id="_EA42AFD2-4A71-4771-BFDC-3D294CE90CAA">
           <dmn:text>"Y"</dmn:text>
@@ -47,7 +47,7 @@
       </dmn:rule>
       <dmn:rule id="_7E6CC61B-FC84-43D0-98BA-262D26526830">
         <dmn:inputEntry id="_7DC972E5-1BB3-451F-85FB-7C82A99C4DDF">
-          <dmn:text>false</dmn:text>
+          <dmn:text>0</dmn:text>
         </dmn:inputEntry>
         <dmn:outputEntry id="_748DD004-5B2D-44C2-B1DB-B9BA8FB59E6D">
           <dmn:text>"N"</dmn:text>
@@ -64,9 +64,9 @@
       </dmn:rule>
     </dmn:decisionTable>
   </dmn:decision>
-  <dmn:inputData id="_6375E2B0-F540-49BA-BE6E-F8E4A090C8C8" name="check">
+  <dmn:inputData id="_6375E2B0-F540-49BA-BE6E-F8E4A090C8C8" name="bailout">
     <dmn:extensionElements/>
-    <dmn:variable id="_465EE5E6-6019-4005-8704-13DE4173D155" name="check" typeRef="boolean"/>
+    <dmn:variable id="_465EE5E6-6019-4005-8704-13DE4173D155" name="bailout" typeRef="number"/>
   </dmn:inputData>
   <dmndi:DMNDI>
     <dmndi:DMNDiagram>
