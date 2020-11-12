@@ -4,14 +4,17 @@
   <dmn:itemDefinition id="_77308344-A6E4-4FEC-A1F5-F5007816FB2C" name="Insert a name" isCollection="false">
     <dmn:typeRef>Any</dmn:typeRef>
   </dmn:itemDefinition>
-  <dmn:itemDefinition id="_256ED28C-5A0E-4BC5-B286-CFBE69F613CD" name="output" isCollection="false">
-    <dmn:itemComponent id="_20545ACA-F345-451B-B44E-544DDD206E71" name="autoReject" isCollection="false">
+  <dmn:itemDefinition id="_3A76050F-0645-4FCB-A561-E39E88ED1ED5" name="output" isCollection="false">
+    <dmn:itemComponent id="_358C8566-2B07-4A5B-9A0B-04DEC0CA05AE" name="autoReject" isCollection="false">
       <dmn:typeRef>string</dmn:typeRef>
     </dmn:itemComponent>
-    <dmn:itemComponent id="_0917A3A6-FC95-40D1-90F9-5F1FAE55D35E" name="deviationCode" isCollection="false">
+    <dmn:itemComponent id="_52F70118-42ED-4D93-86AF-DC3D7B1AB0B4" name="deviationCode" isCollection="false">
       <dmn:typeRef>string</dmn:typeRef>
     </dmn:itemComponent>
-    <dmn:itemComponent id="_7A1938AD-4AD8-46C9-A478-11FC57412E7A" name="rejectCode" isCollection="false">
+    <dmn:itemComponent id="_D0D592E5-150C-467B-A6B6-CAE44C3C3EC2" name="rejectCode" isCollection="false">
+      <dmn:typeRef>string</dmn:typeRef>
+    </dmn:itemComponent>
+    <dmn:itemComponent id="_26951594-2D7A-4916-926A-6930AAC67373" name="nosValue" isCollection="false">
       <dmn:typeRef>string</dmn:typeRef>
     </dmn:itemComponent>
   </dmn:itemDefinition>
@@ -101,6 +104,7 @@
       <dmn:output id="_0298996A-4042-431D-A4EB-043522EF2294" name="autoReject" typeRef="string"/>
       <dmn:output id="_9F0756AA-95D0-4BD1-9A1A-3644A1ED1AA1" name="deviationCode" typeRef="string"/>
       <dmn:output id="_7CDF4493-8630-4D80-9080-5B5BA3703FD7" name="rejectCode" typeRef="string"/>
+      <dmn:output id="_BCE5D985-AAC2-45AA-903E-BD33C5ED66E3" name="nosValue" typeRef="string"/>
       <dmn:annotation name="annotation"/>
       <dmn:rule id="_902D14E4-6911-4A6D-933B-5DEEDBE1F239">
         <dmn:inputEntry id="_35E6C747-3A61-4207-A22A-723A1E2BFA04">
@@ -117,6 +121,9 @@
         </dmn:outputEntry>
         <dmn:outputEntry id="_46413DCE-5093-4F60-BC98-F2AA2401CCBA">
           <dmn:text>"002"</dmn:text>
+        </dmn:outputEntry>
+        <dmn:outputEntry id="_FB162C9B-1AB3-42D7-B545-F9575E118073">
+          <dmn:text>"MIN_PLAFOND_HAS_BUSINESS"</dmn:text>
         </dmn:outputEntry>
         <dmn:annotationEntry>
           <dmn:text></dmn:text>
@@ -138,6 +145,9 @@
         <dmn:outputEntry id="_2EF2DDD4-41BF-4431-BFEE-6D55DBE1A4D5">
           <dmn:text>"002"</dmn:text>
         </dmn:outputEntry>
+        <dmn:outputEntry id="_E5730368-EDE3-40B9-9A17-E3FCB0F5376A">
+          <dmn:text>"MAX_PLAFOND_HAS_BUSINESS"</dmn:text>
+        </dmn:outputEntry>
         <dmn:annotationEntry>
           <dmn:text></dmn:text>
         </dmn:annotationEntry>
@@ -157,6 +167,9 @@
         </dmn:outputEntry>
         <dmn:outputEntry id="_5DA7434D-4B9D-4C61-BD84-2A007FF10198">
           <dmn:text>"000"</dmn:text>
+        </dmn:outputEntry>
+        <dmn:outputEntry id="_2B9B8A17-5B90-4080-B78C-4611952A2828">
+          <dmn:text>""</dmn:text>
         </dmn:outputEntry>
         <dmn:annotationEntry>
           <dmn:text></dmn:text>
@@ -178,6 +191,9 @@
         <dmn:outputEntry id="_35BD324E-B356-4F37-A8A7-9F1124C79952">
           <dmn:text>"002"</dmn:text>
         </dmn:outputEntry>
+        <dmn:outputEntry id="_8D1425EE-9EED-4B47-B71C-C20473AB5B15">
+          <dmn:text>"MIN_PLAFOND_HAS_NO_BUSINESS"</dmn:text>
+        </dmn:outputEntry>
         <dmn:annotationEntry>
           <dmn:text></dmn:text>
         </dmn:annotationEntry>
@@ -197,6 +213,9 @@
         </dmn:outputEntry>
         <dmn:outputEntry id="_6DA7DF86-D20C-46F5-913F-FA52FCC4D528">
           <dmn:text>"002"</dmn:text>
+        </dmn:outputEntry>
+        <dmn:outputEntry id="_922E8C08-8CB5-4FD3-92E0-537DA1E8CACC">
+          <dmn:text>"MAX_PLAFOND_HAS_NO_BUSINESS"</dmn:text>
         </dmn:outputEntry>
         <dmn:annotationEntry>
           <dmn:text></dmn:text>
@@ -218,6 +237,9 @@
         <dmn:outputEntry id="_C5195094-E5E3-4BB7-9DE1-5700EE0067BB">
           <dmn:text>"000"</dmn:text>
         </dmn:outputEntry>
+        <dmn:outputEntry id="_A9A49F75-ED09-4A58-AD07-74E6411986C9">
+          <dmn:text>""</dmn:text>
+        </dmn:outputEntry>
         <dmn:annotationEntry>
           <dmn:text></dmn:text>
         </dmn:annotationEntry>
@@ -238,6 +260,7 @@
             <kie:width>50.0</kie:width>
             <kie:width>100.0</kie:width>
             <kie:width>905.0</kie:width>
+            <kie:width>100.0</kie:width>
             <kie:width>100.0</kie:width>
             <kie:width>100.0</kie:width>
             <kie:width>100.0</kie:width>
