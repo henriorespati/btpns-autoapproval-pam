@@ -14,6 +14,9 @@
     <dmn:itemComponent id="_31D09956-EA1A-4817-83DE-A00794F4B9CD" name="rejectCode" isCollection="false">
       <dmn:typeRef>string</dmn:typeRef>
     </dmn:itemComponent>
+    <dmn:itemComponent id="_49C725FC-9FE6-4572-A6EA-4309B1A69EC5" name="nosValue" isCollection="false">
+      <dmn:typeRef>string</dmn:typeRef>
+    </dmn:itemComponent>
   </dmn:itemDefinition>
   <dmn:inputData id="_9AF44EA6-8030-4FC0-91CA-1FA7B4B9EE6E" name="age">
     <dmn:extensionElements/>
@@ -46,6 +49,7 @@
       <dmn:output id="_A72766AE-299E-4906-B1FC-1FFA99C42778" name="autoReject" typeRef="string"/>
       <dmn:output id="_2490938E-E39B-4405-849D-D45087CA7A19" name="rejectCode" typeRef="string"/>
       <dmn:output id="_4F2E7DBB-50F4-4C1F-A258-10ECA7F3A828" name="deviationCode" typeRef="string"/>
+      <dmn:output id="_CC1DEA64-108E-4700-8F6D-783132858DF2" name="nosValue" typeRef="string"/>
       <dmn:annotation name="annotation"/>
       <dmn:rule id="_315F939B-4E51-4EFA-BD3B-A2044DBB2356">
         <dmn:inputEntry id="_BB7446C8-010E-4D33-ABDB-588F97A627B4">
@@ -62,6 +66,9 @@
         </dmn:outputEntry>
         <dmn:outputEntry id="_0E4AFF7F-2994-420A-AA65-833D44FDCCE8">
           <dmn:text>""</dmn:text>
+        </dmn:outputEntry>
+        <dmn:outputEntry id="_891400AD-AACB-4FDD-ABAA-70AF3DD5195C">
+          <dmn:text>"MIN_AGE_SINGLE"</dmn:text>
         </dmn:outputEntry>
         <dmn:annotationEntry>
           <dmn:text>"Single or Widowed, &lt;21"</dmn:text>
@@ -83,13 +90,39 @@
         <dmn:outputEntry id="_4B9A9CB6-2B98-4185-B8EB-F11788FE6ED0">
           <dmn:text>""</dmn:text>
         </dmn:outputEntry>
+        <dmn:outputEntry id="_336DF6BF-C315-42EA-8A5A-611B701A889C">
+          <dmn:text>"MIN_AGE_MARRIED"</dmn:text>
+        </dmn:outputEntry>
         <dmn:annotationEntry>
           <dmn:text>"Married, &lt;18"</dmn:text>
         </dmn:annotationEntry>
       </dmn:rule>
+      <dmn:rule id="_A79B673C-5E87-42AA-9C01-599A8E050F7D">
+        <dmn:inputEntry id="_5AD37252-382E-4EE6-B171-2F331D1B39D2">
+          <dmn:text>"710", "715"</dmn:text>
+        </dmn:inputEntry>
+        <dmn:inputEntry id="_5DC78624-36BC-4A56-B166-4E887FAFE02F">
+          <dmn:text>&gt;60</dmn:text>
+        </dmn:inputEntry>
+        <dmn:outputEntry id="_5ACCF812-FE2B-4E51-ACA7-1C8DA09BBC81">
+          <dmn:text>"Y"</dmn:text>
+        </dmn:outputEntry>
+        <dmn:outputEntry id="_805751E7-2BD8-438A-A0E3-659AF6C5230E">
+          <dmn:text>"001"</dmn:text>
+        </dmn:outputEntry>
+        <dmn:outputEntry id="_98049CC6-3D09-4DA0-A3A1-7867F1744027">
+          <dmn:text>""</dmn:text>
+        </dmn:outputEntry>
+        <dmn:outputEntry id="_9BC4726D-FE6A-43FF-9D96-1F3802A56761">
+          <dmn:text>"MAX_AGE_SINGLE"</dmn:text>
+        </dmn:outputEntry>
+        <dmn:annotationEntry>
+          <dmn:text>">60"</dmn:text>
+        </dmn:annotationEntry>
+      </dmn:rule>
       <dmn:rule id="_75FC60DE-C747-4FBF-96D7-9ED896431023">
         <dmn:inputEntry id="_BAEBEEEC-D829-4D89-BB9B-5F491D234C5C">
-          <dmn:text>-</dmn:text>
+          <dmn:text>"714"</dmn:text>
         </dmn:inputEntry>
         <dmn:inputEntry id="_835C1384-A241-4D4B-B148-565A1906DA7F">
           <dmn:text>&gt;60</dmn:text>
@@ -102,6 +135,9 @@
         </dmn:outputEntry>
         <dmn:outputEntry id="_895880D8-882A-4282-B5C6-8085EEBE15F4">
           <dmn:text>""</dmn:text>
+        </dmn:outputEntry>
+        <dmn:outputEntry id="_A351203D-2A47-43CF-BDE5-554EDA01C432">
+          <dmn:text>"MAX_AGE_MARRIED"</dmn:text>
         </dmn:outputEntry>
         <dmn:annotationEntry>
           <dmn:text>">60"</dmn:text>
@@ -123,6 +159,9 @@
         <dmn:outputEntry id="_AF48DBE2-F9F7-4B54-8EBD-334F47B2F35E">
           <dmn:text>""</dmn:text>
         </dmn:outputEntry>
+        <dmn:outputEntry id="_B6694451-ABBE-4A5B-8383-3AED32BB91F4">
+          <dmn:text></dmn:text>
+        </dmn:outputEntry>
         <dmn:annotationEntry>
           <dmn:text></dmn:text>
         </dmn:annotationEntry>
@@ -143,6 +182,9 @@
         <dmn:outputEntry id="_FC5B1311-E3B9-42B6-8898-525639AC3F7D">
           <dmn:text>""</dmn:text>
         </dmn:outputEntry>
+        <dmn:outputEntry id="_E2A62589-A662-451D-A573-2061EDCDF217">
+          <dmn:text></dmn:text>
+        </dmn:outputEntry>
         <dmn:annotationEntry>
           <dmn:text></dmn:text>
         </dmn:annotationEntry>
@@ -160,6 +202,7 @@
             <kie:width>100.0</kie:width>
             <kie:width>100.0</kie:width>
             <kie:width>100.0</kie:width>
+            <kie:width>150.0</kie:width>
             <kie:width>362.0</kie:width>
           </kie:ComponentWidths>
         </kie:ComponentsWidthsExtension>
@@ -170,7 +213,7 @@
           <dmndi:StrokeColor red="0" green="0" blue="0"/>
           <dmndi:FontColor red="0" green="0" blue="0"/>
         </dmndi:DMNStyle>
-        <dc:Bounds x="223" y="225" width="100" height="50"/>
+        <dc:Bounds x="272" y="224" width="100" height="50"/>
         <dmndi:DMNLabel/>
       </dmndi:DMNShape>
       <dmndi:DMNShape id="dmnshape-_A239132D-F885-4EF6-AF20-EA5502058B9C" dmnElementRef="_A239132D-F885-4EF6-AF20-EA5502058B9C" isCollapsed="false">
@@ -179,7 +222,7 @@
           <dmndi:StrokeColor red="0" green="0" blue="0"/>
           <dmndi:FontColor red="0" green="0" blue="0"/>
         </dmndi:DMNStyle>
-        <dc:Bounds x="50" y="225" width="98" height="52"/>
+        <dc:Bounds x="99" y="224" width="98" height="52"/>
         <dmndi:DMNLabel/>
       </dmndi:DMNShape>
       <dmndi:DMNShape id="dmnshape-_333A5470-BD9B-4E47-8A03-5F250E5B23A3" dmnElementRef="_333A5470-BD9B-4E47-8A03-5F250E5B23A3" isCollapsed="false">
@@ -188,16 +231,16 @@
           <dmndi:StrokeColor red="0" green="0" blue="0"/>
           <dmndi:FontColor red="0" green="0" blue="0"/>
         </dmndi:DMNStyle>
-        <dc:Bounds x="137" y="50" width="100" height="50"/>
+        <dc:Bounds x="186" y="49" width="100" height="50"/>
         <dmndi:DMNLabel/>
       </dmndi:DMNShape>
       <dmndi:DMNEdge id="dmnedge-_7C1AD054-2339-4FEB-95DB-272E5516D985" dmnElementRef="_7C1AD054-2339-4FEB-95DB-272E5516D985">
-        <di:waypoint x="148" y="251"/>
-        <di:waypoint x="187" y="100"/>
+        <di:waypoint x="197" y="250"/>
+        <di:waypoint x="236" y="99"/>
       </dmndi:DMNEdge>
       <dmndi:DMNEdge id="dmnedge-_9FC8CA3C-2160-4AFA-B652-00ABEF448DF8" dmnElementRef="_9FC8CA3C-2160-4AFA-B652-00ABEF448DF8">
-        <di:waypoint x="273" y="250"/>
-        <di:waypoint x="187" y="100"/>
+        <di:waypoint x="322" y="249"/>
+        <di:waypoint x="236" y="99"/>
       </dmndi:DMNEdge>
     </dmndi:DMNDiagram>
   </dmndi:DMNDI>
