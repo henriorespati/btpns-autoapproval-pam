@@ -20,11 +20,11 @@
   </dmn:itemDefinition>
   <dmn:inputData id="_76E76993-2E23-4AA2-9777-32E476F0E3C7" name="businessFlag">
     <dmn:extensionElements/>
-    <dmn:variable id="_8865180F-903B-493B-8922-8854A28EC911" name="businessFlag" typeRef="boolean"/>
+    <dmn:variable id="_8865180F-903B-493B-8922-8854A28EC911" name="businessFlag" typeRef="string"/>
   </dmn:inputData>
-  <dmn:inputData id="_BC31840A-7464-42CD-BC03-C1B4B98B1CA9" name="productCode">
+  <dmn:inputData id="_BC31840A-7464-42CD-BC03-C1B4B98B1CA9" name="ruleset">
     <dmn:extensionElements/>
-    <dmn:variable id="_07137572-1E6B-4472-92C3-81483298A0CB" name="productCode" typeRef="string"/>
+    <dmn:variable id="_07137572-1E6B-4472-92C3-81483298A0CB" name="ruleset" typeRef="string"/>
   </dmn:inputData>
   <dmn:decision id="_C8BF5CF9-234E-4E9D-81EC-455EB89F4E3A" name="plafondMatrix">
     <dmn:extensionElements/>
@@ -35,14 +35,14 @@
     <dmn:decisionTable id="_09EBD3B4-4F34-41B4-B227-B3248714D63E" hitPolicy="UNIQUE" preferredOrientation="Rule-as-Row">
       <dmn:input id="_6FA1183C-8903-4AD7-908F-C321A0DF4B6D">
         <dmn:inputExpression id="_2E132422-BEF3-4875-85C9-09C2AFDE0234" typeRef="string">
-          <dmn:text>productCode</dmn:text>
+          <dmn:text>ruleset</dmn:text>
         </dmn:inputExpression>
       </dmn:input>
       <dmn:output id="_4492C2A4-C7F3-4ADB-B860-DFA96DDF6DAE"/>
       <dmn:annotation name="annotation"/>
       <dmn:rule id="_82A9239D-03CA-439C-801A-BDBC8E27B0AE">
         <dmn:inputEntry id="_10E15E1D-5CF2-4496-969E-CF8987476329">
-          <dmn:text>"1"</dmn:text>
+          <dmn:text>"PMD_AWAL"</dmn:text>
         </dmn:inputEntry>
         <dmn:outputEntry id="_22A5D079-7ECD-4E55-9354-A646F0DA7AB2">
           <dmn:text>{
@@ -58,7 +58,7 @@
       </dmn:rule>
       <dmn:rule id="_12D7BF64-BDE8-48E1-8454-1C327730A700">
         <dmn:inputEntry id="_6B4952A1-EA93-46CB-AF33-2219DD8CB7F5">
-          <dmn:text>"2"</dmn:text>
+          <dmn:text>"PMD_TU_AWAL"</dmn:text>
         </dmn:inputEntry>
         <dmn:outputEntry id="_CF971E99-8861-42E8-BBFC-BBC114DC8738">
           <dmn:text>{
@@ -108,7 +108,7 @@
       <dmn:annotation name="annotation"/>
       <dmn:rule id="_902D14E4-6911-4A6D-933B-5DEEDBE1F239">
         <dmn:inputEntry id="_35E6C747-3A61-4207-A22A-723A1E2BFA04">
-          <dmn:text>true</dmn:text>
+          <dmn:text>"1"</dmn:text>
         </dmn:inputEntry>
         <dmn:inputEntry id="_22FC458C-2FE1-464A-A969-089DE5F3767E">
           <dmn:text>&lt;get value(plafondMatrix,"MIN_PLAFOND_HAS_BUSINESS")</dmn:text>
@@ -131,7 +131,7 @@
       </dmn:rule>
       <dmn:rule id="_42CE6893-EE60-40A7-AB8A-119A040F2A0A">
         <dmn:inputEntry id="_187B9162-F02D-4FDE-9DA1-FC9BD5EA00EF">
-          <dmn:text>true</dmn:text>
+          <dmn:text>"1"</dmn:text>
         </dmn:inputEntry>
         <dmn:inputEntry id="_2EF47A4D-7ECD-40CC-B1F9-BC4156078E89">
           <dmn:text>&gt;get value(plafondMatrix,"MAX_PLAFOND_HAS_BUSINESS")</dmn:text>
@@ -154,7 +154,7 @@
       </dmn:rule>
       <dmn:rule id="_BF00CE3E-E4EC-4385-BC13-B48BF6C2F45D">
         <dmn:inputEntry id="_4CF5D72C-1AE4-4E16-AD26-C7FD1686A538">
-          <dmn:text>true</dmn:text>
+          <dmn:text>"1"</dmn:text>
         </dmn:inputEntry>
         <dmn:inputEntry id="_E132891F-F07B-48C1-8753-6B7BFDE02BF9">
           <dmn:text>[get value(plafondMatrix,"MIN_PLAFOND_HAS_BUSINESS")..get value(plafondMatrix,"MAX_PLAFOND_HAS_BUSINESS")]</dmn:text>
@@ -177,7 +177,7 @@
       </dmn:rule>
       <dmn:rule id="_79B6E26F-D5C2-41E5-9CC8-A2FA1F4BA5BE">
         <dmn:inputEntry id="_7FCEBCBB-88E7-4BA7-A09E-0AF605E2F75B">
-          <dmn:text>false</dmn:text>
+          <dmn:text>"2"</dmn:text>
         </dmn:inputEntry>
         <dmn:inputEntry id="_AD778081-B9D3-4212-B4BA-318743587D8B">
           <dmn:text>&lt;get value(plafondMatrix,"MIN_PLAFOND_HAS_NO_BUSINESS")</dmn:text>
@@ -200,7 +200,7 @@
       </dmn:rule>
       <dmn:rule id="_AE8A8BFE-E26C-49B4-B178-7843398C52E7">
         <dmn:inputEntry id="_0D680AFF-119B-4CE7-903B-3816E161E00D">
-          <dmn:text>false</dmn:text>
+          <dmn:text>"2"</dmn:text>
         </dmn:inputEntry>
         <dmn:inputEntry id="_947AF2F8-650B-44B2-BC55-3D65672D56FA">
           <dmn:text>&gt;get value(plafondMatrix,"MAX_PLAFOND_HAS_NO_BUSINESS")</dmn:text>
@@ -223,7 +223,7 @@
       </dmn:rule>
       <dmn:rule id="_8FA56AAD-1370-4305-A6DB-9FE258025CCD">
         <dmn:inputEntry id="_9036023A-CCC3-4251-8695-4D066F95D526">
-          <dmn:text>false</dmn:text>
+          <dmn:text>"2"</dmn:text>
         </dmn:inputEntry>
         <dmn:inputEntry id="_02DD7141-11DA-4ADA-8D8D-3EF0F24D53CB">
           <dmn:text>[get value(plafondMatrix,"MIN_PLAFOND_HAS_NO_BUSINESS")..get value(plafondMatrix,"MAX_PLAFOND_HAS_NO_BUSINESS")]</dmn:text>
@@ -252,8 +252,8 @@
         <kie:ComponentsWidthsExtension>
           <kie:ComponentWidths dmnElementRef="_09EBD3B4-4F34-41B4-B227-B3248714D63E">
             <kie:width>50.0</kie:width>
-            <kie:width>100.0</kie:width>
-            <kie:width>1133.0</kie:width>
+            <kie:width>156.0</kie:width>
+            <kie:width>356.0</kie:width>
             <kie:width>100.0</kie:width>
           </kie:ComponentWidths>
           <kie:ComponentWidths dmnElementRef="_CF0CE8CB-BDF2-4A66-89EE-D6734E37B4EE">
