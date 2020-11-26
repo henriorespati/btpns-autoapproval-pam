@@ -20,8 +20,8 @@ public class input implements java.io.Serializable {
 	private java.lang.Double plafond;
 	private java.lang.String mms;
 	private java.lang.String notes;
-	private java.util.Date applicationDate;
-	private java.util.Date disbursementDate;
+	private String applicationDate;
+	private String disbursementDate;
 	private java.lang.String noAppId;
 
 	public input() {
@@ -115,22 +115,6 @@ public class input implements java.io.Serializable {
 		this.notes = notes;
 	}
 
-	public java.util.Date getApplicationDate() {
-		return this.applicationDate;
-	}
-
-	public void setApplicationDate(java.util.Date applicationDate) {
-		this.applicationDate = applicationDate;
-	}
-
-	public java.util.Date getDisbursementDate() {
-		return this.disbursementDate;
-	}
-
-	public void setDisbursementDate(java.util.Date disbursementDate) {
-		this.disbursementDate = disbursementDate;
-	}
-
 	public java.lang.String getNoAppId() {
 		return this.noAppId;
 	}
@@ -147,14 +131,30 @@ public class input implements java.io.Serializable {
 		this.birthDate = birthDate;
 	}
 
+	public java.lang.String getApplicationDate() {
+		return this.applicationDate;
+	}
+
+	public void setApplicationDate(java.lang.String applicationDate) {
+		this.applicationDate = applicationDate;
+	}
+
+	public java.lang.String getDisbursementDate() {
+		return this.disbursementDate;
+	}
+
+	public void setDisbursementDate(java.lang.String disbursementDate) {
+		this.disbursementDate = disbursementDate;
+	}
+
 	public input(java.lang.String financingReferenceId,
 			java.lang.String channelId, java.lang.String cif,
 			java.lang.String productCode, java.lang.String financingStatus,
 			java.lang.String maritalStatus, java.lang.String businessFlag,
 			java.lang.Integer tenor, java.lang.String birthDate,
 			java.lang.Double plafond, java.lang.String mms,
-			java.lang.String notes, java.util.Date applicationDate,
-			java.util.Date disbursementDate, java.lang.String noAppId) {
+			java.lang.String notes, java.lang.String applicationDate,
+			java.lang.String disbursementDate, java.lang.String noAppId) {
 		this.financingReferenceId = financingReferenceId;
 		this.channelId = channelId;
 		this.cif = cif;
