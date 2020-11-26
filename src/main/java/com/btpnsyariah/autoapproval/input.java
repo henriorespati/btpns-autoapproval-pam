@@ -16,14 +16,14 @@ public class input implements java.io.Serializable {
 	private java.lang.String maritalStatus;
 	private java.lang.String businessFlag;
 	private java.lang.Integer tenor;
-	private java.util.Date birthDate;
+	private String birthDate;
 	private java.lang.Double plafond;
 	private java.lang.String mms;
 	private java.lang.String notes;
 	private java.util.Date applicationDate;
 	private java.util.Date disbursementDate;
 	private java.lang.String noAppId;
-	
+
 	public input() {
 	}
 
@@ -91,14 +91,6 @@ public class input implements java.io.Serializable {
 		this.tenor = tenor;
 	}
 
-	public java.util.Date getBirthDate() {
-		return this.birthDate;
-	}
-
-	public void setBirthDate(java.util.Date birthDate) {
-		this.birthDate = birthDate;
-	}
-
 	public java.lang.Double getPlafond() {
 		return this.plafond;
 	}
@@ -147,11 +139,19 @@ public class input implements java.io.Serializable {
 		this.noAppId = noAppId;
 	}
 
+	public java.lang.String getBirthDate() {
+		return this.birthDate;
+	}
+
+	public void setBirthDate(java.lang.String birthDate) {
+		this.birthDate = birthDate;
+	}
+
 	public input(java.lang.String financingReferenceId,
 			java.lang.String channelId, java.lang.String cif,
 			java.lang.String productCode, java.lang.String financingStatus,
 			java.lang.String maritalStatus, java.lang.String businessFlag,
-			java.lang.Integer tenor, java.util.Date birthDate,
+			java.lang.Integer tenor, java.lang.String birthDate,
 			java.lang.Double plafond, java.lang.String mms,
 			java.lang.String notes, java.util.Date applicationDate,
 			java.util.Date disbursementDate, java.lang.String noAppId) {
