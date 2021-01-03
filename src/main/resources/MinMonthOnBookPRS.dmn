@@ -1,0 +1,161 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<dmn:definitions xmlns:dmn="http://www.omg.org/spec/DMN/20180521/MODEL/" xmlns="https://kiegroup.org/dmn/_121E7834-2FBC-4DAD-832C-4DF117921F44" xmlns:di="http://www.omg.org/spec/DMN/20180521/DI/" xmlns:kie="http://www.drools.org/kie/dmn/1.2" xmlns:feel="http://www.omg.org/spec/DMN/20180521/FEEL/" xmlns:dmndi="http://www.omg.org/spec/DMN/20180521/DMNDI/" xmlns:dc="http://www.omg.org/spec/DMN/20180521/DC/" id="_EDF3E3B6-F73A-49A7-9912-5EEADB6A98D0" name="MinMonthOnBookPRS" expressionLanguage="http://www.omg.org/spec/DMN/20180521/FEEL/" typeLanguage="http://www.omg.org/spec/DMN/20180521/FEEL/" namespace="https://kiegroup.org/dmn/_121E7834-2FBC-4DAD-832C-4DF117921F44">
+  <dmn:extensionElements/>
+  <dmn:itemDefinition id="_3742F634-45A8-4D0B-9918-FAF7D45B0E3A" name="Insert a name" isCollection="false">
+    <dmn:typeRef>Any</dmn:typeRef>
+  </dmn:itemDefinition>
+  <dmn:itemDefinition id="_6B4B3A9A-1CE4-49F9-AE47-5929AD8B80CA" name="output" isCollection="false">
+    <dmn:itemComponent id="_17E56C0F-BC70-4EA1-9679-CBA9A3A06632" name="autoReject" isCollection="false">
+      <dmn:typeRef>string</dmn:typeRef>
+    </dmn:itemComponent>
+    <dmn:itemComponent id="_0585B370-2A3D-42DD-A90B-D9C9EC10C8F3" name="rejectCode" isCollection="false">
+      <dmn:typeRef>string</dmn:typeRef>
+    </dmn:itemComponent>
+  </dmn:itemDefinition>
+  <dmn:inputData id="_BE3E4B51-F898-41A2-82F2-9A3D713F50D2" name="installment">
+    <dmn:extensionElements/>
+    <dmn:variable id="_681DDBC5-7002-42F4-B230-30E2155F80EF" name="installment" typeRef="number"/>
+  </dmn:inputData>
+  <dmn:inputData id="_955B0978-14F3-4A71-92E9-C7F598573C09" name="check">
+    <dmn:extensionElements/>
+    <dmn:variable id="_42C8D4BB-5A32-4BE8-94CA-C081F6C61D44" name="check" typeRef="boolean"/>
+  </dmn:inputData>
+  <dmn:decision id="_709444B2-03C0-46C4-B306-394948138DC8" name="MinMonthOnBookPRS">
+    <dmn:extensionElements/>
+    <dmn:variable id="_D63B45F9-5934-4190-8E8D-C55CDEFCF668" name="MinMonthOnBookPRS" typeRef="output"/>
+    <dmn:informationRequirement id="_8B0C8830-4D95-41C0-8A97-FDD8DEEA8EF7">
+      <dmn:requiredInput href="#_BE3E4B51-F898-41A2-82F2-9A3D713F50D2"/>
+    </dmn:informationRequirement>
+    <dmn:informationRequirement id="_FC3C03C0-2C92-493D-A08E-156D07BEA5EE">
+      <dmn:requiredInput href="#_955B0978-14F3-4A71-92E9-C7F598573C09"/>
+    </dmn:informationRequirement>
+    <dmn:decisionTable id="_A214996E-24F8-4558-837A-CAC11E68AF0A" hitPolicy="UNIQUE" preferredOrientation="Rule-as-Row">
+      <dmn:input id="_C29BE4A9-EF11-4EF6-B712-4D2168AEBE56">
+        <dmn:inputExpression id="_9984EB3A-24AC-4968-8B51-F2222D887E53" typeRef="boolean">
+          <dmn:text>check</dmn:text>
+        </dmn:inputExpression>
+      </dmn:input>
+      <dmn:input id="_F51B8F59-079D-45F5-9B2C-B8E3773C664F">
+        <dmn:inputExpression id="_32C5D267-25F4-4F30-A0B7-D80449DB21B0" typeRef="number">
+          <dmn:text>installment</dmn:text>
+        </dmn:inputExpression>
+      </dmn:input>
+      <dmn:output id="_71955341-B151-4593-8BEC-FEDA1E85AE0D" name="autoReject" typeRef="string"/>
+      <dmn:output id="_3465F8F7-80E0-4324-91BD-E19C375C1871" name="rejectCode" typeRef="string"/>
+      <dmn:output id="_07CFF339-E47F-453F-B9D8-9065E3CA7877" name="deviationCode" typeRef="string"/>
+      <dmn:annotation name="annotation"/>
+      <dmn:rule id="_B03C0564-50BF-49FF-944E-42C037BD56F7">
+        <dmn:inputEntry id="_32FD913E-1FAC-44FE-B949-03BA15E860C7">
+          <dmn:text>false</dmn:text>
+        </dmn:inputEntry>
+        <dmn:inputEntry id="_76915E0A-CC52-4D41-BA5B-9CD512A1B87F">
+          <dmn:text>[0..null]</dmn:text>
+        </dmn:inputEntry>
+        <dmn:outputEntry id="_CDC614FA-19D6-402E-BB74-B08756D934A3">
+          <dmn:text>"Y"</dmn:text>
+        </dmn:outputEntry>
+        <dmn:outputEntry id="_8150D39D-29AA-40A4-BB19-DC7D40C4AAE5">
+          <dmn:text>"003"</dmn:text>
+        </dmn:outputEntry>
+        <dmn:outputEntry id="_E483B27E-60F9-4CF6-8522-B146AEA7240D">
+          <dmn:text>""</dmn:text>
+        </dmn:outputEntry>
+        <dmn:annotationEntry>
+          <dmn:text>"PMD Awal Inactive"</dmn:text>
+        </dmn:annotationEntry>
+      </dmn:rule>
+      <dmn:rule id="_C635E558-5E9F-41C8-9D5B-0755B1CA7404">
+        <dmn:inputEntry id="_CC2CB094-699B-442E-8938-72EAB63072AA">
+          <dmn:text>true</dmn:text>
+        </dmn:inputEntry>
+        <dmn:inputEntry id="_D8960668-A35E-4BB8-9C6C-479E4DD89C60">
+          <dmn:text>&lt;4</dmn:text>
+        </dmn:inputEntry>
+        <dmn:outputEntry id="_26ACDE31-44F3-4729-A6E2-14C3F765A772">
+          <dmn:text>"Y"</dmn:text>
+        </dmn:outputEntry>
+        <dmn:outputEntry id="_8CE87187-E4EC-446F-B83E-4D436C31A787">
+          <dmn:text>"003"</dmn:text>
+        </dmn:outputEntry>
+        <dmn:outputEntry id="_CE52E013-7EEC-4C98-B5B1-BDC15E19FA28">
+          <dmn:text>""</dmn:text>
+        </dmn:outputEntry>
+        <dmn:annotationEntry>
+          <dmn:text>"Installment &lt;4"</dmn:text>
+        </dmn:annotationEntry>
+      </dmn:rule>
+      <dmn:rule id="_51FAA871-4C59-4519-B8CC-D74872B6FB1A">
+        <dmn:inputEntry id="_957940CC-5A04-4B44-9914-EAAD1732729A">
+          <dmn:text>true</dmn:text>
+        </dmn:inputEntry>
+        <dmn:inputEntry id="_D12A52DF-CC22-4675-A707-9423608DA472">
+          <dmn:text>&gt;=4</dmn:text>
+        </dmn:inputEntry>
+        <dmn:outputEntry id="_BF1152AF-1EA5-48DC-BAD1-AA4D2FA2CC6F">
+          <dmn:text>"N"</dmn:text>
+        </dmn:outputEntry>
+        <dmn:outputEntry id="_FB84DAFA-9429-49A7-8C88-4F2BE9A4A7BE">
+          <dmn:text>""</dmn:text>
+        </dmn:outputEntry>
+        <dmn:outputEntry id="_0D5E1019-26AD-4F4B-A0CD-7CAE4A8B1C3D">
+          <dmn:text>""</dmn:text>
+        </dmn:outputEntry>
+        <dmn:annotationEntry>
+          <dmn:text></dmn:text>
+        </dmn:annotationEntry>
+      </dmn:rule>
+    </dmn:decisionTable>
+  </dmn:decision>
+  <dmndi:DMNDI>
+    <dmndi:DMNDiagram>
+      <di:extension>
+        <kie:ComponentsWidthsExtension>
+          <kie:ComponentWidths dmnElementRef="_A214996E-24F8-4558-837A-CAC11E68AF0A">
+            <kie:width>50.0</kie:width>
+            <kie:width>100.0</kie:width>
+            <kie:width>100.0</kie:width>
+            <kie:width>100.0</kie:width>
+            <kie:width>100.0</kie:width>
+            <kie:width>100.0</kie:width>
+            <kie:width>200.0</kie:width>
+          </kie:ComponentWidths>
+        </kie:ComponentsWidthsExtension>
+      </di:extension>
+      <dmndi:DMNShape id="dmnshape-_BE3E4B51-F898-41A2-82F2-9A3D713F50D2" dmnElementRef="_BE3E4B51-F898-41A2-82F2-9A3D713F50D2" isCollapsed="false">
+        <dmndi:DMNStyle>
+          <dmndi:FillColor red="255" green="255" blue="255"/>
+          <dmndi:StrokeColor red="0" green="0" blue="0"/>
+          <dmndi:FontColor red="0" green="0" blue="0"/>
+        </dmndi:DMNStyle>
+        <dc:Bounds x="50" y="225" width="100" height="50"/>
+        <dmndi:DMNLabel/>
+      </dmndi:DMNShape>
+      <dmndi:DMNShape id="dmnshape-_955B0978-14F3-4A71-92E9-C7F598573C09" dmnElementRef="_955B0978-14F3-4A71-92E9-C7F598573C09" isCollapsed="false">
+        <dmndi:DMNStyle>
+          <dmndi:FillColor red="255" green="255" blue="255"/>
+          <dmndi:StrokeColor red="0" green="0" blue="0"/>
+          <dmndi:FontColor red="0" green="0" blue="0"/>
+        </dmndi:DMNStyle>
+        <dc:Bounds x="225" y="225" width="100" height="50"/>
+        <dmndi:DMNLabel/>
+      </dmndi:DMNShape>
+      <dmndi:DMNShape id="dmnshape-_709444B2-03C0-46C4-B306-394948138DC8" dmnElementRef="_709444B2-03C0-46C4-B306-394948138DC8" isCollapsed="false">
+        <dmndi:DMNStyle>
+          <dmndi:FillColor red="255" green="255" blue="255"/>
+          <dmndi:StrokeColor red="0" green="0" blue="0"/>
+          <dmndi:FontColor red="0" green="0" blue="0"/>
+        </dmndi:DMNStyle>
+        <dc:Bounds x="137" y="50" width="100" height="50"/>
+        <dmndi:DMNLabel/>
+      </dmndi:DMNShape>
+      <dmndi:DMNEdge id="dmnedge-_8B0C8830-4D95-41C0-8A97-FDD8DEEA8EF7" dmnElementRef="_8B0C8830-4D95-41C0-8A97-FDD8DEEA8EF7">
+        <di:waypoint x="100" y="250"/>
+        <di:waypoint x="137" y="75"/>
+      </dmndi:DMNEdge>
+      <dmndi:DMNEdge id="dmnedge-_FC3C03C0-2C92-493D-A08E-156D07BEA5EE" dmnElementRef="_FC3C03C0-2C92-493D-A08E-156D07BEA5EE">
+        <di:waypoint x="275" y="250"/>
+        <di:waypoint x="187" y="75"/>
+      </dmndi:DMNEdge>
+    </dmndi:DMNDiagram>
+  </dmndi:DMNDI>
+</dmn:definitions>
