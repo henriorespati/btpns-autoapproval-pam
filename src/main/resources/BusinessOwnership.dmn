@@ -1,0 +1,106 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<dmn:definitions xmlns:dmn="http://www.omg.org/spec/DMN/20180521/MODEL/" xmlns="https://kiegroup.org/dmn/_D57E7197-E15F-4998-BC3F-241DC9C36799" xmlns:di="http://www.omg.org/spec/DMN/20180521/DI/" xmlns:kie="http://www.drools.org/kie/dmn/1.2" xmlns:feel="http://www.omg.org/spec/DMN/20180521/FEEL/" xmlns:dmndi="http://www.omg.org/spec/DMN/20180521/DMNDI/" xmlns:dc="http://www.omg.org/spec/DMN/20180521/DC/" id="_6D59EF12-3446-479A-88FF-CC7FEAB26FCC" name="BusinessOwnership" expressionLanguage="http://www.omg.org/spec/DMN/20180521/FEEL/" typeLanguage="http://www.omg.org/spec/DMN/20180521/FEEL/" namespace="https://kiegroup.org/dmn/_D57E7197-E15F-4998-BC3F-241DC9C36799">
+  <dmn:extensionElements/>
+  <dmn:itemDefinition id="_85ABB737-0698-4BCB-A48D-8B9AFAA126D1" name="output" isCollection="false">
+    <dmn:itemComponent id="_8A6DD333-B08A-43C7-8B46-0E4308952209" name="autoReject" isCollection="false">
+      <dmn:typeRef>string</dmn:typeRef>
+    </dmn:itemComponent>
+    <dmn:itemComponent id="_0796E1F8-F921-415E-A850-32033B071CFA" name="rejectCode" isCollection="false">
+      <dmn:typeRef>string</dmn:typeRef>
+    </dmn:itemComponent>
+  </dmn:itemDefinition>
+  <dmn:inputData id="_C766A2A5-5E02-41D0-8955-E429C8BB4655" name="businessFlag">
+    <dmn:extensionElements/>
+    <dmn:variable id="_1C7CD8D1-6459-411B-AA4F-B7AAB728E092" name="businessFlag" typeRef="string"/>
+  </dmn:inputData>
+  <dmn:decision id="_F142C849-D594-452B-8796-A040E3B8046F" name="BusinessOwnership">
+    <dmn:extensionElements/>
+    <dmn:variable id="_814A393F-8A43-41A2-A7EB-9E2E5A51591D" name="BusinessOwnership" typeRef="output"/>
+    <dmn:informationRequirement id="_13128D49-5D47-4166-B8DD-C1D5483372D6">
+      <dmn:requiredInput href="#_C766A2A5-5E02-41D0-8955-E429C8BB4655"/>
+    </dmn:informationRequirement>
+    <dmn:decisionTable id="_45FB0364-3818-4DC2-8CAA-B45E0CB17405" hitPolicy="UNIQUE" preferredOrientation="Rule-as-Row">
+      <dmn:input id="_0829A253-04B2-418D-816B-5B44DC6F16A1">
+        <dmn:inputExpression id="_420B6ECA-7595-48B7-ACE4-C339ED6B11A3" typeRef="string">
+          <dmn:text>businessFlag</dmn:text>
+        </dmn:inputExpression>
+      </dmn:input>
+      <dmn:output id="_979C8E11-FFF1-4726-BA12-44C7BC8CEC22" name="autoReject" typeRef="string"/>
+      <dmn:output id="_4EE30DB2-FAE6-4DFB-8B48-CA4FF9E8FD92" name="rejectCode" typeRef="string"/>
+      <dmn:output id="_440347C4-BB7D-442D-9F2E-25D6C44A9671" name="deviationCode" typeRef="string"/>
+      <dmn:annotation name="annotation-1"/>
+      <dmn:rule id="_411B5DCA-C0C4-42D6-96BA-85A9D10C17EB">
+        <dmn:inputEntry id="_DD6033F3-966D-4FE3-8075-6E1D4C6AA58E">
+          <dmn:text>"2"</dmn:text>
+        </dmn:inputEntry>
+        <dmn:outputEntry id="_470665C8-AEA6-4F16-AB9C-7C10CFEDBDFD">
+          <dmn:text>"Y"</dmn:text>
+        </dmn:outputEntry>
+        <dmn:outputEntry id="_A13E2CF2-A146-4A37-B65E-8295D9DD38CA">
+          <dmn:text>"006"</dmn:text>
+        </dmn:outputEntry>
+        <dmn:outputEntry id="_B8A7960A-8E3E-496A-8B39-759A37AD8151">
+          <dmn:text>""</dmn:text>
+        </dmn:outputEntry>
+        <dmn:annotationEntry>
+          <dmn:text>"Customer does not have businesses"</dmn:text>
+        </dmn:annotationEntry>
+      </dmn:rule>
+      <dmn:rule id="_9A0C010B-912D-4D3B-B8B4-E71680246EFE">
+        <dmn:inputEntry id="_DCEF6E9A-0492-409B-AB90-6D021A593017">
+          <dmn:text>"1"</dmn:text>
+        </dmn:inputEntry>
+        <dmn:outputEntry id="_2FF4FB22-114E-4716-A55C-79A1FFEE48B9">
+          <dmn:text>"N"</dmn:text>
+        </dmn:outputEntry>
+        <dmn:outputEntry id="_CA0EB188-A0D7-40D8-BCE2-8353BAEA0407">
+          <dmn:text>""</dmn:text>
+        </dmn:outputEntry>
+        <dmn:outputEntry id="_05349A14-E627-4BA5-8B3F-51354F55551B">
+          <dmn:text>""</dmn:text>
+        </dmn:outputEntry>
+        <dmn:annotationEntry>
+          <dmn:text></dmn:text>
+        </dmn:annotationEntry>
+      </dmn:rule>
+    </dmn:decisionTable>
+  </dmn:decision>
+  <dmndi:DMNDI>
+    <dmndi:DMNDiagram>
+      <di:extension>
+        <kie:ComponentsWidthsExtension>
+          <kie:ComponentWidths dmnElementRef="_45FB0364-3818-4DC2-8CAA-B45E0CB17405">
+            <kie:width>50.0</kie:width>
+            <kie:width>100.0</kie:width>
+            <kie:width>100.0</kie:width>
+            <kie:width>100.0</kie:width>
+            <kie:width>100.0</kie:width>
+            <kie:width>279.0</kie:width>
+          </kie:ComponentWidths>
+        </kie:ComponentsWidthsExtension>
+      </di:extension>
+      <dmndi:DMNShape id="dmnshape-_C766A2A5-5E02-41D0-8955-E429C8BB4655" dmnElementRef="_C766A2A5-5E02-41D0-8955-E429C8BB4655" isCollapsed="false">
+        <dmndi:DMNStyle>
+          <dmndi:FillColor red="255" green="255" blue="255"/>
+          <dmndi:StrokeColor red="0" green="0" blue="0"/>
+          <dmndi:FontColor red="0" green="0" blue="0"/>
+        </dmndi:DMNStyle>
+        <dc:Bounds x="101" y="113" width="100" height="50"/>
+        <dmndi:DMNLabel/>
+      </dmndi:DMNShape>
+      <dmndi:DMNShape id="dmnshape-_F142C849-D594-452B-8796-A040E3B8046F" dmnElementRef="_F142C849-D594-452B-8796-A040E3B8046F" isCollapsed="false">
+        <dmndi:DMNStyle>
+          <dmndi:FillColor red="255" green="255" blue="255"/>
+          <dmndi:StrokeColor red="0" green="0" blue="0"/>
+          <dmndi:FontColor red="0" green="0" blue="0"/>
+        </dmndi:DMNStyle>
+        <dc:Bounds x="287" y="113" width="100" height="50"/>
+        <dmndi:DMNLabel/>
+      </dmndi:DMNShape>
+      <dmndi:DMNEdge id="dmnedge-_13128D49-5D47-4166-B8DD-C1D5483372D6" dmnElementRef="_13128D49-5D47-4166-B8DD-C1D5483372D6">
+        <di:waypoint x="201" y="138"/>
+        <di:waypoint x="287" y="138"/>
+      </dmndi:DMNEdge>
+    </dmndi:DMNDiagram>
+  </dmndi:DMNDI>
+</dmn:definitions>
