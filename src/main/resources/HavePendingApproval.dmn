@@ -1,0 +1,109 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<dmn:definitions xmlns:dmn="http://www.omg.org/spec/DMN/20180521/MODEL/" xmlns="https://kiegroup.org/dmn/_619A58C8-1FAD-4EFD-B555-5AA37A909635" xmlns:di="http://www.omg.org/spec/DMN/20180521/DI/" xmlns:kie="http://www.drools.org/kie/dmn/1.2" xmlns:feel="http://www.omg.org/spec/DMN/20180521/FEEL/" xmlns:dmndi="http://www.omg.org/spec/DMN/20180521/DMNDI/" xmlns:dc="http://www.omg.org/spec/DMN/20180521/DC/" id="_566BFAEA-EFE4-4AAA-9814-4143BE5C5AFD" name="HavePendingApproval" expressionLanguage="http://www.omg.org/spec/DMN/20180521/FEEL/" typeLanguage="http://www.omg.org/spec/DMN/20180521/FEEL/" namespace="https://kiegroup.org/dmn/_619A58C8-1FAD-4EFD-B555-5AA37A909635">
+  <dmn:extensionElements/>
+  <dmn:itemDefinition id="_6B6CC152-6DF9-4EDE-B403-616830EB8A3B" name="Insert a name" isCollection="false">
+    <dmn:typeRef>Any</dmn:typeRef>
+  </dmn:itemDefinition>
+  <dmn:itemDefinition id="_181AEC61-55A8-4427-B36D-67695B8C3192" name="output" isCollection="false">
+    <dmn:itemComponent id="_1F572F5A-E090-436A-8CFA-EDE3FEC4C11F" name="autoReject" isCollection="false">
+      <dmn:typeRef>string</dmn:typeRef>
+    </dmn:itemComponent>
+    <dmn:itemComponent id="_5060CA60-F251-41E1-8202-7F5278E49B31" name="rejectCode" isCollection="false">
+      <dmn:typeRef>string</dmn:typeRef>
+    </dmn:itemComponent>
+  </dmn:itemDefinition>
+  <dmn:inputData id="_6DBF07FA-CB63-40B6-A7D9-8F652DBA8DEA" name="check">
+    <dmn:extensionElements/>
+    <dmn:variable id="_3DF17ED2-5737-4A1B-8054-45E4D8B90555" name="check" typeRef="boolean"/>
+  </dmn:inputData>
+  <dmn:decision id="_8619A86E-F766-49C7-820C-902C240FE165" name="HavePendingApproval">
+    <dmn:extensionElements/>
+    <dmn:variable id="_1C7D72CB-D1AB-46A4-871A-BA6030DB4426" name="HavePendingApproval" typeRef="output"/>
+    <dmn:informationRequirement id="_3831BE70-A1BC-465F-AB95-9B64AE767399">
+      <dmn:requiredInput href="#_6DBF07FA-CB63-40B6-A7D9-8F652DBA8DEA"/>
+    </dmn:informationRequirement>
+    <dmn:decisionTable id="_97C71AB6-2CFB-4667-8FF5-F856F7CCBB49" hitPolicy="UNIQUE" preferredOrientation="Rule-as-Row">
+      <dmn:input id="_1B53E7BA-3575-4FD6-911E-3D77E6F2A4AA">
+        <dmn:inputExpression id="_FC6E2DBC-A26C-475B-B902-0AFCEEA17EBB" typeRef="boolean">
+          <dmn:text>check</dmn:text>
+        </dmn:inputExpression>
+      </dmn:input>
+      <dmn:output id="_DFBAE2B7-37A4-47AE-B96A-9C46DA13D499" name="autoReject" typeRef="string"/>
+      <dmn:output id="_7709D8DD-FCE3-44A5-B882-A7BC066281F3" name="rejectCode" typeRef="string"/>
+      <dmn:output id="_D21CF6C1-5372-440E-B984-3E9538D18675" name="deviationCode" typeRef="string"/>
+      <dmn:annotation name="annotation"/>
+      <dmn:rule id="_0643DF66-322B-41DD-BBD1-4AA3EDAA7217">
+        <dmn:inputEntry id="_52DDFC9C-1CFE-4C7A-BE31-E3C681EF4D40">
+          <dmn:text>true</dmn:text>
+        </dmn:inputEntry>
+        <dmn:outputEntry id="_1E012189-9FE2-429D-B5EF-6DC8DDEA4BD4">
+          <dmn:text>"Y"</dmn:text>
+        </dmn:outputEntry>
+        <dmn:outputEntry id="_AC907C8E-6E21-4443-B6D2-EA234D415304">
+          <dmn:text>"017"</dmn:text>
+        </dmn:outputEntry>
+        <dmn:outputEntry id="_91EE7C3D-3ACB-441B-983B-DCA0A72F328A">
+          <dmn:text>""</dmn:text>
+        </dmn:outputEntry>
+        <dmn:annotationEntry>
+          <dmn:text>"Customer has other financing with status 'Approved' or 'Pending Approval'"</dmn:text>
+        </dmn:annotationEntry>
+      </dmn:rule>
+      <dmn:rule id="_6375C4E9-45B9-44A1-9233-864B44CB29E9">
+        <dmn:inputEntry id="_56F3D6C2-85A6-4A90-800A-F0602A8B48A4">
+          <dmn:text>false</dmn:text>
+        </dmn:inputEntry>
+        <dmn:outputEntry id="_B9B1838C-D306-4FDE-ADC4-13F197DAE7ED">
+          <dmn:text>"N"</dmn:text>
+        </dmn:outputEntry>
+        <dmn:outputEntry id="_1858EB79-CE2F-4568-B6C2-312637333C44">
+          <dmn:text>""</dmn:text>
+        </dmn:outputEntry>
+        <dmn:outputEntry id="_270A0B12-D4E0-486E-8C58-668815D35CB1">
+          <dmn:text>""</dmn:text>
+        </dmn:outputEntry>
+        <dmn:annotationEntry>
+          <dmn:text></dmn:text>
+        </dmn:annotationEntry>
+      </dmn:rule>
+    </dmn:decisionTable>
+  </dmn:decision>
+  <dmndi:DMNDI>
+    <dmndi:DMNDiagram>
+      <di:extension>
+        <kie:ComponentsWidthsExtension>
+          <kie:ComponentWidths dmnElementRef="_97C71AB6-2CFB-4667-8FF5-F856F7CCBB49">
+            <kie:width>50.0</kie:width>
+            <kie:width>100.0</kie:width>
+            <kie:width>100.0</kie:width>
+            <kie:width>100.0</kie:width>
+            <kie:width>100.0</kie:width>
+            <kie:width>625.0</kie:width>
+          </kie:ComponentWidths>
+        </kie:ComponentsWidthsExtension>
+      </di:extension>
+      <dmndi:DMNShape id="dmnshape-_6DBF07FA-CB63-40B6-A7D9-8F652DBA8DEA" dmnElementRef="_6DBF07FA-CB63-40B6-A7D9-8F652DBA8DEA" isCollapsed="false">
+        <dmndi:DMNStyle>
+          <dmndi:FillColor red="255" green="255" blue="255"/>
+          <dmndi:StrokeColor red="0" green="0" blue="0"/>
+          <dmndi:FontColor red="0" green="0" blue="0"/>
+        </dmndi:DMNStyle>
+        <dc:Bounds x="86" y="210" width="100" height="50"/>
+        <dmndi:DMNLabel/>
+      </dmndi:DMNShape>
+      <dmndi:DMNShape id="dmnshape-_8619A86E-F766-49C7-820C-902C240FE165" dmnElementRef="_8619A86E-F766-49C7-820C-902C240FE165" isCollapsed="false">
+        <dmndi:DMNStyle>
+          <dmndi:FillColor red="255" green="255" blue="255"/>
+          <dmndi:StrokeColor red="0" green="0" blue="0"/>
+          <dmndi:FontColor red="0" green="0" blue="0"/>
+        </dmndi:DMNStyle>
+        <dc:Bounds x="94" y="36" width="85" height="50"/>
+        <dmndi:DMNLabel/>
+      </dmndi:DMNShape>
+      <dmndi:DMNEdge id="dmnedge-_3831BE70-A1BC-465F-AB95-9B64AE767399" dmnElementRef="_3831BE70-A1BC-465F-AB95-9B64AE767399">
+        <di:waypoint x="136" y="235"/>
+        <di:waypoint x="136.5" y="86"/>
+      </dmndi:DMNEdge>
+    </dmndi:DMNDiagram>
+  </dmndi:DMNDI>
+</dmn:definitions>
