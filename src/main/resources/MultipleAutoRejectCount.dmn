@@ -1,0 +1,109 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<dmn:definitions xmlns:dmn="http://www.omg.org/spec/DMN/20180521/MODEL/" xmlns="https://kiegroup.org/dmn/_58858731-3EED-448A-A509-5236E0D6942A" xmlns:di="http://www.omg.org/spec/DMN/20180521/DI/" xmlns:kie="http://www.drools.org/kie/dmn/1.2" xmlns:feel="http://www.omg.org/spec/DMN/20180521/FEEL/" xmlns:dmndi="http://www.omg.org/spec/DMN/20180521/DMNDI/" xmlns:dc="http://www.omg.org/spec/DMN/20180521/DC/" id="_4567DB4D-91ED-4345-8DEF-FE3E582BE1FA" name="MultipleAutoRejectCount" expressionLanguage="http://www.omg.org/spec/DMN/20180521/FEEL/" typeLanguage="http://www.omg.org/spec/DMN/20180521/FEEL/" namespace="https://kiegroup.org/dmn/_58858731-3EED-448A-A509-5236E0D6942A">
+  <dmn:extensionElements/>
+  <dmn:itemDefinition id="_68098F75-D092-48AD-AA11-D83773D5EA8E" name="Insert a name" isCollection="false">
+    <dmn:typeRef>Any</dmn:typeRef>
+  </dmn:itemDefinition>
+  <dmn:itemDefinition id="_2830D7E0-5E7E-44B1-AE7B-8F4E005331A2" name="output" isCollection="false">
+    <dmn:itemComponent id="_E360CC65-6AE6-461B-A295-2BFE074D85DF" name="autoReject" isCollection="false">
+      <dmn:typeRef>string</dmn:typeRef>
+    </dmn:itemComponent>
+    <dmn:itemComponent id="_347C14C1-3B17-4E7C-BCE2-C40A8B152CB7" name="rejectCode" isCollection="false">
+      <dmn:typeRef>string</dmn:typeRef>
+    </dmn:itemComponent>
+  </dmn:itemDefinition>
+  <dmn:decision id="_04037AE3-7244-49A8-AB41-BA607E96BAA5" name="MultipleAutoRejectCount">
+    <dmn:extensionElements/>
+    <dmn:variable id="_672BC680-5B1C-4383-B7A3-2938B30E9D87" name="MultipleAutoRejectCount" typeRef="output"/>
+    <dmn:informationRequirement id="_11B4D6DD-5956-47A2-BB95-1C718FEA575A">
+      <dmn:requiredInput href="#_FF52CFCC-2DFC-4F39-857B-33FDC06D46A9"/>
+    </dmn:informationRequirement>
+    <dmn:decisionTable id="_4372E727-8A14-4198-BBB8-B7BA50CFC1DB" hitPolicy="UNIQUE" preferredOrientation="Rule-as-Row">
+      <dmn:input id="_19629313-26E4-4E13-8797-0D774AFAC40A">
+        <dmn:inputExpression id="_11401CC9-0802-496C-B7AC-6ACAE8940013" typeRef="number">
+          <dmn:text>autoRejectCount</dmn:text>
+        </dmn:inputExpression>
+      </dmn:input>
+      <dmn:output id="_E5528FA7-31F1-4C6E-9BBE-602DF3454804" name="autoReject" typeRef="string"/>
+      <dmn:output id="_8CFD7ADE-0E5B-4625-8550-C7BBCEDC5846" name="deviationCode" typeRef="string"/>
+      <dmn:output id="_08FBEB15-D2FB-4C4E-BCDA-5B7FC5F86DB4" name="rejectCode" typeRef="string"/>
+      <dmn:annotation name="annotation"/>
+      <dmn:rule id="_90416457-FDD6-41A4-9ADB-0DF102A70362">
+        <dmn:inputEntry id="_13869AF7-373A-4A34-8071-CF885647C596">
+          <dmn:text>&gt;=2</dmn:text>
+        </dmn:inputEntry>
+        <dmn:outputEntry id="_93631B1D-6B6A-4837-8607-A0EE072FBD79">
+          <dmn:text>"Y"</dmn:text>
+        </dmn:outputEntry>
+        <dmn:outputEntry id="_2ED3EF3C-E89F-4EFA-9350-6B6918C2E5D1">
+          <dmn:text>""</dmn:text>
+        </dmn:outputEntry>
+        <dmn:outputEntry id="_2C35901A-C126-464C-B309-B87ECED2859D">
+          <dmn:text>"028"</dmn:text>
+        </dmn:outputEntry>
+        <dmn:annotationEntry>
+          <dmn:text></dmn:text>
+        </dmn:annotationEntry>
+      </dmn:rule>
+      <dmn:rule id="_69CC134E-B0D3-476C-ADCE-CFD718A5A7CC">
+        <dmn:inputEntry id="_E718FFA3-BFC0-483B-A5FB-EEF2576A1D0F">
+          <dmn:text>&lt;2</dmn:text>
+        </dmn:inputEntry>
+        <dmn:outputEntry id="_F26DD0AA-66AB-459B-A599-A8C1757A9C4A">
+          <dmn:text>"N"</dmn:text>
+        </dmn:outputEntry>
+        <dmn:outputEntry id="_D85DFB1F-7B31-4C53-ABAD-A73E3F87AC5D">
+          <dmn:text>""</dmn:text>
+        </dmn:outputEntry>
+        <dmn:outputEntry id="_C463630E-B472-4A53-9FB2-6644871C9174">
+          <dmn:text>""</dmn:text>
+        </dmn:outputEntry>
+        <dmn:annotationEntry>
+          <dmn:text></dmn:text>
+        </dmn:annotationEntry>
+      </dmn:rule>
+    </dmn:decisionTable>
+  </dmn:decision>
+  <dmn:inputData id="_FF52CFCC-2DFC-4F39-857B-33FDC06D46A9" name="autoRejectCount">
+    <dmn:extensionElements/>
+    <dmn:variable id="_9482964F-2D37-4FDB-98EF-72B2766961D1" name="autoRejectCount" typeRef="number"/>
+  </dmn:inputData>
+  <dmndi:DMNDI>
+    <dmndi:DMNDiagram>
+      <di:extension>
+        <kie:ComponentsWidthsExtension>
+          <kie:ComponentWidths dmnElementRef="_4372E727-8A14-4198-BBB8-B7BA50CFC1DB">
+            <kie:width>50.0</kie:width>
+            <kie:width>142.0</kie:width>
+            <kie:width>100.0</kie:width>
+            <kie:width>100.0</kie:width>
+            <kie:width>100.0</kie:width>
+            <kie:width>100.0</kie:width>
+          </kie:ComponentWidths>
+        </kie:ComponentsWidthsExtension>
+      </di:extension>
+      <dmndi:DMNShape id="dmnshape-_04037AE3-7244-49A8-AB41-BA607E96BAA5" dmnElementRef="_04037AE3-7244-49A8-AB41-BA607E96BAA5" isCollapsed="false">
+        <dmndi:DMNStyle>
+          <dmndi:FillColor red="255" green="255" blue="255"/>
+          <dmndi:StrokeColor red="0" green="0" blue="0"/>
+          <dmndi:FontColor red="0" green="0" blue="0"/>
+        </dmndi:DMNStyle>
+        <dc:Bounds x="93" y="38" width="100" height="50"/>
+        <dmndi:DMNLabel/>
+      </dmndi:DMNShape>
+      <dmndi:DMNShape id="dmnshape-_FF52CFCC-2DFC-4F39-857B-33FDC06D46A9" dmnElementRef="_FF52CFCC-2DFC-4F39-857B-33FDC06D46A9" isCollapsed="false">
+        <dmndi:DMNStyle>
+          <dmndi:FillColor red="255" green="255" blue="255"/>
+          <dmndi:StrokeColor red="0" green="0" blue="0"/>
+          <dmndi:FontColor red="0" green="0" blue="0"/>
+        </dmndi:DMNStyle>
+        <dc:Bounds x="93" y="213" width="100" height="50"/>
+        <dmndi:DMNLabel/>
+      </dmndi:DMNShape>
+      <dmndi:DMNEdge id="dmnedge-_11B4D6DD-5956-47A2-BB95-1C718FEA575A" dmnElementRef="_11B4D6DD-5956-47A2-BB95-1C718FEA575A">
+        <di:waypoint x="193" y="238"/>
+        <di:waypoint x="93" y="63"/>
+      </dmndi:DMNEdge>
+    </dmndi:DMNDiagram>
+  </dmndi:DMNDI>
+</dmn:definitions>
