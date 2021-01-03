@@ -1,0 +1,109 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<dmn:definitions xmlns:dmn="http://www.omg.org/spec/DMN/20180521/MODEL/" xmlns="https://kiegroup.org/dmn/_A1E6A66D-FF3D-4642-8242-7D2A588FE2FD" xmlns:di="http://www.omg.org/spec/DMN/20180521/DI/" xmlns:kie="http://www.drools.org/kie/dmn/1.2" xmlns:feel="http://www.omg.org/spec/DMN/20180521/FEEL/" xmlns:dmndi="http://www.omg.org/spec/DMN/20180521/DMNDI/" xmlns:dc="http://www.omg.org/spec/DMN/20180521/DC/" id="_C508126B-E0E9-472E-B284-D0EDFA98264E" name="LastInstallPayStatus" expressionLanguage="http://www.omg.org/spec/DMN/20180521/FEEL/" typeLanguage="http://www.omg.org/spec/DMN/20180521/FEEL/" namespace="https://kiegroup.org/dmn/_A1E6A66D-FF3D-4642-8242-7D2A588FE2FD">
+  <dmn:extensionElements/>
+  <dmn:itemDefinition id="_2C0A73AD-F4A8-4B75-BF6D-C03E931B46FB" name="Insert a name" isCollection="false">
+    <dmn:typeRef>Any</dmn:typeRef>
+  </dmn:itemDefinition>
+  <dmn:itemDefinition id="_75A55B81-121F-4186-8B1F-0ACBC6919835" name="output" isCollection="false">
+    <dmn:itemComponent id="_DE743DC3-F3E1-4031-AFE4-26E8DA17ACFB" name="autoReject" isCollection="false">
+      <dmn:typeRef>string</dmn:typeRef>
+    </dmn:itemComponent>
+    <dmn:itemComponent id="_8783E58D-CC8E-4759-9419-08CBD62DE9EE" name="rejectCode" isCollection="false">
+      <dmn:typeRef>string</dmn:typeRef>
+    </dmn:itemComponent>
+  </dmn:itemDefinition>
+  <dmn:decision id="_F2F63A99-6223-43AC-9574-47262562A49F" name="LastInstallPayStatus">
+    <dmn:extensionElements/>
+    <dmn:variable id="_A71DB7D4-E490-4B4F-A5D4-581E152A9588" name="LastInstallPayStatus" typeRef="output"/>
+    <dmn:informationRequirement id="_49BE8265-A357-49EE-B627-9E46DA070751">
+      <dmn:requiredInput href="#_A4457365-025D-43D9-9AFC-BEA25A0FF6EA"/>
+    </dmn:informationRequirement>
+    <dmn:decisionTable id="_8E54285B-D2F7-44CD-8D0C-39C5001955AF" hitPolicy="UNIQUE" preferredOrientation="Rule-as-Row">
+      <dmn:input id="_A0691F3F-3A08-4E69-838C-29BC8BFC9CA3">
+        <dmn:inputExpression id="_7E1A3AEE-E550-4B9C-AC70-B43FFB51587F" typeRef="string">
+          <dmn:text>collectibility</dmn:text>
+        </dmn:inputExpression>
+      </dmn:input>
+      <dmn:output id="_6EEA87D9-17A8-4CA4-BACA-4F9F2B4F8165" name="autoReject" typeRef="string"/>
+      <dmn:output id="_38C56373-D3A6-42C8-85A2-8FC048B54009" name="rejectCode" typeRef="string"/>
+      <dmn:output id="_EF64164A-9C40-45DA-9283-583471CFEC3D" name="deviationCode" typeRef="string"/>
+      <dmn:annotation name="annotation"/>
+      <dmn:rule id="_2424F53D-8740-4C05-A05E-ED24D67A3CDE">
+        <dmn:inputEntry id="_8E6835E9-AD6D-47BB-83B3-85B19794F4F7">
+          <dmn:text>not("1")</dmn:text>
+        </dmn:inputEntry>
+        <dmn:outputEntry id="_F5558458-A97A-46E9-B2AB-EF82E34B382B">
+          <dmn:text>"Y"</dmn:text>
+        </dmn:outputEntry>
+        <dmn:outputEntry id="_88B770AB-2F25-40AF-9CDC-CD663BCAE197">
+          <dmn:text>"010"</dmn:text>
+        </dmn:outputEntry>
+        <dmn:outputEntry id="_DC8D4B61-D54A-43AC-9E90-512F7347F946">
+          <dmn:text>""</dmn:text>
+        </dmn:outputEntry>
+        <dmn:annotationEntry>
+          <dmn:text>"Collectibility is not equal to 1"</dmn:text>
+        </dmn:annotationEntry>
+      </dmn:rule>
+      <dmn:rule id="_60362EB7-951D-4C5A-ACC7-C6A91EC1BD64">
+        <dmn:inputEntry id="_65C78DCD-62AD-4EE8-9574-9ED023CBBFA5">
+          <dmn:text>"1"</dmn:text>
+        </dmn:inputEntry>
+        <dmn:outputEntry id="_33937B04-A643-408C-B7D7-7E5444D9AAAB">
+          <dmn:text>"N"</dmn:text>
+        </dmn:outputEntry>
+        <dmn:outputEntry id="_BE02D410-D88C-48E0-8DBC-A49B228101C0">
+          <dmn:text>""</dmn:text>
+        </dmn:outputEntry>
+        <dmn:outputEntry id="_8DA84192-8684-467E-834A-92EA32A50C4E">
+          <dmn:text>""</dmn:text>
+        </dmn:outputEntry>
+        <dmn:annotationEntry>
+          <dmn:text></dmn:text>
+        </dmn:annotationEntry>
+      </dmn:rule>
+    </dmn:decisionTable>
+  </dmn:decision>
+  <dmn:inputData id="_A4457365-025D-43D9-9AFC-BEA25A0FF6EA" name="collectibility">
+    <dmn:extensionElements/>
+    <dmn:variable id="_9E2DE38B-C959-43A1-884C-14DE52929649" name="collectibility" typeRef="string"/>
+  </dmn:inputData>
+  <dmndi:DMNDI>
+    <dmndi:DMNDiagram>
+      <di:extension>
+        <kie:ComponentsWidthsExtension>
+          <kie:ComponentWidths dmnElementRef="_8E54285B-D2F7-44CD-8D0C-39C5001955AF">
+            <kie:width>50.0</kie:width>
+            <kie:width>100.0</kie:width>
+            <kie:width>100.0</kie:width>
+            <kie:width>100.0</kie:width>
+            <kie:width>100.0</kie:width>
+            <kie:width>319.0</kie:width>
+          </kie:ComponentWidths>
+        </kie:ComponentsWidthsExtension>
+      </di:extension>
+      <dmndi:DMNShape id="dmnshape-_F2F63A99-6223-43AC-9574-47262562A49F" dmnElementRef="_F2F63A99-6223-43AC-9574-47262562A49F" isCollapsed="false">
+        <dmndi:DMNStyle>
+          <dmndi:FillColor red="255" green="255" blue="255"/>
+          <dmndi:StrokeColor red="0" green="0" blue="0"/>
+          <dmndi:FontColor red="0" green="0" blue="0"/>
+        </dmndi:DMNStyle>
+        <dc:Bounds x="125" y="48" width="100" height="50"/>
+        <dmndi:DMNLabel/>
+      </dmndi:DMNShape>
+      <dmndi:DMNShape id="dmnshape-_A4457365-025D-43D9-9AFC-BEA25A0FF6EA" dmnElementRef="_A4457365-025D-43D9-9AFC-BEA25A0FF6EA" isCollapsed="false">
+        <dmndi:DMNStyle>
+          <dmndi:FillColor red="255" green="255" blue="255"/>
+          <dmndi:StrokeColor red="0" green="0" blue="0"/>
+          <dmndi:FontColor red="0" green="0" blue="0"/>
+        </dmndi:DMNStyle>
+        <dc:Bounds x="125" y="223" width="100" height="50"/>
+        <dmndi:DMNLabel/>
+      </dmndi:DMNShape>
+      <dmndi:DMNEdge id="dmnedge-_49BE8265-A357-49EE-B627-9E46DA070751" dmnElementRef="_49BE8265-A357-49EE-B627-9E46DA070751">
+        <di:waypoint x="225" y="248"/>
+        <di:waypoint x="125" y="73"/>
+      </dmndi:DMNEdge>
+    </dmndi:DMNDiagram>
+  </dmndi:DMNDI>
+</dmn:definitions>
